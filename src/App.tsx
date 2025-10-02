@@ -9,10 +9,10 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
         <>
           {/* Header */}
           <header className="text-center mb-16">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <Code className="w-8 h-8 text-red-500" />
-              <h1 className="text-3xl font-bold text-red-500">كود من أجل السودان</h1>
-            </div>
+          <div className="flex items-center justify-center space-x-2 mb-4">
+          <Code className="w-8 h-8 text-red-500" />
+          <h1 className="text-3xl font-bold text-red-500">Code 4 Sudan</h1>
+        </div>
             <p className="text-lg text-gray-700">تمكين السودان عبر التكنولوجيا والتعليم</p>
             <p className="mt-4">
               <strong>انضم إلى المجتمع:</strong>{' '}
@@ -135,7 +135,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
       <header className="text-center mb-16">
         <div className="flex items-center justify-center space-x-2 mb-4">
           <Code className="w-8 h-8 text-red-500" />
-          <h1 className="text-3xl font-bold text-red-500">Code for Sudan</h1>
+          <h1 className="text-3xl font-bold text-red-500">Code 4 Sudan</h1>
         </div>
         <p className="text-lg text-gray-700">
           Empowering Sudan through technology and education
@@ -584,17 +584,27 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
 function App() {
   const [lang, setLang] = useState<'en' | 'ar'>('en');
   return (
-    <div className={`min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12 ${lang === 'ar' ? 'text-right' : ''}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-      <div className="fixed top-4 right-4 z-50 flex items-center space-x-2">
-        <span className="text-sm text-gray-600 hidden sm:inline">{lang === 'ar' ? 'اللغة' : 'Language'}</span>
-        <button
-          type="button"
-          onClick={() => setLang((prev) => (prev === 'en' ? 'ar' : 'en'))}
-          className="px-3 py-1 rounded border border-gray-300 bg-white hover:bg-gray-50 shadow-sm"
-          aria-label={lang === 'ar' ? 'تبديل اللغة إلى الإنجليزية' : 'Toggle language to Arabic'}
-        >
-          {lang === 'en' ? 'AR' : 'EN'}
-        </button>
+      <div className={`min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12 ${lang === 'ar' ? 'text-right' : ''}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+      <div className="fixed top-4 right-4 z-50 flex items-center gap-3">
+        <span className="text-base font-medium text-gray-700">{lang === 'ar' ? 'اللغة' : 'Language'}</span>
+        <div role="group" aria-label={lang === 'ar' ? 'تبديل اللغة' : 'Language toggle'} className="inline-flex rounded-full overflow-hidden border border-gray-200 bg-white shadow-md">
+          <button
+            type="button"
+            onClick={() => setLang('ar')}
+            className={`px-4 py-2 text-sm sm:text-base font-semibold focus:outline-none focus:ring-2 focus:ring-green-300 ${lang === 'ar' ? 'bg-green-500 text-white' : 'text-green-600 hover:bg-green-50'}`}
+            aria-pressed={lang === 'ar'}
+          >
+            AR
+          </button>
+          <button
+            type="button"
+            onClick={() => setLang('en')}
+            className={`px-4 py-2 text-sm sm:text-base font-semibold border-l border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-300 ${lang === 'en' ? 'bg-red-500 text-white' : 'text-red-600 hover:bg-red-50'}`}
+            aria-pressed={lang === 'en'}
+          >
+            EN
+          </button>
+        </div>
       </div>
       <Routes>
         <Route path="/" element={<HomePage lang={lang} />} />
