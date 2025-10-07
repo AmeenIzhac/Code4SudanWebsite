@@ -11,7 +11,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           <header className="text-center mb-16">
           <div className="flex items-center justify-center space-x-2 mb-4">
           <Code className="w-8 h-8 text-red-500" />
-          <h1 className="text-3xl font-bold text-red-500">Code 4 Sudan</h1>
+          <h1 className="text-3xl font-bold text-red-500">Code4Sudan</h1>
         </div>
             <p className="text-lg text-gray-700">تمكين السودان عبر التكنولوجيا والتعليم</p>
             <p className="mt-4">
@@ -126,7 +126,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
 
           {/* Footer */}
           <footer className="text-center pt-8 border-t border-gray-300">
-            <p className="text-gray-600">© 2025 كود من أجل السودان</p>
+            <p className="text-gray-600">© 2025 كود فور سودان</p>
           </footer>
         </>
       ) : (
@@ -135,7 +135,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
       <header className="text-center mb-16">
         <div className="flex items-center justify-center space-x-2 mb-4">
           <Code className="w-8 h-8 text-red-500" />
-          <h1 className="text-3xl font-bold text-red-500">Code 4 Sudan</h1>
+          <h1 className="text-3xl font-bold text-red-500">Code4Sudan</h1>
         </div>
         <p className="text-lg text-gray-700">
           Empowering Sudan through technology and education
@@ -252,7 +252,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
 
       {/* Footer */}
       <footer className="text-center pt-8 border-t border-gray-300">
-        <p className="text-gray-600">© 2025 Code for Sudan</p>
+        <p className="text-gray-600">© 2025 Code4Sudan</p>
       </footer>
         </>
       )}
@@ -448,6 +448,15 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
             <p className="mb-0 leading-relaxed">لذا فالسوق صعب الانطلاق ويحتاج جهدًا كبيرًا وإطلاقًا قويًا. قد لا ينجح سوق لهواة خراطيم المياه، لكن طلب سيارة أجرة حاجة شائعة جدًا — لذا نجحت أوبر.</p>
           </Collapsible>
 
+          <Collapsible title="التطبيقات المستقلة (Stand-Alone Apps)">
+            <p className="mb-6 leading-relaxed">
+              نهتم كثيرًا بالأفكار التي تقدّم قيمة فورية للمستخدم دون الاعتماد على شبكة أو جهة تعتمدها. تخيّل تطبيقًا يساعد مزارعًا على استخدام الذكاء الاصطناعي لتحليل التربة، أو أداة تمنح السائق مسارات أكثر كفاءة في الوقت الحقيقي، أو أي حل يُستخدم فور تثبيته ويمنح فائدة ملموسة.
+            </p>
+            <p className="mb-0 leading-relaxed">
+              هذه المشاريع يسهل اختبارها وتحسينها بسرعة لأنها لا تحتاج إلى تبنٍ مؤسسي. ومع ذلك، إذا كانت لديك فكرة قوية تعتمد على سوق أو جهة تتبناها، فنرحب بها أيضًا؛ سنقيّمها بعناية أكبر لأن تحويلها إلى واقع يتطلب تنسيقًا أوسع.
+            </p>
+          </Collapsible>
+
           <Collapsible title="النموذج الأولي الأدنى (MVPs)">
             <p className="mb-6 leading-relaxed">بناء MVP يعني عدم السعي فورًا إلى منتج نهائي مصقول، بل صنع شيء بسيط يعمل بأسرع ما يمكن. شاهد الصورة:</p>
             <div className="flex justify-center mb-6">
@@ -479,7 +488,7 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
       ) : (
         <>
         <p className="mb-6 leading-relaxed">
-          A core goal of Code for Sudan is to produce technology that benefits the country. To do this we need to:
+          A core goal of Code4Sudan is to produce technology that benefits the country. To do this we need to:
         </p>
         <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
           <li>Come up with ideas</li>
@@ -514,7 +523,10 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
               Case study - Ebay vs Back Market.
             </h6>
             <p className="mb-0 leading-relaxed">
-              Ebay is a website for buying and selling used items. Backmarket is the same, but focusing on phones and laptops. If someone wants buy from Ebay, they often have search through options, check the quality, find the lowest price, and wait for the seller to accept the bid. This is a lot of friction. Backmarket, has fixed prices, they inspect phones themselves to provide a quality guarantee, and you can ord immediately and not wait for the seller to accept the bid. Same service, but BackMarket has a lot less friction.
+              Ebay is a website for buying and selling used items. Backmarket is the same, but focusing on phones and laptops. If someone wants buy from Ebay, they often have search through options, check the quality, find the lowest price, and wait for the seller to accept the bid. This is a lot of friction. Backmarket, has fixed prices, they inspect phones themselves and provide a quality guarantee, and you can order immediately and not wait for the seller to accept the bid.
+              <br/>
+              <br/>
+              Note Ebay sells all items so it's business model must be different, but this is how Back Market stole a large portion of the electronic device market from Ebay by reducting friction and solving pain points.
             </p>
           </Collapsible>
 
@@ -527,6 +539,15 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
             </p>
             <p className="mb-0 leading-relaxed">
               Therefore marketplaces are very difficult to get started with. They usually require a lot of effort to launch as they need to get many users very suddenly so that they can function. So while it would be nice to have a marketplace where garden hose enthusiasts can meet up with other garden hose enthusiasts, it would likely never work. As for getting a taxi, this is something that a huge number of people need very often, which is why Uber is so successful.
+            </p>
+          </Collapsible>
+
+          <Collapsible title="Stand-Alone Apps">
+            <p className="mb-6 leading-relaxed">
+              We are especially excited to see self-contained apps that deliver value the moment someone installs them, without depending on a wider marketplace or an institution to adopt them. Imagine a farmer using on-device AI to understand soil conditions, a driver optimizing routes in real time, or any focused tool that makes a single user's day better right away.
+            </p>
+            <p className="mb-0 leading-relaxed">
+              These ideas shine because they can be built, tested, and refined quickly. Still, if you have a bold marketplace or ecosystem-based concept, please submit it—just know we'll evaluate it more critically since it takes extra coordination to bring to life.
             </p>
           </Collapsible>
 
