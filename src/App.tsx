@@ -421,12 +421,29 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
           <Collapsible title="مقدمة" defaultOpen>
             <p className="mb-6 leading-relaxed">هدف أساسي لـ كود من أجل السودان هو إنتاج تقنيات تفيد البلاد. لتحقيق ذلك نحتاج إلى:</p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
-              <li>ابتكار أفكار</li>
-              <li>تحقق من الأفكار</li>
-              <li>تنفيذ الأفكار</li>
+              <li>المرحلة الأولى: ابتكار أفكار</li>
+              <li>المرحلة الثانية: تحقق من الأفكار</li>
+              <li>المرحلة الثالثة: تنفيذ الأفكار</li>
             </ul>
-            <p className="mb-0 leading-relaxed">بدءًا بالمهمة الأولى، نريدك أن تقترح أفكارك للمشاريع التي يمكن أن تساعد السودان وسنختار الأفكار الواعدة لنمضي بها قدمًا إن شاء الله. ستجد نموذج التقديم في أسفل الصفحة.</p>
+            <p className="mb-0 leading-relaxed">بدءًا بالمرحلة الأولى، نريدك أن تقترح أفكارك للمشاريع التي يمكن أن تساعد السودان وسنختار الأفكار الواعدة لنمضي بها قدمًا إن شاء الله. ستجد نموذج التقديم في أسفل الصفحة.</p>
           </Collapsible>
+
+          <h2 className="text-xl font-bold mb-6 text-black-500">معلومات أساسية</h2>
+          إن شاء الله، الخطة للمرحلة الأولى هي كالتالي:
+          <br/>
+          <br/>
+          <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
+            <li>الجوائز. لا توجد جوائز لهذه المسابقة، نبحث عن أشخاص دافعهم هو رؤية أفكارهم لها تأثير حقيقي</li>
+            <li>الاتصالات. سنعمل معك للتواصل مع أي منظمات أو جهات اتصال ذات صلة مطلوبة لتنفيذ فكرتك</li>
+            <li>الأدوات. سنوفر أي أدوات مطلوبة للتنفيذ مثل اشتراكات الذكاء الاصطناعي وما إلى ذلك</li>
+            <li>التمويل. ضمن حدود معقولة، قد نتمكن من توفير مبلغ صغير من التمويل إذا تم إظهار حاجة وتطبيق واضحين</li>
+            <li>النصيحة. بالنسبة لأي أفكار يتم اتخاذها إلى الأمام، سندعمك بنصائح تقنية وغير تقنية من أشخاص ذوي خبرة في المجال</li>
+            <li>يمكنك تقديم أفكار متعددة، ولكن يجب عليك تقديم نموذج منفصل لكل واحدة</li>
+            <li>يمكن تقديم الأفكار من الآن حتى منتصف الليل بتوقيت غرينتش في 7 نوفمبر، وبعد ذلك سيتم إغلاق النموذج</li>
+            <li>ستتلقى ردًا بحلول 20 نوفمبر حول ما إذا كان قد تم اختيار فكرتك للانتقال إلى المرحلة الثانية</li>
+          </ul>
+          <br/>
+          <br/>
 
           <h2 className="text-2xl font-bold mb-6 text-green-500">نصائح لتقديم أفكار جيدة</h2>
           <Collapsible title="نقاط الألم والاحتكاك">
@@ -438,8 +455,8 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
             <p className="mb-4 leading-relaxed">كل منتج أو خدمة تقدم فائدة ما، مثل توفير الوقت أو المال أو الجهد. إنفاق الوقت أو المال أو الجهد هي نقاط ألم، والمنتج الذي تستخدمه هو حل لتلك النقاط. كلما خففت وقتًا أو مالًا أو جهدًا أكثر، زادت قيمة المنتج.</p>
             <p className="mb-4 leading-relaxed">في الوقت نفسه، أي منتج أو خدمة تحتاج وقتًا أو جهدًا للاستخدام: تنزيل تطبيق، إنشاء حساب، الإعداد، التعلم... هذا هو الاحتكاك. كلما زاد الاحتكاك قلّ احتمال استخدام فكرتك.</p>
             <p className="mb-4 leading-relaxed">معادلة تقريبية لقيمة الفكرة: القيمة = تخفيف الألم ÷ الاحتكاك.</p>
-            <h6 className="mb-4 leading-relaxed">دراسة حالة - إيباي مقابل باك ماركت.</h6>
-            <p className="mb-0 leading-relaxed">إيباي موقع لبيع وشراء السلع المستعملة. باك ماركت مماثل لكنه يركز على الهواتف والحواسيب. على إيباي يجب البحث بين الخيارات، فحص الجودة، إيجاد السعر الأدنى، وانتظار قبول البائع — احتكاك كبير. في باك ماركت الأسعار ثابتة، والفحص يتم من قبلهم لضمان الجودة، ويمكنك الطلب مباشرة دون انتظار. نفس الخدمة لكن باك ماركت باحتكاك أقل بكثير.</p>
+            <h6 className="mb-4 leading-relaxed">دراسة حالة - بلوكباستر مقابل نتفليكس.</h6>
+            <p className="mb-0 leading-relaxed">كانت بلوكباستر تتطلب من العملاء القيادة إلى متجر فعلي، تصفح مجموعة محدودة، وإرجاع أقراص DVD في الوقت المحدد لتجنب رسوم التأخير. بدأت نتفليكس بإرسال أقراص DVD مباشرة إلى بابك دون رسوم تأخير، ثم انتقلت إلى البث الفوري — مما منح العملاء راحة وتنوعًا وإمكانية وصول أكبر بكثير. لذا قللت نتفليكس الاحتكاك وتفوقت.</p>
           </Collapsible>
 
           <Collapsible title="الأسواق (Marketplaces)">
@@ -464,6 +481,9 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
             </div>
             <p className="mb-4 leading-relaxed">المنتج هنا مركبة متحركة. المثال الأول غير مجدٍ حتى الوصول للسيارة النهائية، بينما المثال السفلي يقدم لوح تزلج يمكن استخدامه فورًا ثم يتحسن إلى سكوتر... وهكذا. هذا مشابه لما ينبغي فعله مع فكرتك.</p>
             <p className="mb-4 leading-relaxed">قبل بناء تطبيق، فكّر بأبسط طريقة للتنفيذ. مثلًا لمطابقة المدرسين استخدم نموذج جوجل وجدول بيانات بدل التطبيق. لمشروع زواج، ابدأ بمجموعة واتساب لمشاركة الملفات الشخصية.</p>
+            <p className="mb-4 leading-relaxed">
+              مثال رائع على MVP هو <a href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 hover:underline transition-colors">إير بي إن بي</a>. لم يقم المؤسسون ببناء موقع كبير مع خلفية معقدة — قرروا فقط تأجير بعض المراتب في شقتهم خلال مؤتمر في سان فرانسيسco. التقطوا بعض الصور، وضعوها على الإنترنت، وانتظروا. حجز الناس فعلاً. أثبت ذلك أن الفكرة نجحت. من ذلك الاختبار الصغير، بنوا إير بي إن بي التي تساوي الآن أكثر من 70 مليار دولار.
+            </p>
             <p className="mb-0 leading-relaxed">قد يستغرق بناء تطبيق أشهرًا. ميزة MVPs البسيطة المتسلسلة أنها سريعة الإعداد وتكشف مبكرًا مدى اهتمام الناس واستخدامهم، وبذلك تبني مجتمعًا جاهزًا عند الانتقال للمنتج الحقيقي.</p>
           </Collapsible>
 
@@ -487,18 +507,36 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
         </>
       ) : (
         <>
-        <p className="mb-6 leading-relaxed">
-          A core goal of Code4Sudan is to produce technology that benefits the country. To do this we need to:
-        </p>
-        <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
-          <li>Come up with ideas</li>
-          <li>Validate the ideas</li>
-          <li>Implement the ideas</li>
-        </ul>
+        <Collapsible title="Introduction" defaultOpen>
+          <p className="mb-6 leading-relaxed">
+            A core goal of Code4Sudan is to produce technology that benefits the country. To do this we need to:
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
+            <li>Stage 1: Come up with ideas</li>
+            <li>Stage 2: Validate the ideas</li>
+            <li>Stage 3: Implement the ideas</li>
+          </ul>
           <p className="mb-0 leading-relaxed">
-            Starting with task one, we want you to propose your ideas for projects that can help Sudan and we will select promising ideas to take forward in sha' Allah.
+            Starting with Stage 1, we want you to propose your ideas for projects that can help Sudan and we will select promising ideas to take forward in sha' Allah.
             The application form can be found at the bottom of the page.
           </p>
+        </Collapsible>
+
+          <br/>
+        <h2 className="text-xl font-bold mb-6 text-black-500">Key Info</h2>
+        Insha 'Allah, the plan for Stage 1 is the following:
+          <br/>
+          <br/>
+          <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
+          <li>Prizes. There is no prizes for this competition, we're looking for people who's motivation is to see their ideas have real impact</li>
+          <li>Connections. We will work with you to reach out to any relevant organizations or contacts needed to implement your idea</li>
+          <li>Tools. We will make available any tools needed for implementation such as AI subscriptions etc</li>
+          <li>Funds. Within reason, we may be able to make a small amount of funding available if clear need and application can be shown</li>
+          <li>Advice. For any ideas taken forward, we will support you with technical and non technical advice from people with experience in the field</li>
+          <li>You can submit multiple ideas, but you must make a different form submission for each one</li>
+          <li>Ideas can be submitted from now until midnight GMT on November 7th, afterwards the form will close</li>
+          <li>You will hear back by November 20th whether your idea has been selected to move to Stage 2</li>
+        </ul>
           <br/>
           <br/>
         <h2 className="text-2xl font-bold mb-6 text-green-500">Advice for Proposing Good Ideas</h2>
@@ -520,13 +558,10 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
               A rough equation for how valuable your idea is: value = pain relief / friction.
             </p>
             <h6 className="mb-4 leading-relaxed">
-              Case study - Ebay vs Back Market.
+              Case study - Blockbuster vs Netflix.
             </h6>
             <p className="mb-0 leading-relaxed">
-              Ebay is a website for buying and selling used items. Backmarket is the same, but focusing on phones and laptops. If someone wants buy from Ebay, they often have search through options, check the quality, find the lowest price, and wait for the seller to accept the bid. This is a lot of friction. Backmarket, has fixed prices, they inspect phones themselves and provide a quality guarantee, and you can order immediately and not wait for the seller to accept the bid.
-              <br/>
-              <br/>
-              Note Ebay sells all items so it's business model must be different, but this is how Back Market stole a large portion of the electronic device market from Ebay by reducting friction and solving pain points.
+              Blockbuster required customers to drive to a physical store, browse limited selections, and return DVDs on time to avoid late fees. Netflix started by mailing DVDs directly to your door with no late fees, then moved to instant streaming — giving customers vastly more convenience, variety, and accessibility. So Netflix reduced friction and came out on top.
             </p>
           </Collapsible>
 
@@ -570,10 +605,10 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
               If you are building an app, before building an app, you should try think of the simplest way you could make it work. For example, if you're making a tutor matching platform, don't build an app or website yet, make a Google Form and export the results to a spreadsheet. If you are making a matrimonial app, don't build an app or website yet, make a WhatsApp group and let people share profiles in the group.
             </p>
           <p className="mb-4 leading-relaxed">
-              A great example of an MVP is <a href="https://www.mancrates.com/" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 hover:underline transition-colors">Man Crates</a>. This company sells gifts for men. Production is a lot of time and money. They started by making a website that sells the product, before they had made the physical product. They allowed users to go to checkout, but when they check out, they get a message saying they don't deliver to that address. But really, they don't have any product at all yet. They just did this to see how many people would want to buy it, and once they realised it was a lot of people, they actually started producing it.
+              A great example of an MVP is <a href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 hover:underline transition-colors">Airbnb</a>. The founders didn't build a big website with a complex backend — they just decided to rent some mattresses in their apartment during a conference in San Francisco. They took some photos, put them online, and waited. People actually booked. That proved the idea worked. From that small test, they built Airbnb now worth over $70B.
             </p>
             <p className="mb-0 leading-relaxed">
-              An app can take months to build. The benefit of building very basic strung together MVPs, is that they take very little time to setup, and you can quickly see if people are interested in it and using it, and if so, you already have a community of people ready to on board once you start on the real product.
+              An app can take months to build. The benefit of building very basic strung together MVPs is that they take very little time to setup, and you can quickly see if people are interested in it and using it, and if so, you already have a community of people ready to on board once you start on the real product.
           </p>
           </Collapsible>
 
