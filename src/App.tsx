@@ -8,19 +8,19 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
       {lang === 'ar' ? (
         <>
           {/* Header */}
-          <header className="text-center mb-16">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-          <Code className="w-8 h-8 text-red-500" />
-          <h1 className="text-3xl font-bold text-red-500">Code4Sudan</h1>
+          <header className="text-center mb-20">
+          <div className="flex items-center justify-center space-x-2 mb-6" dir="ltr">
+          <Code className="w-10 h-10 text-red-600" />
+          <h1 className="text-4xl font-bold text-gray-900">Code4Sudan</h1>
         </div>
-            <p className="text-lg text-gray-700">تمكين السودان عبر التكنولوجيا والتعليم</p>
-            <p className="mt-4">
-              <strong>انضم إلى المجتمع:</strong>{' '}
+            <p className="text-xl text-gray-600 mb-6">تمكين السودان عبر التكنولوجيا والتعليم</p>
+            <p className="mt-6 text-gray-700">
+              <strong className="text-gray-900">انضم إلى المجتمع:</strong>{' '}
               <a 
                 href="https://t.me/+eb1WfhdFFAtkOGU0" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-red-500 hover:text-red-600 hover:underline transition-colors"
+                className="text-green-500 hover:text-green-600 transition-colors font-semibold"
               >
                 https://t.me/+eb1WfhdFFAtkOGU0
               </a>
@@ -28,17 +28,17 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           </header>
 
           {/* Events */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-green-500">الفعاليات</h2>
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-8 text-green-600">الفعاليات</h2>
             
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-green-400">فعاليات سابقة</h3>
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">فعاليات سابقة</h3>
                 <ul className="space-y-2">
                   <li>
                     <Link 
                       to="/launch-hackathon" 
-                      className="text-red-400 hover:text-red-500 hover:underline transition-colors"
+                      className="text-red-500 hover:text-red-600 font-medium transition-colors underline decoration-red-200 hover:decoration-red-400"
                     >
                       هاكاثون الإطلاق من 1 مايو - 31 يوليو
                     </Link>
@@ -47,12 +47,12 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-green-400">فعاليات قادمة</h3>
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">فعاليات قادمة</h3>
                 <ul className="space-y-2">
                   <li>
                     <Link 
                       to="/idea-proposal" 
-                      className="text-red-400 hover:text-red-500 hover:underline transition-colors"
+                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
                     >
                       تقديم الأفكار - التاريخ سيحدد لاحقًا
                     </Link>
@@ -63,11 +63,11 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           </section>
 
           {/* About */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-green-500">عن المبادرة</h2>
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-8 text-red-500">عن المبادرة</h2>
             
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-green-400">رسالتنا</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">رسالتنا</h3>
               <p className="mb-4 leading-relaxed">
                 رسالتنا هي نشر وتحديث ودعم علوم الحاسوب في السودان — ليس كمجال تعليمي فحسب، بل أيضًا كأداة عملية لمعالجة احتياجات السودان.
               </p>
@@ -76,7 +76,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
               </p>
               
               <div className="mb-6">
-                <h4 className="font-semibold mb-2 text-red-400">الركيزة التعليمية</h4>
+                <h4 className="font-semibold mb-3 text-gray-900">الركيزة التعليمية</h4>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
                   <li>دعم وتحسين تعليم علوم الحاسوب في السودان</li>
                   <li>تمكين المعلمين والموجهين بالمصادر</li>
@@ -85,7 +85,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
               </div>
 
               <div className="mb-6">
-                <h4 className="font-semibold mb-2 text-red-400">ركيزة الإنتاج</h4>
+                <h4 className="font-semibold mb-3 text-gray-900">ركيزة الإنتاج</h4>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
                   <li>تمكين ومكافأة تطبيق علوم الحاسوب لحل التحديات السودانية</li>
                   <li>توجيه ودعم الابتكار الذي يفيد السودان مباشرة</li>
@@ -100,11 +100,11 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           </section>
 
           {/* How We Work */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-green-500">كيف نعمل</h2>
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-green-600">كيف نعمل</h2>
             
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-green-400">دعم الناس في السودان</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">دعم الناس في السودان</h3>
               <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
                 <li>توفير الوصول للتعليم عبر الجلسات والدروس والمحاضرات</li>
                 <li>دعم المعلمين من خلال تمويل المواد والتخطيط وتحسين المناهج والدعم الإعلامي والتغذية الراجعة</li>
@@ -114,7 +114,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
             </div>
 
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-green-400">التواصل مع الشتات</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">التواصل مع الشتات</h3>
               <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
                 <li>توفير منصة للتواصل مع الطلاب والمعلمين والمبتكرين في السودان</li>
                 <li>إتاحة فرص للتدريس والإرشاد أو التعاون عن بُعد</li>
@@ -125,28 +125,28 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           </section>
 
           {/* Footer */}
-          <footer className="text-center pt-8 border-t border-gray-300">
-            <p className="text-gray-600">© 2025 كود فور سودان</p>
+          <footer className="text-center pt-12 mt-16 border-t border-gray-200">
+            <p className="text-gray-500">© 2025 كود فور سودان</p>
           </footer>
         </>
       ) : (
     <>
       {/* Header */}
-      <header className="text-center mb-16">
-        <div className="flex items-center justify-center space-x-2 mb-4">
-          <Code className="w-8 h-8 text-red-500" />
-          <h1 className="text-3xl font-bold text-red-500">Code4Sudan</h1>
+      <header className="text-center mb-20">
+        <div className="flex items-center justify-center space-x-2 mb-6" dir="ltr">
+          <Code className="w-10 h-10 text-red-600" />
+          <h1 className="text-4xl font-bold text-gray-900">Code4Sudan</h1>
         </div>
-        <p className="text-lg text-gray-700">
+        <p className="text-xl text-gray-600 mb-6">
           Empowering Sudan through technology and education
         </p>
-        <p className="mt-4">
-          <strong>Join the community!:</strong>{' '}
+        <p className="mt-6 text-gray-700">
+          <strong className="text-gray-900">Join the community!:</strong>{' '}
           <a 
             href="https://t.me/+eb1WfhdFFAtkOGU0" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-red-500 hover:text-red-600 hover:underline transition-colors"
+            className="text-green-500 hover:text-green-600 transition-colors font-semibold"
           >
             https://t.me/+eb1WfhdFFAtkOGU0
           </a>
@@ -154,17 +154,17 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
       </header>
 
       {/* Events */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-green-500">Events</h2>
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-8 text-green-600">Events</h2>
         
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-green-400">Past Events</h3>
+            <h3 className="text-xl font-semibold mb-4 text-gray-800">Past Events</h3>
             <ul className="space-y-2">
               <li>
                 <Link 
                   to="/launch-hackathon" 
-                  className="text-red-400 hover:text-red-500 hover:underline transition-colors"
+                  className="text-red-500 hover:text-red-600 font-medium transition-colors underline decoration-red-200 hover:decoration-red-400"
                 >
                   Launch Hackathon of May 1 - Jul 31
                 </Link>
@@ -173,12 +173,12 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           </div>
           
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-green-400">Upcoming Events</h3>
+            <h3 className="text-xl font-semibold mb-4 text-gray-800">Upcoming Events</h3>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
               <li>
                 <Link 
                   to="/idea-proposal" 
-                  className="text-red-400 hover:text-red-500 hover:underline transition-colors"
+                  className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
                 >
                   Idea Proposal Date TBD
                 </Link>
@@ -189,11 +189,11 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
       </section>
 
       {/* About */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-green-500">About</h2>
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-8 text-red-500">About</h2>
         
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-green-400">Our Mission</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">Our Mission</h3>
           <p className="mb-4 leading-relaxed">
             Our mission is to spread, modernize, and support computer science in Sudan—not only as an educational field but equally as a practical tool to address Sudanese needs.
           </p>
@@ -202,7 +202,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           </p>
           
           <div className="mb-6">
-            <h4 className="font-semibold mb-2 text-red-400">Educational Pillar</h4>
+            <h4 className="font-semibold mb-3 text-gray-900">Educational Pillar</h4>
             <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
               <li>Support and improve CS education in Sudan</li>
               <li>Empower teachers, mentors, and educators with resources</li>
@@ -211,7 +211,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           </div>
 
           <div className="mb-6">
-            <h4 className="font-semibold mb-2 text-red-400">Production Pillar</h4>
+            <h4 className="font-semibold mb-3 text-gray-900">Production Pillar</h4>
             <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
               <li>Enable and reward the application of CS to solve Sudan-specific challenges</li>
               <li>Guide and support innovation that benefits Sudan directly</li>
@@ -226,11 +226,11 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
       </section>
 
       {/* How We Work */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-green-500">How We Work</h2>
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-8 text-green-600">How We Work</h2>
         
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-green-400">Supporting People in Sudan</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">Supporting People in Sudan</h3>
           <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
             <li>Provide access to education through sessions, tutorials, and lectures</li>
             <li>Support teachers and educators by funding materials, planning courses, improving curricula, media support, and feedback</li>
@@ -240,7 +240,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
         </div>
 
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-green-400">Engaging the Diaspora</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">Engaging the Diaspora</h3>
           <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
             <li>Offer a platform to connect with students, educators, and innovators in Sudan</li>
             <li>Provide opportunities to teach, mentor, or collaborate remotely</li>
@@ -251,8 +251,8 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
       </section>
 
       {/* Footer */}
-      <footer className="text-center pt-8 border-t border-gray-300">
-        <p className="text-gray-600">© 2025 Code4Sudan</p>
+      <footer className="text-center pt-12 mt-16 border-t border-gray-200">
+        <p className="text-gray-500">© 2025 Code4Sudan</p>
       </footer>
         </>
       )}
@@ -263,26 +263,26 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
 function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
   return (
     <div className="min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-      <div className="mb-8">
+      <div className="mb-12">
         <Link 
           to="/" 
-          className="inline-flex items-center text-red-500 hover:text-red-600 transition-colors mb-6"
+          className="inline-flex items-center text-green-500 hover:text-green-600 font-medium transition-colors mb-8"
         >
           {lang === 'ar' ? '← الرجوع للصفحة الرئيسية' : '← Back to Home'}
         </Link>
-        <h1 className="text-3xl font-bold text-red-500 mb-4">{lang === 'ar' ? 'هاكاثون الإطلاق من 1 مايو – 31 يوليو' : 'Launch Hackathon of May 1 – Jul 31'}</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">{lang === 'ar' ? 'هاكاثون الإطلاق من 1 مايو – 31 يوليو' : 'Launch Hackathon of May 1 – Jul 31'}</h1>
       </div>
       
       {/* Hackathon Header */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-green-500">{lang === 'ar' ? 'الهاكاثون' : 'Hackathon'}</h2>
-        <p className="mb-2">
-          <strong>{lang === 'ar' ? 'الهاكاثون على Devpost:' : 'Hackathon on Devpost:'}</strong>{' '}
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-6 text-green-600">{lang === 'ar' ? 'الهاكاثون' : 'Hackathon'}</h2>
+        <p className="mb-2 text-gray-700">
+          <strong className="text-gray-900">{lang === 'ar' ? 'الهاكاثون على Devpost:' : 'Hackathon on Devpost:'}</strong>{' '}
           <a 
             href="https://code-for-sudan.devpost.com/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-red-500 hover:text-red-600 hover:underline transition-colors"
+            className="text-red-500 hover:text-red-600 transition-colors font-semibold"
           >
             https://code-for-sudan.devpost.com/
           </a>
@@ -290,11 +290,11 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
       </section>
 
       {/* About the Hackathon */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-green-500">{lang === 'ar' ? 'عن الهاكاثون' : 'About the Hackathon'}</h2>
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-8 text-red-500">{lang === 'ar' ? 'عن الهاكاثون' : 'About the Hackathon'}</h2>
         
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-green-400">{lang === 'ar' ? 'نبحث عن:' : "We're looking for:"}</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">{lang === 'ar' ? 'نبحث عن:' : "We're looking for:"}</h3>
           <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
             <li>{lang === 'ar' ? 'برامج حاسوبية تقدم قيمة ملموسة للمجتمعات السودانية' : 'Computer programs that deliver tangible value to Sudanese communities'}</li>
             <li>{lang === 'ar' ? 'حلول في مجالات متعددة مثل الصحة والتعليم والمالية والاتصال وغيرها' : 'Solutions across various domains including healthcare, education, finance, communication, and more'}</li>
@@ -305,7 +305,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
         </div>
 
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-green-400">{lang === 'ar' ? 'معايير الأهلية:' : 'Eligibility:'}</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">{lang === 'ar' ? 'معايير الأهلية:' : 'Eligibility:'}</h3>
           <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
             <li>{lang === 'ar' ? 'مفتوح للسودانيين فقط' : 'Open to Sudanese nationals only'}</li>
             <li>{lang === 'ar' ? 'يمكن أن تتكون الفرق من 1-5 أعضاء' : 'Teams can consist of 1-5 members'}</li>
@@ -314,21 +314,21 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
       </section>
 
       {/* Winners */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-green-500">{lang === 'ar' ? 'الفائزون في هاكاثون 2025 الافتتاحي' : '2025 Inaugural Hackathon Winners'}</h2>
-        <div className="space-y-3 text-gray-700">
-          <p>{lang === 'ar' ? 'جائزة المركز الأول بقيمة ' : 'The first place prize of '}<strong>$1000</strong>{lang === 'ar' ? ' منحت إلى ' : ' was awarded to '}<strong className="text-red-500">AwkData</strong>.</p>
-          <p>{lang === 'ar' ? 'جائزة المركز الثاني بقيمة ' : 'The second place prize of '}<strong>$500</strong>{lang === 'ar' ? ' منحت إلى ' : ' was awarded to '}<strong className="text-red-500">University Platform</strong>.</p>
-          <p>{lang === 'ar' ? 'جوائز المركز الثالث بقيمة ' : 'Third place prizes of '}<strong>$100</strong>{lang === 'ar' ? ' لكل فريق منحت إلى ' : ' each were awarded to '}<strong className="text-red-500">Mission 249</strong>, <strong className="text-red-500">Elajy</strong>, <strong className="text-red-500">Monqez</strong> {lang === 'ar' ? 'و' : 'and'} <strong className="text-red-500">Dawak</strong>. {lang === 'ar' ? 'جائزة اختيار الجمهور بقيمة ' : 'The popular choice prize of '}<strong>$100</strong> {lang === 'ar' ? 'منحت إلى ' : 'was awarded to '}<strong className="text-red-500">Shobbak</strong>.</p>
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-8 text-green-600">{lang === 'ar' ? 'الفائزون في هاكاثون 2025 الافتتاحي' : '2025 Inaugural Hackathon Winners'}</h2>
+        <div className="space-y-4 text-gray-700">
+          <p>{lang === 'ar' ? 'جائزة المركز الأول بقيمة ' : 'The first place prize of '}<strong>$1000</strong>{lang === 'ar' ? ' منحت إلى ' : ' was awarded to '}<strong className="text-gray-900">AwkData</strong>.</p>
+          <p>{lang === 'ar' ? 'جائزة المركز الثاني بقيمة ' : 'The second place prize of '}<strong>$500</strong>{lang === 'ar' ? ' منحت إلى ' : ' was awarded to '}<strong className="text-gray-900">University Platform</strong>.</p>
+          <p>{lang === 'ar' ? 'جوائز المركز الثالث بقيمة ' : 'Third place prizes of '}<strong>$100</strong>{lang === 'ar' ? ' لكل فريق منحت إلى ' : ' each were awarded to '}<strong className="text-gray-900">Mission 249</strong>, <strong className="text-gray-900">Elajy</strong>, <strong className="text-gray-900">Monqez</strong> {lang === 'ar' ? 'و' : 'and'} <strong className="text-gray-900">Dawak</strong>. {lang === 'ar' ? 'جائزة اختيار الجمهور بقيمة ' : 'The popular choice prize of '}<strong>$100</strong> {lang === 'ar' ? 'منحت إلى ' : 'was awarded to '}<strong className="text-gray-900">Shobbak</strong>.</p>
         </div>
       </section>
 
       {/* Requirements */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-green-500">{lang === 'ar' ? 'المتطلبات' : 'Requirements'}</h2>
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-8 text-red-500">{lang === 'ar' ? 'المتطلبات' : 'Requirements'}</h2>
         
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-green-400">{lang === 'ar' ? 'ماذا تبني' : 'What to Build'}</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">{lang === 'ar' ? 'ماذا تبني' : 'What to Build'}</h3>
           <p className="mb-4 leading-relaxed">
             {lang === 'ar' ? 'أنشئ برنامجًا حاسوبيًا يعالج حاجة محددة داخل المجتمع السوداني. يمكن أن يكون حلك:' : 'Create a computer program that addresses a specific need within Sudanese society. Your solution can be:'}
           </p>
@@ -341,7 +341,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
         </div>
 
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-green-400">{lang === 'ar' ? 'ماذا تُقدم' : 'What to Submit'}</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">{lang === 'ar' ? 'ماذا تُقدم' : 'What to Submit'}</h3>
           <p className="mb-4 leading-relaxed">
             {lang === 'ar' ? 'تُقبل المشاركات بالعربية أو الإنجليزية ويجب أن تتضمن:' : 'Submissions are accepted in Arabic or English and must include:'}
           </p>
@@ -352,7 +352,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
 
           <div className="space-y-6">
             <div>
-              <h4 className="font-semibold mb-2 text-red-400">{lang === 'ar' ? 'التوثيق' : 'Documentation'}</h4>
+              <h4 className="font-semibold mb-3 text-gray-900">{lang === 'ar' ? 'التوثيق' : 'Documentation'}</h4>
               <p className="mb-2">{lang === 'ar' ? 'وثيقة مختصرة من صفحة واحدة (PDF) توضّح:' : 'A concise one-page document (PDF format) explaining:'}</p>
               <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
                 <li>{lang === 'ar' ? 'المشكلة التي يعالجها الحل' : 'The problem your solution addresses'}</li>
@@ -362,7 +362,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-2 text-red-400">{lang === 'ar' ? 'فيديو العرض' : 'Demo Video'}</h4>
+              <h4 className="font-semibold mb-3 text-gray-900">{lang === 'ar' ? 'فيديو العرض' : 'Demo Video'}</h4>
               <p className="mb-2">{lang === 'ar' ? 'فيديو توضيحي (بحد أقصى 5 دقائق) مرفوع على يوتيوب أو جوجل درايف يوضح بجلاء:' : 'A video demonstration (maximum 5 minutes) uploaded to YouTube or Google Drive that clearly explains:'}</p>
               <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
                 <li>{lang === 'ar' ? 'ماذا يفعل برنامجك (مع عرض توضيحي)' : "What your program does (with demonstration)"}</li>
@@ -372,7 +372,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-2 text-red-400">{lang === 'ar' ? 'الشيفرة المصدرية' : 'Source Code'}</h4>
+              <h4 className="font-semibold mb-3 text-gray-900">{lang === 'ar' ? 'الشيفرة المصدرية' : 'Source Code'}</h4>
               <p>{lang === 'ar' ? 'رابط إلى مستودع الشيفرة المفتوحة (ويفضّل GitHub)' : 'A URL to your open-source code repository (GitHub preferred)'}</p>
             </div>
           </div>
@@ -385,18 +385,18 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
 function Collapsible({ title, defaultOpen = false, children }: { title: string; defaultOpen?: boolean; children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   return (
-    <div className="mb-6 border border-gray-200 rounded">
+    <div className="mb-6 border-2 border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-colors">
       <button
         type="button"
-        className="w-full flex items-center justify-between px-4 py-3 text-left"
+        className="w-full flex items-center justify-between px-5 py-4 text-left bg-gradient-to-r from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-50 transition-all"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
       >
-        <span className="font-semibold text-green-500">{title}</span>
-        <span className="text-2xl leading-none select-none">{isOpen ? '−' : '+'}</span>
+        <span className="font-semibold text-gray-900">{title}</span>
+        <span className="text-xl leading-none select-none text-gray-600">{isOpen ? '−' : '+'}</span>
       </button>
       {isOpen && (
-        <div className="px-4 pb-4">
+        <div className="px-5 py-4 bg-white">
           {children}
         </div>
       )}
@@ -407,31 +407,31 @@ function Collapsible({ title, defaultOpen = false, children }: { title: string; 
 function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
   return (
     <div className="min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-      <div className="mb-8">
+      <div className="mb-12">
         <Link 
           to="/" 
-          className="inline-flex items-center text-red-500 hover:text-red-600 transition-colors mb-6"
+          className="inline-flex items-center text-green-500 hover:text-green-600 font-medium transition-colors mb-8"
         >
           {lang === 'ar' ? '← الرجوع للصفحة الرئيسية' : '← Back to Home'}
         </Link>
-        <h1 className="text-3xl font-bold text-red-500 mb-4">{lang === 'ar' ? 'تقديم الأفكار' : 'Idea Proposal'}</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">{lang === 'ar' ? 'تقديم الأفكار' : 'Idea Proposal'}</h1>
       </div>
       {lang === 'ar' ? (
         <>
-          <Collapsible title="مقدمة" defaultOpen>
-            <p className="mb-6 leading-relaxed">هدف أساسي لـ كود من أجل السودان هو إنتاج تقنيات تفيد البلاد. لتحقيق ذلك نحتاج إلى:</p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
-              <li>المرحلة الأولى: ابتكار أفكار</li>
-              <li>المرحلة الثانية: تحقق من الأفكار</li>
-              <li>المرحلة الثالثة: تنفيذ الأفكار</li>
-            </ul>
-            <p className="mb-0 leading-relaxed">بدءًا بالمرحلة الأولى، نريدك أن تقترح أفكارك للمشاريع التي يمكن أن تساعد السودان وسنختار الأفكار الواعدة لنمضي بها قدمًا إن شاء الله. ستجد نموذج التقديم في أسفل الصفحة.</p>
-          </Collapsible>
+          <section className="mb-16 pb-16 border-b border-gray-200">
+          <h2 className="text-3xl font-bold mb-6 text-green-600">مقدمة</h2>
+          <p className="mb-6 leading-relaxed">هدف أساسي لـ كود من أجل السودان هو إنتاج تقنيات تفيد البلاد. لتحقيق ذلك نحتاج إلى:</p>
+          <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
+            <li>المرحلة الأولى: ابتكار أفكار</li>
+            <li>المرحلة الثانية: تحقق من الأفكار</li>
+            <li>المرحلة الثالثة: تنفيذ الأفكار</li>
+          </ul>
+          <p className="mb-6 leading-relaxed">بدءًا بالمرحلة الأولى، نريدك أن تقترح أفكارك للمشاريع التي يمكن أن تساعد السودان وسنختار الأفكار الواعدة لنمضي بها قدمًا إن شاء الله. ستجد نموذج التقديم في أسفل الصفحة.</p>
+          </section>
 
-          <h2 className="text-xl font-bold mb-6 text-black-500">معلومات أساسية</h2>
-          إن شاء الله، الخطة للمرحلة الأولى هي كالتالي:
-          <br/>
-          <br/>
+          <section className="mb-16 pb-16 border-b border-gray-200">
+          <h2 className="text-3xl font-bold mb-6 text-red-500">معلومات أساسية</h2>
+          <p className="mb-6 text-gray-700">إن شاء الله، الخطة للمرحلة الأولى هي كالتالي:</p>
           <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
             <li>الجوائز. لا توجد جوائز لهذه المسابقة، نبحث عن أشخاص دافعهم هو رؤية أفكارهم لها تأثير حقيقي</li>
             <li>الاتصالات. سنعمل معك للتواصل مع أي منظمات أو جهات اتصال ذات صلة مطلوبة لتنفيذ فكرتك</li>
@@ -442,10 +442,10 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
             <li>يمكن تقديم الأفكار من الآن حتى منتصف الليل بتوقيت غرينتش في 7 نوفمبر، وبعد ذلك سيتم إغلاق النموذج</li>
             <li>ستتلقى ردًا بحلول 20 نوفمبر حول ما إذا كان قد تم اختيار فكرتك للانتقال إلى المرحلة الثانية</li>
           </ul>
-          <br/>
-          <br/>
+          </section>
 
-          <h2 className="text-2xl font-bold mb-6 text-green-500">نصائح لتقديم أفكار جيدة</h2>
+          <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-8 text-green-600">نصائح لتقديم أفكار جيدة</h2>
           <Collapsible title="نقاط الألم والاحتكاك">
             <p className="mb-6 leading-relaxed">هذه اقتراحاتنا لكيفية التفكير وتقديم أفكار جيدة لتكون أكثر احتمالًا للاختيار. تحتاج لمعرفة مفهومين:</p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
@@ -482,7 +482,7 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
             <p className="mb-4 leading-relaxed">المنتج هنا مركبة متحركة. المثال الأول غير مجدٍ حتى الوصول للسيارة النهائية، بينما المثال السفلي يقدم لوح تزلج يمكن استخدامه فورًا ثم يتحسن إلى سكوتر... وهكذا. هذا مشابه لما ينبغي فعله مع فكرتك.</p>
             <p className="mb-4 leading-relaxed">قبل بناء تطبيق، فكّر بأبسط طريقة للتنفيذ. مثلًا لمطابقة المدرسين استخدم نموذج جوجل وجدول بيانات بدل التطبيق. لمشروع زواج، ابدأ بمجموعة واتساب لمشاركة الملفات الشخصية.</p>
             <p className="mb-4 leading-relaxed">
-              مثال رائع على MVP هو <a href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 hover:underline transition-colors">إير بي إن بي</a>. لم يقم المؤسسون ببناء موقع كبير مع خلفية معقدة — قرروا فقط تأجير بعض المراتب في شقتهم خلال مؤتمر في سان فرانسيسco. التقطوا بعض الصور، وضعوها على الإنترنت، وانتظروا. حجز الناس فعلاً. أثبت ذلك أن الفكرة نجحت. من ذلك الاختبار الصغير، بنوا إير بي إن بي التي تساوي الآن أكثر من 70 مليار دولار.
+              مثال رائع على MVP هو <a href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">إير بي إن بي</a>. لم يقم المؤسسون ببناء موقع كبير مع خلفية معقدة — قرروا فقط تأجير بعض المراتب في شقتهم خلال مؤتمر في سان فرانسيسco. التقطوا بعض الصور، وضعوها على الإنترنت، وانتظروا. حجز الناس فعلاً. أثبت ذلك أن الفكرة نجحت. من ذلك الاختبار الصغير، بنوا إير بي إن بي التي تساوي الآن أكثر من 70 مليار دولار.
             </p>
             <p className="mb-0 leading-relaxed">قد يستغرق بناء تطبيق أشهرًا. ميزة MVPs البسيطة المتسلسلة أنها سريعة الإعداد وتكشف مبكرًا مدى اهتمام الناس واستخدامهم، وبذلك تبني مجتمعًا جاهزًا عند الانتقال للمنتج الحقيقي.</p>
           </Collapsible>
@@ -490,45 +490,45 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
           <Collapsible title="مصادر">
             <p className="mb-4 leading-relaxed">هذه لمحة سريعة عن مفاهيم مهمة. توجد مصادر كثيرة للتعمق في ابتكار الأفكار وبنائها واختبارها:</p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-0">
-              <li><a href="https://www.youtube.com/watch?v=Th8JoIan4dg&list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&index=23" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 hover:underline transition-colors">YC كيفية الحصول على أفكار الشركات الناشئة وتقييمها</a></li>
-              <li><a href="https://youtube.com/playlist?list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&si=k0z_Fk_Y2MmX6zrz" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 hover:underline transition-colors">YC مدرسة الشركات الناشئة</a></li>
+              <li><a href="https://www.youtube.com/watch?v=Th8JoIan4dg&list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&index=23" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700 transition-colors">YC كيفية الحصول على أفكار الشركات الناشئة وتقييمها</a></li>
+              <li><a href="https://youtube.com/playlist?list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&si=k0z_Fk_Y2MmX6zrz" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700 transition-colors">YC مدرسة الشركات الناشئة</a></li>
               <li>كتاب The Mom Test (متوفر بالعربية والإنجليزية والصوت)</li>
               <li>كتاب The Lean Startup (متوفر بالعربية والإنجليزية والصوت)</li>
             </ul>
           </Collapsible>
+          </section>
 
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-red-500 mb-4">نموذج التقديم</h1>
-          </div>
-          <p>
+          <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6 text-red-500">نموذج التقديم</h2>
+          <p className="text-gray-700">
             مع مراعاة النصائح أعلاه، يمكنك تعبئة نموذج التقديم من{' '}
-            <a href="https://forms.gle/1234567890" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 hover:underline transition-colors">هنا</a>.
+            <a href="https://forms.gle/1234567890" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 font-medium transition-colors">هنا</a>.
           </p>
+          </section>
         </>
       ) : (
         <>
-        <Collapsible title="Introduction" defaultOpen>
-          <p className="mb-6 leading-relaxed">
-            A core goal of Code4Sudan is to produce technology that benefits the country. To do this we need to:
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
-            <li>Stage 1: Come up with ideas</li>
-            <li>Stage 2: Validate the ideas</li>
-            <li>Stage 3: Implement the ideas</li>
-          </ul>
-          <p className="mb-0 leading-relaxed">
-            Starting with Stage 1, we want you to propose your ideas for projects that can help Sudan and we will select promising ideas to take forward in sha' Allah.
-            The application form can be found at the bottom of the page.
-          </p>
-        </Collapsible>
+        <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-6 text-green-600">Introduction</h2>
+        <p className="mb-6 leading-relaxed">
+          A core goal of Code4Sudan is to produce technology that benefits the country. To do this we need to:
+        </p>
+        <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
+          <li>Stage 1: Come up with ideas</li>
+          <li>Stage 2: Validate the ideas</li>
+          <li>Stage 3: Implement the ideas</li>
+        </ul>
+        <p className="mb-6 leading-relaxed">
+          Starting with Stage 1, we want you to propose your ideas for projects that can help Sudan and we will select promising ideas to take forward in sha' Allah.
+          The application form can be found at the bottom of the page.
+        </p>
+        </section>
 
-          <br/>
-        <h2 className="text-xl font-bold mb-6 text-black-500">Key Info</h2>
-        Insha 'Allah, the plan for Stage 1 is the following:
-          <br/>
-          <br/>
+        <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-6 text-red-500">Key Info</h2>
+        <p className="mb-6 text-gray-700">Insha 'Allah, the plan for Stage 1 is the following:</p>
           <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
-          <li>Prizes. There is no prizes for this competition, we're looking for people who's motivation is to see their ideas have real impact</li>
+          <li>Prizes. There are no prizes for Stage 1 of this competition, we're looking for people whose motivation is to see their ideas have real impact</li>
           <li>Connections. We will work with you to reach out to any relevant organizations or contacts needed to implement your idea</li>
           <li>Tools. We will make available any tools needed for implementation such as AI subscriptions etc</li>
           <li>Funds. Within reason, we may be able to make a small amount of funding available if clear need and application can be shown</li>
@@ -537,12 +537,13 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
           <li>Ideas can be submitted from now until midnight GMT on November 7th, afterwards the form will close</li>
           <li>You will hear back by November 20th whether your idea has been selected to move to Stage 2</li>
         </ul>
-          <br/>
-          <br/>
-        <h2 className="text-2xl font-bold mb-6 text-green-500">Advice for Proposing Good Ideas</h2>
+        </section>
+
+        <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-8 text-green-600">Advice for Proposing Good Ideas</h2>
           <Collapsible title="Pain Points and Friction">
         <p className="mb-6 leading-relaxed">
-              Here is our suggestions for how to think of and propose good ideas so that they're more likely to be selected. You need to be aware of 2 concepts:
+              Here are our suggestions for how to think of and propose good ideas so that they're more likely to be selected. You need to be aware of 2 concepts:
         </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
             <li>Pain points</li>
@@ -605,7 +606,7 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
               If you are building an app, before building an app, you should try think of the simplest way you could make it work. For example, if you're making a tutor matching platform, don't build an app or website yet, make a Google Form and export the results to a spreadsheet. If you are making a matrimonial app, don't build an app or website yet, make a WhatsApp group and let people share profiles in the group.
             </p>
           <p className="mb-4 leading-relaxed">
-              A great example of an MVP is <a href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 hover:underline transition-colors">Airbnb</a>. The founders didn't build a big website with a complex backend — they just decided to rent some mattresses in their apartment during a conference in San Francisco. They took some photos, put them online, and waited. People actually booked. That proved the idea worked. From that small test, they built Airbnb now worth over $70B.
+              A great example of an MVP is <a href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">Airbnb</a>. The founders didn't build a big website with a complex backend — they just decided to rent some mattresses in their apartment during a conference in San Francisco. They took some photos, put them online, and waited. People actually booked. That proved the idea worked. From that small test, they built Airbnb now worth over $70B.
             </p>
             <p className="mb-0 leading-relaxed">
               An app can take months to build. The benefit of building very basic strung together MVPs is that they take very little time to setup, and you can quickly see if people are interested in it and using it, and if so, you already have a community of people ready to on board once you start on the real product.
@@ -617,20 +618,20 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
               I just touched briefly on some important concepts here, but there is a lot more knowledge on how to come up with ideas, build them, and how to test whether people would use them. Here are some great resources that go into more detail:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-0">
-              <li><a href="https://www.youtube.com/watch?v=Th8JoIan4dg&list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&index=23" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 hover:underline transition-colors">Y Combinator How to Get and Evaluate Startup Ideas </a></li>
-              <li><a href="https://youtube.com/playlist?list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&si=k0z_Fk_Y2MmX6zrz" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 hover:underline transition-colors">Y Combinator Startup School</a></li>
+              <li><a href="https://www.youtube.com/watch?v=Th8JoIan4dg&list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&index=23" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700 transition-colors">Y Combinator How to Get and Evaluate Startup Ideas </a></li>
+              <li><a href="https://youtube.com/playlist?list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&si=k0z_Fk_Y2MmX6zrz" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700 transition-colors">Y Combinator Startup School</a></li>
               <li>The Mom Test (Book widely available in Arabic, English, and Audio)</li>
               <li>The Lean Startup (Book widely available in Arabic, English, and Audio)</li>
             </ul>
           </Collapsible>
+          </section>
 
-        <div className="mb-8">
-            <h1 className="text-3xl font-bold text-red-500 mb-4">Application Form</h1>
-        </div>
-
-          <p>
-            Keeping in mind the advice above, you can procede to fill in the application form <a href="https://forms.gle/1234567890" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600 hover:underline transition-colors">here</a>.
+          <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6 text-red-500">Application Form</h2>
+          <p className="text-gray-700">
+            Keeping in mind the advice above, you can proceed to fill in the application form <a href="https://forms.gle/1234567890" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 font-medium transition-colors">here</a>.
           </p>
+          </section>
         </>
       )}
     </div>
@@ -641,13 +642,13 @@ function App() {
   const [lang, setLang] = useState<'en' | 'ar'>('en');
   return (
       <div className={`min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12 ${lang === 'ar' ? 'text-right' : ''}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-      <div className="fixed top-4 right-4 z-50 flex items-center gap-3">
-        <span className="text-base font-medium text-gray-700">{lang === 'ar' ? 'اللغة' : 'Language'}</span>
-        <div role="group" aria-label={lang === 'ar' ? 'تبديل اللغة' : 'Language toggle'} className="inline-flex rounded-full overflow-hidden border border-gray-200 bg-white shadow-md">
+      <div className="fixed top-4 right-4 z-50 flex flex-row items-center gap-3" dir="ltr">
+        <span className="text-sm font-medium text-gray-600">{lang === 'ar' ? 'اللغة' : 'Language'}</span>
+        <div role="group" aria-label={lang === 'ar' ? 'تبديل اللغة' : 'Language toggle'} className="inline-flex rounded-md overflow-hidden border border-gray-300 bg-white shadow-sm">
           <button
             type="button"
             onClick={() => setLang('ar')}
-            className={`px-4 py-2 text-sm sm:text-base font-semibold focus:outline-none focus:ring-2 focus:ring-green-300 ${lang === 'ar' ? 'bg-green-500 text-white' : 'text-green-600 hover:bg-green-50'}`}
+            className={`px-3 py-1.5 text-sm font-medium focus:outline-none transition-colors ${lang === 'ar' ? 'bg-green-600 text-white' : 'text-gray-700 hover:bg-gray-50'}`}
             aria-pressed={lang === 'ar'}
           >
             AR
@@ -655,7 +656,7 @@ function App() {
           <button
             type="button"
             onClick={() => setLang('en')}
-            className={`px-4 py-2 text-sm sm:text-base font-semibold border-l border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-300 ${lang === 'en' ? 'bg-red-500 text-white' : 'text-red-600 hover:bg-red-50'}`}
+            className={`px-3 py-1.5 text-sm font-medium border-l border-gray-300 focus:outline-none transition-colors ${lang === 'en' ? 'bg-red-600 text-white' : 'text-gray-700 hover:bg-gray-50'}`}
             aria-pressed={lang === 'en'}
           >
             EN
