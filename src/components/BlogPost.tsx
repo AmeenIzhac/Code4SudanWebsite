@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { blogPosts } from '../data/blogData';
 
@@ -8,6 +9,10 @@ interface BlogPostProps {
 export function BlogPost({ lang }: BlogPostProps) {
   const { id } = useParams<{ id: string }>();
   const post = blogPosts.find(p => p.id === id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   if (!post) {
     return (
