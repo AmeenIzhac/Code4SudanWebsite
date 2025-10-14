@@ -40,11 +40,11 @@ export const blogPosts: BlogPost[] = [
       }
     },
     excerpt: {
-      ar: 'منتصف أغسطس الماضي تمت دعوتي عن طريق الصديق Mohamed Hassan لأكون عضوًا في لجنة تحكيم مسابقة "Code for Sudan"، وعلى الرغم من ضيق الزمن والمشاغل الكثيرة في الفترة الأخيرة والتي لم تمكني من المشاركة في التحكيم بالصورة المطلوبة...',
-      en: 'In mid-August, I was invited by my friend Mohamed Hassan to be a member of the judging committee for the "Code for Sudan" competition. Despite time constraints and many commitments recently that prevented me from participating in judging to the required extent...'
+      ar: 'منتصف أغسطس الماضي تمت دعوتي عن طريق الصديق [Mohamed Hassan](https://www.linkedin.com/in/mohamed-hassan-839631227/) لأكون عضوًا في لجنة تحكيم مسابقة "Code for Sudan"، وعلى الرغم من ضيق الزمن والمشاغل الكثيرة في الفترة الأخيرة والتي لم تمكني من المشاركة في التحكيم بالصورة المطلوبة...',
+      en: 'In mid-August, I was invited by my friend [Mohamed Hassan](https://www.linkedin.com/in/mohamed-hassan-839631227/) to be a member of the judging committee for the "Code for Sudan" competition. Despite time constraints and many commitments recently that prevented me from participating in judging to the required extent...'
     },
     content: {
-      ar: `منتصف أغسطس الماضي تمت دعوتي عن طريق الصديق Mohamed Hassan لأكون عضوًا في لجنة تحكيم مسابقة "Code for Sudan"، وعلى الرغم من ضيق الزمن والمشاغل الكثيرة في الفترة الأخيرة والتي لم تمكني من المشاركة في التحكيم بالصورة المطلوبة، إلا أني أكتب اليوم بفخر واعتزاز ليس فقط لأشارككم تفاصيل هذه المبادرة الرائدة، بل لأنقل لكم شهادتي على إرادة وعزيمة شباب السودان الذين أثبتوا أن الابتكار هو أقوى سلاح لمواجهة الظروف الصعبة. في خضم التحديات التي يمر بها وطننا الحبيب، جاءت هذه المسابقة كبارقة أمل، لتؤكد أن العقول السودانية قادرة على بناء المستقبل وصناعة الحلول.
+      ar: `منتصف أغسطس الماضي تمت دعوتي عن طريق الصديق [Mohamed Hassan](https://www.linkedin.com/in/mohamed-hassan-839631227/) لأكون عضوًا في لجنة تحكيم مسابقة "Code for Sudan"، وعلى الرغم من ضيق الزمن والمشاغل الكثيرة في الفترة الأخيرة والتي لم تمكني من المشاركة في التحكيم بالصورة المطلوبة، إلا أني أكتب اليوم بفخر واعتزاز ليس فقط لأشارككم تفاصيل هذه المبادرة الرائدة، بل لأنقل لكم شهادتي على إرادة وعزيمة شباب السودان الذين أثبتوا أن الابتكار هو أقوى سلاح لمواجهة الظروف الصعبة. في خضم التحديات التي يمر بها وطننا الحبيب، جاءت هذه المسابقة كبارقة أمل، لتؤكد أن العقول السودانية قادرة على بناء المستقبل وصناعة الحلول.
 
 ## أهمية المسابقة:
 
@@ -107,7 +107,7 @@ export const blogPosts: BlogPost[] = [
 ## شكر وتقدير:
 
 لا يسعني في الختام إلا أن أتقدم بجزيل الشكر والتقدير لكل القائمين على هذه المبادرة الرائعة، من منظمين ومرشدين ورعاة. لقد صنعتم بيئة محفزة أتاحت لهذه المواهب أن تزدهر.`,
-      en: `In mid-August, I was invited by my friend Mohamed Hassan to be a member of the judging committee for the "Code for Sudan" competition. Despite time constraints and many commitments recently that prevented me from participating in judging to the required extent, I write today with pride and honor not only to share with you the details of this pioneering initiative, but to convey my testimony to the will and determination of Sudan's youth who have proven that innovation is the strongest weapon to face difficult circumstances. Amidst the challenges facing our beloved country, this competition came as a beacon of hope, confirming that Sudanese minds are capable of building the future and creating solutions.
+      en: `In mid-August, I was invited by my friend [Mohamed Hassan](https://www.linkedin.com/in/mohamed-hassan-839631227/) to be a member of the judging committee for the "Code for Sudan" competition. Despite time constraints and many commitments recently that prevented me from participating in judging to the required extent, I write today with pride and honor not only to share with you the details of this pioneering initiative, but to convey my testimony to the will and determination of Sudan's youth who have proven that innovation is the strongest weapon to face difficult circumstances. Amidst the challenges facing our beloved country, this competition came as a beacon of hope, confirming that Sudanese minds are capable of building the future and creating solutions.
 
 ## The Importance of the Competition:
 
