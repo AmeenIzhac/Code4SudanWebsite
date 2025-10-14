@@ -1,12 +1,29 @@
 import { Code } from 'lucide-react';
 import { Routes, Route, Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import { BlogCard } from './components/BlogCard';
+import { BlogPost } from './components/BlogPost';
+import { ContactUsPage } from './components/ContactUsPage';
+import { KnowledgeHubPage } from './components/KnowledgeHubPage';
+import { blogPosts } from './data/blogData';
 
 function HomePage({ lang }: { lang: 'en' | 'ar' }) {
   return (
     <>
       {lang === 'ar' ? (
         <>
+          {/* Navigation Menu */}
+          <nav className="mb-12 pb-6 border-b border-gray-200">
+            <div className="flex flex-wrap gap-4 justify-start">
+              <a href="#events" className="text-green-600 hover:text-green-700 font-medium transition-colors">الفعاليات</a>
+              <a href="#about" className="text-green-600 hover:text-green-700 font-medium transition-colors">عن المبادرة</a>
+              <a href="#blog" className="text-green-600 hover:text-green-700 font-medium transition-colors">المدونة</a>
+              <a href="#how-we-work" className="text-green-600 hover:text-green-700 font-medium transition-colors">كيف نعمل</a>
+              <Link to="/knowledge-hub" className="text-green-600 hover:text-green-700 font-medium transition-colors">مركز المعرفة</Link>
+              <Link to="/contact" className="text-green-600 hover:text-green-700 font-medium transition-colors">اتصل بنا</Link>
+            </div>
+          </nav>
+
           {/* Header */}
           <header className="text-center mb-20">
           <div className="flex items-center justify-center space-x-2 mb-6" dir="ltr">
@@ -28,7 +45,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           </header>
 
           {/* Events */}
-          <section className="mb-16 pb-16 border-b border-gray-200">
+          <section id="events" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
             <h2 className="text-3xl font-bold mb-8 text-green-600">الفعاليات</h2>
             
             <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -63,7 +80,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           </section>
 
           {/* About */}
-          <section className="mb-16 pb-16 border-b border-gray-200">
+          <section id="about" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
             <h2 className="text-3xl font-bold mb-8 text-red-500">عن المبادرة</h2>
             
             <div className="mb-8">
@@ -99,8 +116,25 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
             </div>
           </section>
 
+          {/* Blog */}
+          <section id="blog" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
+            <h2 className="text-3xl font-bold mb-8 text-red-500">المدونة</h2>
+            <div className="grid md:grid-cols-1 gap-6">
+              {blogPosts.map(post => (
+                <BlogCard
+                  key={post.id}
+                  id={post.id}
+                  title={post.title.ar}
+                  date={post.date}
+                  excerpt={post.excerpt.ar}
+                  lang="ar"
+                />
+              ))}
+            </div>
+          </section>
+
           {/* How We Work */}
-          <section className="mb-16">
+          <section id="how-we-work" className="mb-16 scroll-mt-20">
             <h2 className="text-3xl font-bold mb-8 text-green-600">كيف نعمل</h2>
             
             <div className="mb-8">
@@ -126,11 +160,37 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
 
           {/* Footer */}
           <footer className="text-center pt-12 mt-16 border-t border-gray-200">
+            <div className="flex justify-center gap-6 mb-6">
+              <Link 
+                to="/knowledge-hub" 
+                className="text-green-600 hover:text-green-700 font-medium transition-colors"
+              >
+                مركز المعرفة
+              </Link>
+              <Link 
+                to="/contact" 
+                className="text-green-600 hover:text-green-700 font-medium transition-colors"
+              >
+                اتصل بنا
+              </Link>
+            </div>
             <p className="text-gray-500">© 2025 كود فور سودان</p>
           </footer>
         </>
       ) : (
     <>
+      {/* Navigation Menu */}
+      <nav className="mb-12 pb-6 border-b border-gray-200">
+        <div className="flex flex-wrap gap-4 justify-start">
+          <a href="#events" className="text-green-600 hover:text-green-700 font-medium transition-colors">Events</a>
+          <a href="#about" className="text-green-600 hover:text-green-700 font-medium transition-colors">About</a>
+          <a href="#blog" className="text-green-600 hover:text-green-700 font-medium transition-colors">Blog</a>
+          <a href="#how-we-work" className="text-green-600 hover:text-green-700 font-medium transition-colors">How We Work</a>
+          <Link to="/knowledge-hub" className="text-green-600 hover:text-green-700 font-medium transition-colors">Knowledge Hub</Link>
+          <Link to="/contact" className="text-green-600 hover:text-green-700 font-medium transition-colors">Contact Us</Link>
+        </div>
+      </nav>
+
       {/* Header */}
       <header className="text-center mb-20">
         <div className="flex items-center justify-center space-x-2 mb-6" dir="ltr">
@@ -154,7 +214,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
       </header>
 
       {/* Events */}
-      <section className="mb-16 pb-16 border-b border-gray-200">
+      <section id="events" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
         <h2 className="text-3xl font-bold mb-8 text-green-600">Events</h2>
         
         <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -189,7 +249,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
       </section>
 
       {/* About */}
-      <section className="mb-16 pb-16 border-b border-gray-200">
+      <section id="about" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
         <h2 className="text-3xl font-bold mb-8 text-red-500">About</h2>
         
         <div className="mb-8">
@@ -225,8 +285,25 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
         </div>
       </section>
 
+      {/* Blog */}
+      <section id="blog" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
+        <h2 className="text-3xl font-bold mb-8 text-red-500">Blog</h2>
+        <div className="grid md:grid-cols-1 gap-6">
+          {blogPosts.map(post => (
+            <BlogCard
+              key={post.id}
+              id={post.id}
+              title={post.title.en}
+              date={post.date}
+              excerpt={post.excerpt.en}
+              lang="en"
+            />
+          ))}
+        </div>
+      </section>
+
       {/* How We Work */}
-      <section className="mb-16">
+      <section id="how-we-work" className="mb-16 scroll-mt-20">
         <h2 className="text-3xl font-bold mb-8 text-green-600">How We Work</h2>
         
         <div className="mb-8">
@@ -252,6 +329,20 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
 
       {/* Footer */}
       <footer className="text-center pt-12 mt-16 border-t border-gray-200">
+        <div className="flex justify-center gap-6 mb-6">
+          <Link 
+            to="/knowledge-hub" 
+            className="text-green-600 hover:text-green-700 font-medium transition-colors"
+          >
+            Knowledge Hub
+          </Link>
+          <Link 
+            to="/contact" 
+            className="text-green-600 hover:text-green-700 font-medium transition-colors"
+          >
+            Contact Us
+          </Link>
+        </div>
         <p className="text-gray-500">© 2025 Code4Sudan</p>
       </footer>
         </>
@@ -667,6 +758,9 @@ function App() {
         <Route path="/" element={<HomePage lang={lang} />} />
         <Route path="/launch-hackathon" element={<LaunchHackathonPage lang={lang} />} />
         <Route path="/idea-proposal" element={<IdeaProposalPage lang={lang} />} />
+        <Route path="/blog/:id" element={<BlogPost lang={lang} />} />
+        <Route path="/contact" element={<ContactUsPage lang={lang} />} />
+        <Route path="/knowledge-hub" element={<KnowledgeHubPage lang={lang} />} />
       </Routes>
     </div>
   );
