@@ -9,6 +9,10 @@ interface BlogCardProps {
 }
 
 export function BlogCard({ id, title, date, excerpt, lang }: BlogCardProps) {
+  const processedExcerpt = excerpt
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-gray-900">$1</strong>')
+    .replace(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-green-600 hover:underline">$1</a>');
+
   return (
     <Link 
       to={`/blog/${id}`}
@@ -18,9 +22,10 @@ export function BlogCard({ id, title, date, excerpt, lang }: BlogCardProps) {
         {title}
       </h3>
       <p className="text-sm text-gray-500 mb-3">{date}</p>
-      <p className="text-gray-700 leading-relaxed line-clamp-3">
-        {excerpt}
-      </p>
+      <p
+        className="text-gray-700 leading-relaxed line-clamp-3"
+        dangerouslySetInnerHTML={{ __html: processedExcerpt }}
+      />
       <span className="inline-block mt-4 text-green-600 font-medium hover:text-green-700">
         {lang === 'ar' ? 'اقرأ المزيد ←' : 'Read more →'}
       </span>

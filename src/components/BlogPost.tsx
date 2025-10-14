@@ -64,17 +64,27 @@ export function BlogPost({ lang }: BlogPostProps) {
               const items = paragraph.split('\n').filter(item => item.trim());
               return (
                 <ul key={index} className="list-disc list-inside space-y-2 text-gray-700 mb-6 ml-4">
-                  {items.map((item, i) => (
-                    <li key={i} className="leading-relaxed">
-                      {item.replace(/^[·\-]\s*/, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}
-                    </li>
-                  ))}
+                  {items.map((item, i) => {
+                    const formattedItem = item
+                      .replace(/^[·\-]\s*/, '')
+                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                      .replace(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-green-600 hover:underline">$1</a>');
+                    return (
+                      <li
+                        key={i}
+                        className="leading-relaxed"
+                        dangerouslySetInnerHTML={{ __html: formattedItem }}
+                      />
+                    );
+                  })}
                 </ul>
               );
             }
             
-            // Regular paragraph - handle bold text
-            const processedText = paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-gray-900">$1</strong>');
+            // Regular paragraph - handle bold text and links
+            const processedText = paragraph
+              .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-gray-900">$1</strong>')
+              .replace(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-green-600 hover:underline">$1</a>');
             
             return (
               <p 
