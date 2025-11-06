@@ -1,9 +1,10 @@
 import { Code } from 'lucide-react';
 import { Routes, Route, Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BlogCard } from './components/BlogCard';
 import { BlogPost } from './components/BlogPost';
 import { ContactUsPage } from './components/ContactUsPage';
+import { KnowledgeHubItemPage } from './components/KnowledgeHubItemPage';
 import { KnowledgeHubPage } from './components/KnowledgeHubPage';
 import { blogPosts } from './data/blogData';
 
@@ -473,258 +474,283 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
   );
 }
 
-function Collapsible({ title, defaultOpen = false, children }: { title: string; defaultOpen?: boolean; children: React.ReactNode }) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-  return (
-    <div className="mb-6 border-2 border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-colors">
-      <button
-        type="button"
-        className="w-full flex items-center justify-between px-5 py-4 text-left bg-gradient-to-r from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-50 transition-all"
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-expanded={isOpen}
-      >
-        <span className="font-semibold text-gray-900">{title}</span>
-        <span className="text-xl leading-none select-none text-gray-600">{isOpen ? '−' : '+'}</span>
-      </button>
-      {isOpen && (
-        <div className="px-5 py-4 bg-white">
-          {children}
-        </div>
-      )}
-    </div>
-  );
-}
-
 function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
   return (
-    <div className="min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12" dir="ltr">
       <div className="mb-12">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="inline-flex items-center text-green-500 hover:text-green-600 font-medium transition-colors mb-8"
         >
           {lang === 'ar' ? '← الرجوع للصفحة الرئيسية' : '← Back to Home'}
         </Link>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">{lang === 'ar' ? 'تقديم الأفكار' : 'Idea Proposal'}</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">Idea Proposal</h1>
       </div>
-      {lang === 'ar' ? (
-        <>
-          <section className="mb-16 pb-16 border-b border-gray-200">
-          <h2 className="text-3xl font-bold mb-6 text-green-600">مقدمة</h2>
-          <p className="mb-6 leading-relaxed">هدف أساسي لـ كود من أجل السودان هو إنتاج تقنيات تفيد البلاد. لتحقيق ذلك نحتاج إلى:</p>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
-            <li>المرحلة الأولى: ابتكار أفكار</li>
-            <li>المرحلة الثانية: تحقق من الأفكار</li>
-            <li>المرحلة الثالثة: تنفيذ الأفكار</li>
-          </ul>
-          <p className="mb-6 leading-relaxed">بدءًا بالمرحلة الأولى، نريدك أن تقترح أفكارك للمشاريع التي يمكن أن تساعد السودان وسنختار الأفكار الواعدة لنمضي بها قدمًا إن شاء الله. ستجد نموذج التقديم في أسفل الصفحة.</p>
-          </section>
 
-          <section className="mb-16 pb-16 border-b border-gray-200">
-          <h2 className="text-3xl font-bold mb-6 text-red-500">معلومات أساسية</h2>
-          <p className="mb-6 text-gray-700">إن شاء الله، الخطة للمرحلة الأولى هي كالتالي:</p>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
-            <li>الجوائز. لا توجد جوائز لهذه المسابقة، نبحث عن أشخاص دافعهم هو رؤية أفكارهم لها تأثير حقيقي</li>
-            <li>الاتصالات. سنعمل معك للتواصل مع أي منظمات أو جهات اتصال ذات صلة مطلوبة لتنفيذ فكرتك</li>
-            <li>الأدوات. سنوفر أي أدوات مطلوبة للتنفيذ مثل اشتراكات الذكاء الاصطناعي وما إلى ذلك</li>
-            <li>التمويل. ضمن حدود معقولة، قد نتمكن من توفير مبلغ صغير من التمويل إذا تم إظهار حاجة وتطبيق واضحين</li>
-            <li>النصيحة. بالنسبة لأي أفكار يتم اتخاذها إلى الأمام، سندعمك بنصائح تقنية وغير تقنية من أشخاص ذوي خبرة في المجال</li>
-            <li>يمكنك تقديم أفكار متعددة، ولكن يجب عليك تقديم نموذج منفصل لكل واحدة</li>
-            <li>يمكن تقديم الأفكار من الآن حتى منتصف الليل بتوقيت غرينتش في 7 نوفمبر، وبعد ذلك سيتم إغلاق النموذج</li>
-            <li>ستتلقى ردًا بحلول 20 نوفمبر حول ما إذا كان قد تم اختيار فكرتك للانتقال إلى المرحلة الثانية</li>
-          </ul>
-          </section>
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-6 text-green-600">About the Challenge</h2>
+        <p className="mb-4 leading-relaxed">
+          We invite you to create software that delivers tangible value to Sudanese people in areas such as healthcare, education, finance, communication, and beyond.
+        </p>
+        <p className="mb-4 leading-relaxed">
+          Projects may take the form of mobile apps, web platforms, or other software-based tools. They can be developed for profit or offered freely. Integration of artificial intelligence (AI) is encouraged but not required.
+        </p>
+      </section>
 
-          <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-green-600">نصائح لتقديم أفكار جيدة</h2>
-          <Collapsible title="نقاط الألم والاحتكاك">
-            <p className="mb-6 leading-relaxed">هذه اقتراحاتنا لكيفية التفكير وتقديم أفكار جيدة لتكون أكثر احتمالًا للاختيار. تحتاج لمعرفة مفهومين:</p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
-              <li>نقاط الألم</li>
-              <li>الاحتكاك</li>
-            </ul>
-            <p className="mb-4 leading-relaxed">كل منتج أو خدمة تقدم فائدة ما، مثل توفير الوقت أو المال أو الجهد. إنفاق الوقت أو المال أو الجهد هي نقاط ألم، والمنتج الذي تستخدمه هو حل لتلك النقاط. كلما خففت وقتًا أو مالًا أو جهدًا أكثر، زادت قيمة المنتج.</p>
-            <p className="mb-4 leading-relaxed">في الوقت نفسه، أي منتج أو خدمة تحتاج وقتًا أو جهدًا للاستخدام: تنزيل تطبيق، إنشاء حساب، الإعداد، التعلم... هذا هو الاحتكاك. كلما زاد الاحتكاك قلّ احتمال استخدام فكرتك.</p>
-            <p className="mb-4 leading-relaxed">معادلة تقريبية لقيمة الفكرة: القيمة = تخفيف الألم ÷ الاحتكاك.</p>
-            <h6 className="mb-4 leading-relaxed">دراسة حالة - بلوكباستر مقابل نتفليكس.</h6>
-            <p className="mb-0 leading-relaxed">كانت بلوكباستر تتطلب من العملاء القيادة إلى متجر فعلي، تصفح مجموعة محدودة، وإرجاع أقراص DVD في الوقت المحدد لتجنب رسوم التأخير. بدأت نتفليكس بإرسال أقراص DVD مباشرة إلى بابك دون رسوم تأخير، ثم انتقلت إلى البث الفوري — مما منح العملاء راحة وتنوعًا وإمكانية وصول أكبر بكثير. لذا قللت نتفليكس الاحتكاك وتفوقت.</p>
-          </Collapsible>
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-6 text-red-500">Eligibility</h2>
+        <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+          <li>Open exclusively to Sudanese people both in Sudan and abroad.</li>
+          <li>Teams may consist of 1–5 members.</li>
+        </ul>
+      </section>
 
-          <Collapsible title="الأسواق (Marketplaces)">
-            <p className="mb-6 leading-relaxed">السوق ليس فقط للشراء والبيع، بل أي منتج أو خدمة تحتاج عددًا كبيرًا من المستخدمين لتعمل. مثل فيسبوك، ستاك أوفرفلو، جيت هب، ومنصات مطابقة المتطوعين.</p>
-            <p className="mb-6 leading-relaxed">من الصعب بدء الأسواق والحفاظ عليها لأنها تعاني مشكلة الدجاجة والبيضة. بدون مستخدمين لا يستخدمها أحد، وبدون استخدام من الصعب جذب المستخدمين الأُول. حتى بعد الحصول على مستخدمين يجب إبقاؤهم نشطين.</p>
-            <p className="mb-0 leading-relaxed">لذا فالسوق صعب الانطلاق ويحتاج جهدًا كبيرًا وإطلاقًا قويًا. قد لا ينجح سوق لهواة خراطيم المياه، لكن طلب سيارة أجرة حاجة شائعة جدًا — لذا نجحت أوبر.</p>
-          </Collapsible>
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-6 text-green-600">Why Participate?</h2>
+        <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+          <li><strong className="text-gray-900">Learning:</strong> Gain knowledge in idea validation, MVP centric thinking, and dev tools.</li>
+          <li><strong className="text-gray-900">Skill Development:</strong> Enhance your technical abilities and contribute to your portfolio.</li>
+          <li><strong className="text-gray-900">Venture Creation:</strong> Potential to evolve your project into a business or non-profit.</li>
+          <li><strong className="text-gray-900">Social Impact:</strong> Contribute positively to Sudan.</li>
+          <li><strong className="text-gray-900">Recognition:</strong> Win prizes.</li>
+        </ul>
+      </section>
 
-          <Collapsible title="التطبيقات المستقلة (Stand-Alone Apps)">
-            <p className="mb-6 leading-relaxed">
-              نهتم كثيرًا بالأفكار التي تقدّم قيمة فورية للمستخدم دون الاعتماد على شبكة أو جهة تعتمدها. تخيّل تطبيقًا يساعد مزارعًا على استخدام الذكاء الاصطناعي لتحليل التربة، أو أداة تمنح السائق مسارات أكثر كفاءة في الوقت الحقيقي، أو أي حل يُستخدم فور تثبيته ويمنح فائدة ملموسة.
-            </p>
-            <p className="mb-0 leading-relaxed">
-              هذه المشاريع يسهل اختبارها وتحسينها بسرعة لأنها لا تحتاج إلى تبنٍ مؤسسي. ومع ذلك، إذا كانت لديك فكرة قوية تعتمد على سوق أو جهة تتبناها، فنرحب بها أيضًا؛ سنقيّمها بعناية أكبر لأن تحويلها إلى واقع يتطلب تنسيقًا أوسع.
-            </p>
-          </Collapsible>
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-6 text-red-500">Competition Overview</h2>
+        <p className="mb-6 leading-relaxed">The competition runs in three stages.</p>
 
-          <Collapsible title="النموذج الأولي الأدنى (MVPs)">
-            <p className="mb-6 leading-relaxed">بناء MVP يعني عدم السعي فورًا إلى منتج نهائي مصقول، بل صنع شيء بسيط يعمل بأسرع ما يمكن. شاهد الصورة:</p>
-            <div className="flex justify-center mb-6">
-              <img src="/mvp.png" alt="مخطط MVP" className="max-w-full rounded shadow-md" loading="lazy" />
+        <div className="space-y-10">
+          <div className="space-y-4 rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md border-l-4 border-l-green-500/80">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center rounded-full bg-green-600 px-3 py-1 text-sm font-semibold text-white">
+                Stage 1
+              </span>
+              <h3 className="text-2xl font-semibold text-gray-900">Idea Submission</h3>
             </div>
-            <p className="mb-4 leading-relaxed">المنتج هنا مركبة متحركة. المثال الأول غير مجدٍ حتى الوصول للسيارة النهائية، بينما المثال السفلي يقدم لوح تزلج يمكن استخدامه فورًا ثم يتحسن إلى سكوتر... وهكذا. هذا مشابه لما ينبغي فعله مع فكرتك.</p>
-            <p className="mb-4 leading-relaxed">قبل بناء تطبيق، فكّر بأبسط طريقة للتنفيذ. مثلًا لمطابقة المدرسين استخدم نموذج جوجل وجدول بيانات بدل التطبيق. لمشروع زواج، ابدأ بمجموعة واتساب لمشاركة الملفات الشخصية.</p>
-            <p className="mb-4 leading-relaxed">
-              مثال رائع على MVP هو <a href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">إير بي إن بي</a>. لم يقم المؤسسون ببناء موقع كبير مع خلفية معقدة — قرروا فقط تأجير بعض المراتب في شقتهم خلال مؤتمر في سان فرانسيسco. التقطوا بعض الصور، وضعوها على الإنترنت، وانتظروا. حجز الناس فعلاً. أثبت ذلك أن الفكرة نجحت. من ذلك الاختبار الصغير، بنوا إير بي إن بي التي تساوي الآن أكثر من 70 مليار دولار.
+            <p className="leading-relaxed text-gray-700">
+              At this stage, you only need to submit your idea—no coding, prototype, or video required. Provide a short description (1–3 sentences or one paragraph) explaining your concept and elevator pitch.
             </p>
-            <p className="mb-0 leading-relaxed">قد يستغرق بناء تطبيق أشهرًا. ميزة MVPs البسيطة المتسلسلة أنها سريعة الإعداد وتكشف مبكرًا مدى اهتمام الناس واستخدامهم، وبذلك تبني مجتمعًا جاهزًا عند الانتقال للمنتج الحقيقي.</p>
-          </Collapsible>
+            <div>
+              <p className="font-semibold text-gray-900">Selection Criteria:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                <li>Value to Sudanese society: Does the idea solve a real problem and generate meaningful social impact?</li>
+                <li>Feasibility: Can it realistically be developed during the upcoming stages?</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Submission Requirements:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                <li>
+                  Complete the{' '}
+                  <a
+                    href="https://forms.gle/bYahYvAqbNYfEx6B9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:text-green-700 transition-colors"
+                  >
+                    Google Form
+                  </a>
+                  .
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Timeline:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                <li>Submissions open: November 15, 2025</li>
+                <li>Submissions close: December 15, 2025</li>
+                <li>Results announced: December 31, 2025</li>
+              </ul>
+            </div>
+          </div>
 
-          <Collapsible title="مصادر">
-            <p className="mb-4 leading-relaxed">هذه لمحة سريعة عن مفاهيم مهمة. توجد مصادر كثيرة للتعمق في ابتكار الأفكار وبنائها واختبارها:</p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-0">
-              <li><a href="https://www.youtube.com/watch?v=Th8JoIan4dg&list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&index=23" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700 transition-colors">YC كيفية الحصول على أفكار الشركات الناشئة وتقييمها</a></li>
-              <li><a href="https://youtube.com/playlist?list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&si=k0z_Fk_Y2MmX6zrz" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700 transition-colors">YC مدرسة الشركات الناشئة</a></li>
-              <li>كتاب The Mom Test (متوفر بالعربية والإنجليزية والصوت)</li>
-              <li>كتاب The Lean Startup (متوفر بالعربية والإنجليزية والصوت)</li>
-            </ul>
-          </Collapsible>
-          </section>
+          <div className="space-y-4 rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md border-l-4 border-l-red-500/80">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center rounded-full bg-red-500 px-3 py-1 text-sm font-semibold text-white">
+                Stage 2
+              </span>
+              <h3 className="text-2xl font-semibold text-gray-900">Project Execution</h3>
+            </div>
+            <p className="leading-relaxed text-gray-700">
+              Teams selected from Stage 1 will build their prototypes. By the end of this stage, you must present a working prototype actively used by real people. A prototype is an early version of your product used to validate its functionality, usability, and potential impact before scaling. Your focus should be on testing the concept—not polishing the design. The key question is: Does anyone actually want or use this?
+            </p>
+            <div>
+              <p className="font-semibold text-gray-900">Think lean:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                <li>Can part of your process be done manually?</li>
+                <li>Can tools like email, WhatsApp, or Excel replace complex infrastructure?</li>
+                <li>Can you build upon existing open-source or third-party software?</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Examples:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                <li>An AI-powered CV builder could start with manual CV editing to test demand.</li>
+                <li>An AI tutor for high school exams could begin as a simple interface wrapping an existing LLM.</li>
+              </ul>
+            </div>
+            <p className="leading-relaxed text-gray-700">
+              Impact matters more than technology. A WhatsApp group with 50 daily users is more valuable than a flashy app with 5.
+            </p>
+            <div>
+              <p className="font-semibold text-gray-900">What to Submit:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                <li>A 5-minute video explaining your idea, showing how it’s used, and demonstrating real engagement and results.</li>
+                <li>A link to your live prototype.</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Judging Criteria:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                <li>How user feedback guided your iterations.</li>
+                <li>Number of active users.</li>
+                <li>Tangible benefits delivered to users.</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Timeline:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                <li>Stage 1 results and Stage 2 kickoff: January 1, 2026</li>
+                <li>Final submission: February 15, 2026</li>
+                <li>Winners announced: February 28, 2026</li>
+              </ul>
+            </div>
+          </div>
 
-          <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-red-500">نموذج التقديم</h2>
-          <p className="text-gray-700">
-            مع مراعاة النصائح أعلاه، يمكنك تعبئة نموذج التقديم من{' '}
-            <a href="https://forms.gle/1234567890" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 font-medium transition-colors">هنا</a>.
-          </p>
-          </section>
-        </>
-      ) : (
-        <>
-        <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-green-600">Introduction</h2>
-        <p className="mb-6 leading-relaxed">
-          A core goal of Code4Sudan is to produce technology that benefits the country. To do this we need to:
-        </p>
-        <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
-          <li>Stage 1: Come up with ideas</li>
-          <li>Stage 2: Validate the ideas</li>
-          <li>Stage 3: Implement the ideas</li>
-        </ul>
-        <p className="mb-6 leading-relaxed">
-          Starting with Stage 1, we want you to propose your ideas for projects that can help Sudan and we will select promising ideas to take forward in sha' Allah.
-          The application form can be found at the bottom of the page.
-        </p>
-        </section>
-
-        <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-red-500">Key Info</h2>
-        <p className="mb-6 text-gray-700">Insha 'Allah, the plan for Stage 1 is the following:</p>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
-          <li>Prizes. There are no prizes for Stage 1 of this competition, we're looking for people whose motivation is to see their ideas have real impact</li>
-          <li>Connections. We will work with you to reach out to any relevant organizations or contacts needed to implement your idea</li>
-          <li>Tools. We will make available any tools needed for implementation such as AI subscriptions etc</li>
-          <li>Funds. Within reason, we may be able to make a small amount of funding available if clear need and application can be shown</li>
-          <li>Advice. For any ideas taken forward, we will support you with technical and non technical advice from people with experience in the field</li>
-          <li>You can submit multiple ideas, but you must make a different form submission for each one</li>
-          <li>Ideas can be submitted from now until midnight GMT on November 7th, afterwards the form will close</li>
-          <li>You will hear back by November 20th whether your idea has been selected to move to Stage 2</li>
-        </ul>
-        </section>
-
-        <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-green-600">Advice for Proposing Good Ideas</h2>
-          <Collapsible title="Pain Points and Friction">
-        <p className="mb-6 leading-relaxed">
-              Here are our suggestions for how to think of and propose good ideas so that they're more likely to be selected. You need to be aware of 2 concepts:
-        </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
-            <li>Pain points</li>
-            <li>Friction</li>
-        </ul>
-            <p className="mb-4 leading-relaxed">
-              Any product or service you use provides a certain benefit, such as saving you time, money, or effort. Spending time, money, or effort are all pain points, the product you use is a solution to that pain point. The more time, money or effort you relieve, the more valuable the product is, so think carefully about how much time, money or effort is your idea going to save someone?
+          <div className="space-y-4 rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md border-l-4 border-l-amber-500/80">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center rounded-full bg-amber-500 px-3 py-1 text-sm font-semibold text-white">
+                Stage 3
+              </span>
+              <h3 className="text-2xl font-semibold text-gray-900">Product Development</h3>
+            </div>
+            <p className="leading-relaxed text-gray-700">
+              Teams advancing from Stage 2 will refine and enhance their products based on user feedback. If your prototype was a simple manual system or chat group, this is where you begin developing software. If you already have an app, this stage is about improving features, design, and reliability. Your focus should remain on making the product more effective and user-driven, not just more polished.
             </p>
-            <p className="mb-4 leading-relaxed">
-              At the same time, any product or service requires a certain amount of time, or effort to use. For example downloading an app, creating an account, account set up, learning how to use the software, etc. This is friction, the more friction your idea has, the less likely it is to be used.
-            </p>
-            <p className="mb-4 leading-relaxed">
-              A rough equation for how valuable your idea is: value = pain relief / friction.
-            </p>
-            <h6 className="mb-4 leading-relaxed">
-              Case study - Blockbuster vs Netflix.
-            </h6>
-            <p className="mb-0 leading-relaxed">
-              Blockbuster required customers to drive to a physical store, browse limited selections, and return DVDs on time to avoid late fees. Netflix started by mailing DVDs directly to your door with no late fees, then moved to instant streaming — giving customers vastly more convenience, variety, and accessibility. So Netflix reduced friction and came out on top.
-            </p>
-          </Collapsible>
-
-          <Collapsible title="Marketplaces">
-            <p className="mb-6 leading-relaxed">
-              In the building world, a marketplace is not just a place for buying and selling. A marketplace is any product or service that requires many users to exist on the platform for it to be functional. For example, Facebook is a marketplace, because it requires many users to exist on the platform for it to be functional. If only one person was on Facebook, it would be useless. Similarly Stack Overflow, GitHub, Volunteer Matching platforms, etc. are marketplaces.
-            </p>
-            <p className="mb-6 leading-relaxed">
-              One thing to be careful of with marketplaces is that they are very difficult to get started and maintain. They suffer from a chicken and egg problem. If you have no users, no one will use the platform. If no one is using the platform, it's very hard to get the first users. Even once you have users, you need to keep them actively using it. If Facebook had thousands of users but no one was posting, no one would join it.
-            </p>
-            <p className="mb-0 leading-relaxed">
-              Therefore marketplaces are very difficult to get started with. They usually require a lot of effort to launch as they need to get many users very suddenly so that they can function. So while it would be nice to have a marketplace where garden hose enthusiasts can meet up with other garden hose enthusiasts, it would likely never work. As for getting a taxi, this is something that a huge number of people need very often, which is why Uber is so successful.
-            </p>
-          </Collapsible>
-
-          <Collapsible title="Stand-Alone Apps">
-            <p className="mb-6 leading-relaxed">
-              We are especially excited to see self-contained apps that deliver value the moment someone installs them, without depending on a wider marketplace or an institution to adopt them. Imagine a farmer using on-device AI to understand soil conditions, a driver optimizing routes in real time, or any focused tool that makes a single user's day better right away.
-            </p>
-            <p className="mb-0 leading-relaxed">
-              These ideas shine because they can be built, tested, and refined quickly. Still, if you have a bold marketplace or ecosystem-based concept, please submit it—just know we'll evaluate it more critically since it takes extra coordination to bring to life.
-            </p>
-          </Collapsible>
-
-          <Collapsible title="MVPs">
-            <p className="mb-6 leading-relaxed">
-              Building a Minimum Viable Product (MVP) means not to immediately start working towards the final polished product, but rather make something simple that works as quickly as possible. Look at this image for example:
-            </p>
-            <div className="flex justify-center mb-6">
-              <img
-                src="/mvp.png"
-                alt="MVP diagram"
-                className="max-w-full rounded shadow-md"
-                loading="lazy"
-              />
+            <div>
+              <p className="font-semibold text-gray-900">What to Submit:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                <li>A 5-minute video explaining and demonstrating how your project evolved, emphasizing user feedback and impact.</li>
+                <li>A link to your updated live prototype or demo.</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Timeline:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                <li>Stage 2 results and Stage 3 kickoff: March 1, 2026</li>
+                <li>Final submission: March 31, 2026</li>
+                <li>Winners announced: April 15, 2026</li>
+              </ul>
+            </div>
+          </div>
         </div>
-            <p className="mb-4 leading-relaxed">
-              Here the product is a moving vehicle. See how the first example is completely useless until you get to the final car, but the bottom example makes something useable immediately with the skateboard, once that is working, they improve it to a scooter, etc. This is a similar process to what you should do with your idea.
-            </p>
-            <p className="mb-4 leading-relaxed">
-              If you are building an app, before building an app, you should try think of the simplest way you could make it work. For example, if you're making a tutor matching platform, don't build an app or website yet, make a Google Form and export the results to a spreadsheet. If you are making a matrimonial app, don't build an app or website yet, make a WhatsApp group and let people share profiles in the group.
-            </p>
-          <p className="mb-4 leading-relaxed">
-              A great example of an MVP is <a href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">Airbnb</a>. The founders didn't build a big website with a complex backend — they just decided to rent some mattresses in their apartment during a conference in San Francisco. They took some photos, put them online, and waited. People actually booked. That proved the idea worked. From that small test, they built Airbnb now worth over $70B.
-            </p>
-            <p className="mb-0 leading-relaxed">
-              An app can take months to build. The benefit of building very basic strung together MVPs is that they take very little time to setup, and you can quickly see if people are interested in it and using it, and if so, you already have a community of people ready to on board once you start on the real product.
-          </p>
-          </Collapsible>
+      </section>
 
-          <Collapsible title="Resources">
-          <p className="mb-4 leading-relaxed">
-              I just touched briefly on some important concepts here, but there is a lot more knowledge on how to come up with ideas, build them, and how to test whether people would use them. Here are some great resources that go into more detail:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-0">
-              <li><a href="https://www.youtube.com/watch?v=Th8JoIan4dg&list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&index=23" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700 transition-colors">Y Combinator How to Get and Evaluate Startup Ideas </a></li>
-              <li><a href="https://youtube.com/playlist?list=PLQ-uHSnFig5M9fW16o2l35jrfdsxGknNB&si=k0z_Fk_Y2MmX6zrz" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-700 transition-colors">Y Combinator Startup School</a></li>
-              <li>The Mom Test (Book widely available in Arabic, English, and Audio)</li>
-              <li>The Lean Startup (Book widely available in Arabic, English, and Audio)</li>
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-6 text-green-600">Full timeline</h2>
+        <p className="mb-6 leading-relaxed">
+          Here is the updated hackathon timeline, with each stage starting the day after the previous one ends, and dates rounded up to either the 15th or the end of the month:
+        </p>
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-2xl font-semibold text-gray-900">Stage 1: Idea Submission</h3>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+              <li>Submissions open: November 15, 2025</li>
+              <li>Submissions close: December 15, 2025</li>
+              <li>Results announced: December 31, 2025</li>
             </ul>
-          </Collapsible>
-          </section>
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold text-gray-900">Stage 2: Project Execution</h3>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+              <li>Stage 1 results and Stage 2 kickoff: January 1, 2026 (the day after December 31, 2025)</li>
+              <li>Final submission: February 15, 2026</li>
+              <li>Winners announced: February 28, 2026</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold text-gray-900">Stage 3: Product Development</h3>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+              <li>Stage 2 results and Stage 3 kickoff: March 1, 2026 (the day after February 28, 2026)</li>
+              <li>Final submission: March 31, 2026</li>
+              <li>Winners announced: April 15, 2026</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-          <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-red-500">Application Form</h2>
-          <p className="text-gray-700">
-            Keeping in mind the advice above, you can proceed to fill in the application form <a href="https://forms.gle/1234567890" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 font-medium transition-colors">here</a>.
-          </p>
-          </section>
-        </>
-      )}
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-6 text-red-500">Prizes</h2>
+        <p className="mb-4 leading-relaxed">All teams that reach Stage 3 will receive awards.</p>
+        <ul className="list-disc list-inside space-y-3 text-gray-700 ml-4">
+          <li>
+            <span className="text-xl font-extrabold text-yellow-500">$1,000 - 1st Place</span>
+          </li>
+          <li>
+            <span className="text-xl font-bold text-yellow-500">$1,000 - Shared by up to 5 other teams</span>
+          </li>
+        </ul>
+      </section>
+
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-6 text-green-600">Open Source and Reuse Policy</h2>
+        <p className="mb-4 leading-relaxed">
+          Participants may use pre-existing or open-source software, provided usage is clearly documented. You must demonstrate what original contributions were made during the hackathon.
+        </p>
+      </section>
+
+      <section className="mb-16 pb-16 border-b border-gray-200">
+        <h2 className="text-3xl font-bold mb-6 text-red-500">Intellectual Property &amp; Rights</h2>
+        <p className="mb-4 leading-relaxed">
+          Participants retain full ownership of their work. By participating, you grant Code4Sudan permission to feature your project for promotional or educational purposes. This ensures you keep creative control while allowing the community to learn from outstanding contributions.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-3xl font-bold mb-6 text-green-600">Support for Participants</h2>
+        <p className="mb-6 leading-relaxed">
+          While participants lead their own projects, Code4Sudan will provide limited support where possible.
+        </p>
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-2xl font-semibold text-gray-900">Available Support:</h3>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+              <li>Funding Assistance: Small financial support for essential needs (e.g., hosting, AI tool subscriptions) upon demonstrated need.</li>
+              <li>Mentorship: Access to guidance and expert connections throughout development.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold text-gray-900">Resources:</h3>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+              <li>
+                Avoid Common Pitfalls: Read our blog articles for insights and tips:{' '}
+                <a href="https://code4sudan.com/#blog" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                  https://code4sudan.com/#blog
+                </a>
+              </li>
+              <li>
+                Previous Hackathon Preparation: Access our knowledge hub for past hackathon prep series:{' '}
+                <a href="https://code4sudan.com/knowledge-hub" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                  https://code4sudan.com/knowledge-hub
+                </a>
+              </li>
+              <li>
+                Previous Hackathon Winners: View the project gallery of our past hackathon winners:{' '}
+                <a href="https://code-for-sudan.devpost.com/project-gallery" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                  https://code-for-sudan.devpost.com/project-gallery
+                </a>
+              </li>
+              <li>
+                Judges' Remarks (Previous Hackathon): Watch the award ceremony remarks from our previous hackathon's judges:{' '}
+                <a href="https://youtu.be/xB016l_xJuM?si=NoRZoEtPECTtJpvx" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                  https://youtu.be/xB016l_xJuM?si=NoRZoEtPECTtJpvx
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
@@ -732,7 +758,10 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
 function App() {
   const [lang, setLang] = useState<'en' | 'ar'>('en');
   return (
-      <div className={`min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12 ${lang === 'ar' ? 'text-right' : ''}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <div
+      className={`min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12 ${lang === 'ar' ? 'text-right' : ''}`}
+      dir={lang === 'ar' ? 'rtl' : 'ltr'}
+    >
       <div className="fixed top-4 right-4 z-50 flex flex-row items-center gap-3" dir="ltr">
         <span className="text-sm font-medium text-gray-600">{lang === 'ar' ? 'اللغة' : 'Language'}</span>
         <div role="group" aria-label={lang === 'ar' ? 'تبديل اللغة' : 'Language toggle'} className="inline-flex rounded-md overflow-hidden border border-gray-300 bg-white shadow-sm">
@@ -761,6 +790,7 @@ function App() {
         <Route path="/blog/:id" element={<BlogPost lang={lang} />} />
         <Route path="/contact" element={<ContactUsPage lang={lang} />} />
         <Route path="/knowledge-hub" element={<KnowledgeHubPage lang={lang} />} />
+        <Route path="/knowledge-hub/:id" element={<KnowledgeHubItemPage lang={lang} />} />
       </Routes>
     </div>
   );
