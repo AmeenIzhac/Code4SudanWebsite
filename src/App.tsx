@@ -475,282 +475,574 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
 }
 
 function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
+  const isArabic = lang === 'ar';
+  const stageCardClass = (ltr: string, rtl: string): string =>
+    `space-y-4 rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md ${
+      isArabic ? rtl : ltr
+    }`;
+
   return (
-    <div className="min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12" dir="ltr">
+    <div
+      className="min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12"
+      dir={isArabic ? 'rtl' : 'ltr'}
+    >
       <div className="mb-12">
         <Link
           to="/"
           className="inline-flex items-center text-green-500 hover:text-green-600 font-medium transition-colors mb-8"
         >
-          {lang === 'ar' ? '← الرجوع للصفحة الرئيسية' : '← Back to Home'}
+          {isArabic ? '← الرجوع للصفحة الرئيسية' : '← Back to Home'}
         </Link>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Idea Proposal</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          {isArabic ? 'تقديم الأفكار' : 'Idea Proposal'}
+        </h1>
       </div>
 
-      <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-green-600">About the Challenge</h2>
-        <p className="mb-4 leading-relaxed">
-          We invite you to create software that delivers tangible value to Sudanese people in areas such as healthcare, education, finance, communication, and beyond.
-        </p>
-        <p className="mb-4 leading-relaxed">
-          Projects may take the form of mobile apps, web platforms, or other software-based tools. They can be developed for profit or offered freely. Integration of artificial intelligence (AI) is encouraged but not required.
-        </p>
-      </section>
-
-      <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-red-500">Eligibility</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-          <li>Open exclusively to Sudanese people both in Sudan and abroad.</li>
-          <li>Teams may consist of 1–5 members.</li>
-        </ul>
-      </section>
-
-      <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-green-600">Why Participate?</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-          <li><strong className="text-gray-900">Learning:</strong> Gain knowledge in idea validation, MVP centric thinking, and dev tools.</li>
-          <li><strong className="text-gray-900">Skill Development:</strong> Enhance your technical abilities and contribute to your portfolio.</li>
-          <li><strong className="text-gray-900">Venture Creation:</strong> Potential to evolve your project into a business or non-profit.</li>
-          <li><strong className="text-gray-900">Social Impact:</strong> Contribute positively to Sudan.</li>
-          <li><strong className="text-gray-900">Recognition:</strong> Win prizes.</li>
-        </ul>
-      </section>
-
-      <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-red-500">Competition Overview</h2>
-        <p className="mb-6 leading-relaxed">The competition runs in three stages.</p>
-
-        <div className="space-y-10">
-          <div className="space-y-4 rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md border-l-4 border-l-green-500/80">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center rounded-full bg-green-600 px-3 py-1 text-sm font-semibold text-white">
-                Stage 1
-              </span>
-              <h3 className="text-2xl font-semibold text-gray-900">Idea Submission</h3>
-            </div>
-            <p className="leading-relaxed text-gray-700">
-              At this stage, you only need to submit your idea—no coding, prototype, or video required. Provide a short description (1–3 sentences or one paragraph) explaining your concept and elevator pitch.
+      {isArabic ? (
+        <>
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">حول التحدي</h2>
+            <p className="mb-4 leading-relaxed">
+              ندعوك لابتكار حلول برمجية تقدم قيمة ملموسة للسودانيين في مجالات مثل الصحة والتعليم والتمويل والاتصال وغيرها.
             </p>
-            <div>
-              <p className="font-semibold text-gray-900">Selection Criteria:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-                <li>Value to Sudanese society: Does the idea solve a real problem and generate meaningful social impact?</li>
-                <li>Feasibility: Can it realistically be developed during the upcoming stages?</li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900">Submission Requirements:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-                <li>
-                  Complete the{' '}
-                  <a
-                    href="https://forms.gle/bYahYvAqbNYfEx6B9"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-600 hover:text-green-700 transition-colors"
-                  >
-                    Google Form
-                  </a>
-                  .
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900">Timeline:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-                <li>Submissions open: November 15, 2025</li>
-                <li>Submissions close: December 15, 2025</li>
-                <li>Results announced: December 31, 2025</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="space-y-4 rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md border-l-4 border-l-red-500/80">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center rounded-full bg-red-500 px-3 py-1 text-sm font-semibold text-white">
-                Stage 2
-              </span>
-              <h3 className="text-2xl font-semibold text-gray-900">Project Execution</h3>
-            </div>
-            <p className="leading-relaxed text-gray-700">
-              Teams selected from Stage 1 will build their prototypes. By the end of this stage, you must present a working prototype actively used by real people. A prototype is an early version of your product used to validate its functionality, usability, and potential impact before scaling. Your focus should be on testing the concept—not polishing the design. The key question is: Does anyone actually want or use this?
+            <p className="mb-4 leading-relaxed">
+              يمكن أن يكون مشروعك تطبيقًا للهواتف، أو منصة ويب، أو أي أداة برمجية أخرى. يمكنك تطويره كخدمة مدفوعة أو مجانية. يُشجَّع دمج تقنيات الذكاء الاصطناعي لكنه غير إلزامي.
             </p>
-            <div>
-              <p className="font-semibold text-gray-900">Think lean:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-                <li>Can part of your process be done manually?</li>
-                <li>Can tools like email, WhatsApp, or Excel replace complex infrastructure?</li>
-                <li>Can you build upon existing open-source or third-party software?</li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900">Examples:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-                <li>An AI-powered CV builder could start with manual CV editing to test demand.</li>
-                <li>An AI tutor for high school exams could begin as a simple interface wrapping an existing LLM.</li>
-              </ul>
-            </div>
-            <p className="leading-relaxed text-gray-700">
-              Impact matters more than technology. A WhatsApp group with 50 daily users is more valuable than a flashy app with 5.
-            </p>
-            <div>
-              <p className="font-semibold text-gray-900">What to Submit:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-                <li>A 5-minute video explaining your idea, showing how it’s used, and demonstrating real engagement and results.</li>
-                <li>A link to your live prototype.</li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900">Judging Criteria:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-                <li>How user feedback guided your iterations.</li>
-                <li>Number of active users.</li>
-                <li>Tangible benefits delivered to users.</li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900">Timeline:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-                <li>Stage 1 results and Stage 2 kickoff: January 1, 2026</li>
-                <li>Final submission: February 15, 2026</li>
-                <li>Winners announced: February 28, 2026</li>
-              </ul>
-            </div>
-          </div>
+          </section>
 
-          <div className="space-y-4 rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md border-l-4 border-l-amber-500/80">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center rounded-full bg-amber-500 px-3 py-1 text-sm font-semibold text-white">
-                Stage 3
-              </span>
-              <h3 className="text-2xl font-semibold text-gray-900">Product Development</h3>
-            </div>
-            <p className="leading-relaxed text-gray-700">
-              Teams advancing from Stage 2 will refine and enhance their products based on user feedback. If your prototype was a simple manual system or chat group, this is where you begin developing software. If you already have an app, this stage is about improving features, design, and reliability. Your focus should remain on making the product more effective and user-driven, not just more polished.
-            </p>
-            <div>
-              <p className="font-semibold text-gray-900">What to Submit:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-                <li>A 5-minute video explaining and demonstrating how your project evolved, emphasizing user feedback and impact.</li>
-                <li>A link to your updated live prototype or demo.</li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900">Timeline:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-                <li>Stage 2 results and Stage 3 kickoff: March 1, 2026</li>
-                <li>Final submission: March 31, 2026</li>
-                <li>Winners announced: April 15, 2026</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-green-600">Full timeline</h2>
-        <p className="mb-6 leading-relaxed">
-          Here is the updated hackathon timeline, with each stage starting the day after the previous one ends, and dates rounded up to either the 15th or the end of the month:
-        </p>
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-900">Stage 1: Idea Submission</h3>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-              <li>Submissions open: November 15, 2025</li>
-              <li>Submissions close: December 15, 2025</li>
-              <li>Results announced: December 31, 2025</li>
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">شروط المشاركة</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>المسابقة مفتوحة حصريًا للسودانيين داخل السودان وخارجه.</li>
+              <li>يمكن أن يتكوّن الفريق من 1 إلى 5 أعضاء.</li>
             </ul>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-900">Stage 2: Project Execution</h3>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-              <li>Stage 1 results and Stage 2 kickoff: January 1, 2026 (the day after December 31, 2025)</li>
-              <li>Final submission: February 15, 2026</li>
-              <li>Winners announced: February 28, 2026</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-900">Stage 3: Product Development</h3>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-              <li>Stage 2 results and Stage 3 kickoff: March 1, 2026 (the day after February 28, 2026)</li>
-              <li>Final submission: March 31, 2026</li>
-              <li>Winners announced: April 15, 2026</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-red-500">Prizes</h2>
-        <p className="mb-4 leading-relaxed">All teams that reach Stage 3 will receive awards.</p>
-        <ul className="list-disc list-inside space-y-3 text-gray-700 ml-4">
-          <li>
-            <span className="text-xl font-extrabold text-yellow-500">$1,000 - 1st Place</span>
-          </li>
-          <li>
-            <span className="text-xl font-bold text-yellow-500">$1,000 - Shared by up to 5 other teams</span>
-          </li>
-        </ul>
-      </section>
-
-      <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-green-600">Open Source and Reuse Policy</h2>
-        <p className="mb-4 leading-relaxed">
-          Participants may use pre-existing or open-source software, provided usage is clearly documented. You must demonstrate what original contributions were made during the hackathon.
-        </p>
-      </section>
-
-      <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-red-500">Intellectual Property &amp; Rights</h2>
-        <p className="mb-4 leading-relaxed">
-          Participants retain full ownership of their work. By participating, you grant Code4Sudan permission to feature your project for promotional or educational purposes. This ensures you keep creative control while allowing the community to learn from outstanding contributions.
-        </p>
-      </section>
-
-      <section>
-        <h2 className="text-3xl font-bold mb-6 text-green-600">Support for Participants</h2>
-        <p className="mb-6 leading-relaxed">
-          While participants lead their own projects, Code4Sudan will provide limited support where possible.
-        </p>
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-900">Available Support:</h3>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
-              <li>Funding Assistance: Small financial support for essential needs (e.g., hosting, AI tool subscriptions) upon demonstrated need.</li>
-              <li>Mentorship: Access to guidance and expert connections throughout development.</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-900">Resources:</h3>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">لماذا تشارك؟</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
               <li>
-                Avoid Common Pitfalls: Read our blog articles for insights and tips:{' '}
-                <a href="https://code4sudan.com/#blog" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
-                  https://code4sudan.com/#blog
-                </a>
+                <strong className="text-gray-900">التعلم:</strong> اكتسب معرفة في التحقق من الأفكار، والتفكير المرتكز على الحد الأدنى القابل للمنتج، وأدوات التطوير.
               </li>
               <li>
-                Previous Hackathon Preparation: Access our knowledge hub for past hackathon prep series:{' '}
-                <a href="https://code4sudan.com/knowledge-hub" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
-                  https://code4sudan.com/knowledge-hub
-                </a>
+                <strong className="text-gray-900">تطوير المهارات:</strong> عزّز قدراتك التقنية ووسّع سيرتك المهنية.
               </li>
               <li>
-                Previous Hackathon Winners: View the project gallery of our past hackathon winners:{' '}
-                <a href="https://code-for-sudan.devpost.com/project-gallery" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
-                  https://code-for-sudan.devpost.com/project-gallery
-                </a>
+                <strong className="text-gray-900">تأسيس المشاريع:</strong> حوّل مشروعك إلى عمل ربحي أو مبادرة غير ربحية.
               </li>
               <li>
-                Judges' Remarks (Previous Hackathon): Watch the award ceremony remarks from our previous hackathon's judges:{' '}
-                <a href="https://youtu.be/xB016l_xJuM?si=NoRZoEtPECTtJpvx" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
-                  https://youtu.be/xB016l_xJuM?si=NoRZoEtPECTtJpvx
-                </a>
+                <strong className="text-gray-900">الأثر الاجتماعي:</strong> ساهم بإيجابية في خدمة السودان.
+              </li>
+              <li>
+                <strong className="text-gray-900">التميّز:</strong> احصل على فرص الفوز بالجوائز.
               </li>
             </ul>
-          </div>
-        </div>
-      </section>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">نظرة عامة على المنافسة</h2>
+            <p className="mb-6 leading-relaxed">المسابقة تتكون من ثلاث مراحل.</p>
+
+            <div className="space-y-10">
+              <div className={stageCardClass('border-l-4 border-l-green-500/80', 'border-r-4 border-r-green-500/80')}>
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center rounded-full bg-green-600 px-3 py-1 text-sm font-semibold text-white">
+                    المرحلة 1
+                  </span>
+                  <h3 className="text-2xl font-semibold text-gray-900">تقديم الفكرة</h3>
+                </div>
+                <p className="leading-relaxed text-gray-700">
+                  في هذه المرحلة تحتاج فقط إلى تقديم فكرتك — لا حاجة للبرمجة أو للنموذج الأولي أو للفيديو. قدّم وصفًا موجزًا (من 1 إلى 3 جمل أو فقرة واحدة) يوضّح مفهومك وخطاب المصعد الخاص بك.
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">معايير الاختيار:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>القيمة للمجتمع السوداني: هل تعالج الفكرة مشكلة حقيقية وتحقق أثرًا اجتماعيًا ملموسًا؟</li>
+                    <li>إمكانية التنفيذ: هل يمكن تطويرها واقعيًا خلال المراحل القادمة؟</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">متطلبات التقديم:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>
+                      أكمل{' '}
+                      <a
+                        href="https://forms.gle/bYahYvAqbNYfEx6B9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-green-600 hover:text-green-700 transition-colors"
+                      >
+                        نموذج Google
+                      </a>
+                      .
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">الجدول الزمني:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>بداية التقديمات: 15 نوفمبر 2025</li>
+                    <li>نهاية التقديمات: 15 ديسمبر 2025</li>
+                    <li>إعلان النتائج: 31 ديسمبر 2025</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className={stageCardClass('border-l-4 border-l-red-500/80', 'border-r-4 border-r-red-500/80')}>
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center rounded-full bg-red-500 px-3 py-1 text-sm font-semibold text-white">
+                    المرحلة 2
+                  </span>
+                  <h3 className="text-2xl font-semibold text-gray-900">تنفيذ المشروع</h3>
+                </div>
+                <p className="leading-relaxed text-gray-700">
+                  الفرق المختارة من المرحلة الأولى ستبني نماذجها الأولية. في نهاية هذه المرحلة يجب أن تقدّم نموذجًا يعمل ويُستخدم فعليًا من قبل أشخاص حقيقيين. يهدف النموذج الأولي إلى اختبار الفكرة قبل التوسع، لذا ركّز على التحقق من مدى حاجة الناس للحل وليس على تحسين الشكل.
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">فكّر بطريقة رشيقة:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>هل يمكن تنفيذ جزء من العملية يدويًا؟</li>
+                    <li>هل يمكن للأدوات مثل البريد الإلكتروني أو واتساب أو إكسل أن تحل محل البنية التحتية المعقدة؟</li>
+                    <li>هل تستطيع البناء على برمجيات مفتوحة المصدر أو أدوات جاهزة؟</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">أمثلة:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>منشئ سير ذاتية مدعوم بالذكاء الاصطناعي يمكن أن يبدأ بتحرير السير يدويًا لاختبار الطلب.</li>
+                    <li>مدرّس للامتحانات الثانوية يعتمد على الذكاء الاصطناعي يمكن أن يبدأ كواجهة بسيطة لنموذج لغوي جاهز.</li>
+                  </ul>
+                </div>
+                <p className="leading-relaxed text-gray-700">
+                  الأثر أهم من التقنية. مجموعة واتساب تضم 50 مستخدمًا نشطًا يوميًا أفضل من تطبيق مبهر يستخدمه خمسة أشخاص فقط.
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">ما الذي تقدمه:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>فيديو مدته 5 دقائق يشرح فكرتك ويعرض كيفية استخدامها ويبرهن على التفاعل والنتائج الحقيقية.</li>
+                    <li>رابط إلى النموذج التشغيلي.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">معايير التقييم:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>كيف وجّهت ملاحظات المستخدمين عملية التطوير.</li>
+                    <li>عدد المستخدمين النشطين.</li>
+                    <li>الفوائد الملموسة التي يحصل عليها المستخدمون.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">الجدول الزمني:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>نتائج المرحلة الأولى وبداية المرحلة الثانية: 1 يناير 2026</li>
+                    <li>التسليم النهائي: 15 فبراير 2026</li>
+                    <li>إعلان الفائزين: 28 فبراير 2026</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className={stageCardClass('border-l-4 border-l-amber-500/80', 'border-r-4 border-r-amber-500/80')}>
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center rounded-full bg-amber-500 px-3 py-1 text-sm font-semibold text-white">
+                    المرحلة 3
+                  </span>
+                  <h3 className="text-2xl font-semibold text-gray-900">تطوير المنتج</h3>
+                </div>
+                <p className="leading-relaxed text-gray-700">
+                  الفرق التي تتقدم من المرحلة الثانية ستعمل على تحسين منتجاتها بناءً على ملاحظات المستخدمين. إذا كان نموذجك الأولي بسيطًا أو يعتمد على عمليات يدوية، فهذه هي المرحلة التي تبدأ فيها بكتابة البرمجيات. وإذا كان لديك تطبيق جاهز، فركّز على تحسين المزايا والتصميم والاستقرار مع الحفاظ على قيادة المستخدمين للتطوير.
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">ما الذي تقدمه:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>فيديو مدته 5 دقائق يشرح كيفية تطوّر مشروعك مع إبراز ملاحظات المستخدمين والأثر المتحقق.</li>
+                    <li>رابط إلى النموذج أو العرض المحدّث.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">الجدول الزمني:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>نتائج المرحلة الثانية وبداية المرحلة الثالثة: 1 مارس 2026</li>
+                    <li>التسليم النهائي: 31 مارس 2026</li>
+                    <li>إعلان الفائزين: 15 أبريل 2026</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">الجدول الزمني الكامل</h2>
+            <p className="mb-6 leading-relaxed">
+              فيما يلي الجدول الزمني المحدّث للهاكاثون، حيث تبدأ كل مرحلة في اليوم التالي لانتهاء المرحلة السابقة.
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900">المرحلة 1: تقديم الفكرة</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                  <li>بداية التقديمات: 15 نوفمبر 2025</li>
+                  <li>نهاية التقديمات: 15 ديسمبر 2025</li>
+                  <li>إعلان النتائج: 31 ديسمبر 2025</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900">المرحلة 2: تنفيذ المشروع</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                  <li>نتائج المرحلة الأولى وبداية المرحلة الثانية: 1 يناير 2026</li>
+                  <li>التسليم النهائي: 15 فبراير 2026</li>
+                  <li>إعلان الفائزين: 28 فبراير 2026</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900">المرحلة 3: تطوير المنتج</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                  <li>نتائج المرحلة الثانية وبداية المرحلة الثالثة: 1 مارس 2026</li>
+                  <li>التسليم النهائي: 31 مارس 2026</li>
+                  <li>إعلان الفائزين: 15 أبريل 2026</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">الجوائز</h2>
+            <p className="mb-4 leading-relaxed">جميع الفرق التي تصل إلى المرحلة الثالثة ستحصل على جوائز.</p>
+            <ul className="list-disc list-inside space-y-3 text-gray-700 ml-4">
+              <li>
+                <span className="text-xl font-extrabold text-yellow-500">1,000$ - المركز الأول</span>
+              </li>
+              <li>
+                <span className="text-xl font-bold text-yellow-500">1,000$ - موزعة على ما يصل إلى خمسة فرق أخرى</span>
+              </li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">سياسة المصدر المفتوح وإعادة الاستخدام</h2>
+            <p className="mb-4 leading-relaxed">
+              يمكن للمشاركين استخدام برمجيات قائمة أو مفتوحة المصدر بشرط توثيق الاستخدام بوضوح. يجب أن توضّح الإضافات الأصلية التي تم تطويرها خلال الهاكاثون.
+            </p>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">الملكية الفكرية والحقوق</h2>
+            <p className="mb-4 leading-relaxed">
+              يحتفظ المشاركون بالملكية الكاملة لأعمالهم. من خلال المشاركة، تمنح Code4Sudan الإذن لعرض مشروعك لأغراض ترويجية أو تعليمية، مع احتفاظك بالتحكم الإبداعي الكامل.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-3xl font-bold mb-6 text-green-600">الدعم للمشاركين</h2>
+            <p className="mb-6 leading-relaxed">
+              على الرغم من أن الفرق تقود مشاريعها بنفسها، ستوفر Code4Sudan دعمًا محدودًا حيثما أمكن.
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900">الدعم المتاح:</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                  <li>دعم التمويل: مساهمات مالية صغيرة للاحتياجات الأساسية (مثل الاستضافة أو اشتراكات أدوات الذكاء الاصطناعي) عند إثبات الحاجة.</li>
+                  <li>الإرشاد: الوصول إلى التوجيه والروابط مع خبراء أثناء عملية التطوير.</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900">الموارد:</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                  <li>
+                    تفادي الأخطاء الشائعة: اطلع على مقالات المدونة للحصول على رؤى ونصائح:{' '}
+                    <a href="https://code4sudan.com/#blog" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                      https://code4sudan.com/#blog
+                    </a>
+                  </li>
+                  <li>
+                    التحضير للهاكاثون السابق: تصفّح مركز المعرفة لسلسلة التحضير السابقة:{' '}
+                    <a href="https://code4sudan.com/knowledge-hub" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                      https://code4sudan.com/knowledge-hub
+                    </a>
+                  </li>
+                  <li>
+                    الفائزون في الهاكاثون السابق: شاهد معرض مشاريع الفرق الفائزة:{' '}
+                    <a href="https://code-for-sudan.devpost.com/project-gallery" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                      https://code-for-sudan.devpost.com/project-gallery
+                    </a>
+                  </li>
+                  <li>
+                    ملاحظات لجنة التحكيم (الهاكاثون السابق): شاهد كلمات لجنة التحكيم في حفل الجوائز:{' '}
+                    <a href="https://youtu.be/xB016l_xJuM?si=NoRZoEtPECTtJpvx" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                      https://youtu.be/xB016l_xJuM?si=NoRZoEtPECTtJpvx
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </>
+      ) : (
+        <>
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">About the Challenge</h2>
+            <p className="mb-4 leading-relaxed">
+              We invite you to create software that delivers tangible value to Sudanese people in areas such as healthcare, education, finance, communication, and beyond.
+            </p>
+            <p className="mb-4 leading-relaxed">
+              Projects may take the form of mobile apps, web platforms, or other software-based tools. They can be developed for profit or offered freely. Integration of artificial intelligence (AI) is encouraged but not required.
+            </p>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">Eligibility</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Open exclusively to Sudanese people both in Sudan and abroad.</li>
+              <li>Teams may consist of 1–5 members.</li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">Why Participate?</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong className="text-gray-900">Learning:</strong> Gain knowledge in idea validation, MVP centric thinking, and dev tools.</li>
+              <li><strong className="text-gray-900">Skill Development:</strong> Enhance your technical abilities and contribute to your portfolio.</li>
+              <li><strong className="text-gray-900">Venture Creation:</strong> Potential to evolve your project into a business or non-profit.</li>
+              <li><strong className="text-gray-900">Social Impact:</strong> Contribute positively to Sudan.</li>
+              <li><strong className="text-gray-900">Recognition:</strong> Win prizes.</li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">Competition Overview</h2>
+            <p className="mb-6 leading-relaxed">The competition runs in three stages.</p>
+
+            <div className="space-y-10">
+              <div className={stageCardClass('border-l-4 border-l-green-500/80', 'border-r-4 border-r-green-500/80')}>
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center rounded-full bg-green-600 px-3 py-1 text-sm font-semibold text-white">
+                    Stage 1
+                  </span>
+                  <h3 className="text-2xl font-semibold text-gray-900">Idea Submission</h3>
+                </div>
+                <p className="leading-relaxed text-gray-700">
+                  At this stage, you only need to submit your idea—no coding, prototype, or video required. Provide a short description (1–3 sentences or one paragraph) explaining your concept and elevator pitch.
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">Selection Criteria:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>Value to Sudanese society: Does the idea solve a real problem and generate meaningful social impact?</li>
+                    <li>Feasibility: Can it realistically be developed during the upcoming stages?</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Submission Requirements:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>
+                      Complete the{' '}
+                      <a
+                        href="https://forms.gle/bYahYvAqbNYfEx6B9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-green-600 hover:text-green-700 transition-colors"
+                      >
+                        Google Form
+                      </a>
+                      .
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Timeline:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>Submissions open: November 15, 2025</li>
+                    <li>Submissions close: December 15, 2025</li>
+                    <li>Results announced: December 31, 2025</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className={stageCardClass('border-l-4 border-l-red-500/80', 'border-r-4 border-r-red-500/80')}>
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center rounded-full bg-red-500 px-3 py-1 text-sm font-semibold text-white">
+                    Stage 2
+                  </span>
+                  <h3 className="text-2xl font-semibold text-gray-900">Project Execution</h3>
+                </div>
+                <p className="leading-relaxed text-gray-700">
+                  Teams selected from Stage 1 will build their prototypes. By the end of this stage, you must present a working prototype actively used by real people. A prototype is an early version of your product used to validate its functionality, usability, and potential impact before scaling. Your focus should be on testing the concept—not polishing the design. The key question is: Does anyone actually want or use this?
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">Think lean:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>Can part of your process be done manually?</li>
+                    <li>Can tools like email, WhatsApp, or Excel replace complex infrastructure?</li>
+                    <li>Can you build upon existing open-source or third-party software?</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Examples:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>An AI-powered CV builder could start with manual CV editing to test demand.</li>
+                    <li>An AI tutor for high school exams could begin as a simple interface wrapping an existing LLM.</li>
+                  </ul>
+                </div>
+                <p className="leading-relaxed text-gray-700">
+                  Impact matters more than technology. A WhatsApp group with 50 daily users is more valuable than a flashy app with 5.
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">What to Submit:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>A 5-minute video explaining your idea, showing how it’s used, and demonstrating real engagement and results.</li>
+                    <li>A link to your live prototype.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Judging Criteria:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>How user feedback guided your iterations.</li>
+                    <li>Number of active users.</li>
+                    <li>Tangible benefits delivered to users.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Timeline:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>Stage 1 results and Stage 2 kickoff: January 1, 2026</li>
+                    <li>Final submission: February 15, 2026</li>
+                    <li>Winners announced: February 28, 2026</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className={stageCardClass('border-l-4 border-l-amber-500/80', 'border-r-4 border-r-amber-500/80')}>
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center rounded-full bg-amber-500 px-3 py-1 text-sm font-semibold text-white">
+                    Stage 3
+                  </span>
+                  <h3 className="text-2xl font-semibold text-gray-900">Product Development</h3>
+                </div>
+                <p className="leading-relaxed text-gray-700">
+                  Teams advancing from Stage 2 will refine and enhance their products based on user feedback. If your prototype was a simple manual system or chat group, this is where you begin developing software. If you already have an app, this stage is about improving features, design, and reliability. Your focus should remain on making the product more effective and user-driven, not just more polished.
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">What to Submit:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>A 5-minute video explaining and demonstrating how your project evolved, emphasizing user feedback and impact.</li>
+                    <li>A link to your updated live prototype or demo.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Timeline:</p>
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                    <li>Stage 2 results and Stage 3 kickoff: March 1, 2026</li>
+                    <li>Final submission: March 31, 2026</li>
+                    <li>Winners announced: April 15, 2026</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">Full timeline</h2>
+            <p className="mb-6 leading-relaxed">
+              Here is the updated hackathon timeline, with each stage starting the day after the previous one ends, and dates rounded up to either the 15th or the end of the month:
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900">Stage 1: Idea Submission</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                  <li>Submissions open: November 15, 2025</li>
+                  <li>Submissions close: December 15, 2025</li>
+                  <li>Results announced: December 31, 2025</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900">Stage 2: Project Execution</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                  <li>Stage 1 results and Stage 2 kickoff: January 1, 2026</li>
+                  <li>Final submission: February 15, 2026</li>
+                  <li>Winners announced: February 28, 2026</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900">Stage 3: Product Development</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                  <li>Stage 2 results and Stage 3 kickoff: March 1, 2026</li>
+                  <li>Final submission: March 31, 2026</li>
+                  <li>Winners announced: April 15, 2026</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">Prizes</h2>
+            <p className="mb-4 leading-relaxed">All teams that reach Stage 3 will receive awards.</p>
+            <ul className="list-disc list-inside space-y-3 text-gray-700 ml-4">
+              <li>
+                <span className="text-xl font-extrabold text-yellow-500">$1,000 - 1st Place</span>
+              </li>
+              <li>
+                <span className="text-xl font-bold text-yellow-500">$1,000 - Shared by up to 5 other teams</span>
+              </li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">Open Source and Reuse Policy</h2>
+            <p className="mb-4 leading-relaxed">
+              Participants may use pre-existing or open-source software, provided usage is clearly documented. You must demonstrate what original contributions were made during the hackathon.
+            </p>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">Intellectual Property &amp; Rights</h2>
+            <p className="mb-4 leading-relaxed">
+              Participants retain full ownership of their work. By participating, you grant Code4Sudan permission to feature your project for promotional or educational purposes. This ensures you keep creative control while allowing the community to learn from outstanding contributions.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-3xl font-bold mb-6 text-green-600">Support for Participants</h2>
+            <p className="mb-6 leading-relaxed">
+              While participants lead their own projects, Code4Sudan will provide limited support where possible.
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900">Available Support:</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                  <li>Funding Assistance: Small financial support for essential needs (e.g., hosting, AI tool subscriptions) upon demonstrated need.</li>
+                  <li>Mentorship: Access to guidance and expert connections throughout development.</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900">Resources:</h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-2">
+                  <li>
+                    Avoid Common Pitfalls: Read our blog articles for insights and tips:{' '}
+                    <a href="https://code4sudan.com/#blog" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                      https://code4sudan.com/#blog
+                    </a>
+                  </li>
+                  <li>
+                    Previous Hackathon Preparation: Access our knowledge hub for past hackathon prep series:{' '}
+                    <a href="https://code4sudan.com/knowledge-hub" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                      https://code4sudan.com/knowledge-hub
+                    </a>
+                  </li>
+                  <li>
+                    Previous Hackathon Winners: View the project gallery of our past hackathon winners:{' '}
+                    <a href="https://code-for-sudan.devpost.com/project-gallery" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                      https://code-for-sudan.devpost.com/project-gallery
+                    </a>
+                  </li>
+                  <li>
+                    Judges' Remarks (Previous Hackathon): Watch the award ceremony remarks from our previous hackathon's judges:{' '}
+                    <a href="https://youtu.be/xB016l_xJuM?si=NoRZoEtPECTtJpvx" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                      https://youtu.be/xB016l_xJuM?si=NoRZoEtPECTtJpvx
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
     </div>
   );
 }
