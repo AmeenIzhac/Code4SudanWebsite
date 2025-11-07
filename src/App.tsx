@@ -69,10 +69,10 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
                 <ul className="space-y-2">
                   <li>
                     <Link 
-                      to="/idea-proposal" 
+                      to="/hackathon-2" 
                       className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
                     >
-                      تقديم الأفكار - التاريخ سيحدد لاحقًا
+                      هاكاثون 2 - التاريخ سيحدد لاحقًا
                     </Link>
                   </li>
                 </ul>
@@ -238,10 +238,10 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
                 <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
               <li>
                 <Link 
-                  to="/idea-proposal" 
+                  to="/hackathon-2" 
                   className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
                 >
-                  Idea Proposal Date TBD
+                  Hackathon 2 Date TBD
                 </Link>
               </li>
             </ul>
@@ -439,7 +439,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
           </p>
           
           <p className="mb-4 text-gray-600 italic">
-            {lang === 'ar' ? 'إذا كنت تفضل إبقاء شيفرتك خاصة، أضف "sudanhackathon@gmail.com" كمساهم في مستودعك' : 'If you prefer to keep your code private, add "sudanhackathon@gmail.com" as a collaborator to your repository'}
+            {lang === 'ar' ? 'إذا كنت تفضل إبقاء شيفرتك خاصة، أضف "team@code4sudan.com" كمساهم في مستودعك' : 'If you prefer to keep your code private, add "team@code4sudan.com" as a collaborator to your repository'}
           </p>
 
           <div className="space-y-6">
@@ -474,7 +474,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
   );
 }
 
-function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
+function Hackathon2Page({ lang }: { lang: 'en' | 'ar' }) {
   const isArabic = lang === 'ar';
   const stageCardClass = (ltr: string, rtl: string): string =>
     `space-y-4 rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md ${
@@ -494,7 +494,7 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
           {isArabic ? '← الرجوع للصفحة الرئيسية' : '← Back to Home'}
         </Link>
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          {isArabic ? 'تقديم الأفكار' : 'Idea Proposal'}
+          {isArabic ? 'هاكاثون 2' : 'Hackathon 2'}
         </h1>
       </div>
 
@@ -939,9 +939,6 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
 
           <section className="mb-16 pb-16 border-b border-gray-200">
             <h2 className="text-3xl font-bold mb-6 text-green-600">Full timeline</h2>
-            <p className="mb-6 leading-relaxed">
-              Here is the updated hackathon timeline, with each stage starting the day after the previous one ends, and dates rounded up to either the 15th or the end of the month:
-            </p>
             <div className="space-y-6">
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900">Stage 1: Idea Submission</h3>
@@ -1021,8 +1018,8 @@ function IdeaProposalPage({ lang }: { lang: 'en' | 'ar' }) {
                   </li>
                   <li>
                     Previous Hackathon Preparation: Access our knowledge hub for past hackathon prep series:{' '}
-                    <a href="https://code4sudan.com/knowledge-hub" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
-                      https://code4sudan.com/knowledge-hub
+                    <a href="https://code4sudan.com/knowledge-hub/advice-for-proposing-ideas" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                      https://code4sudan.com/knowledge-hub/advice-for-proposing-ideas
                     </a>
                   </li>
                   <li>
@@ -1078,7 +1075,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage lang={lang} />} />
         <Route path="/launch-hackathon" element={<LaunchHackathonPage lang={lang} />} />
-        <Route path="/idea-proposal" element={<IdeaProposalPage lang={lang} />} />
+        <Route path="/hackathon-2" element={<Hackathon2Page lang={lang} />} />
         <Route path="/blog/:id" element={<BlogPost lang={lang} />} />
         <Route path="/contact" element={<ContactUsPage lang={lang} />} />
         <Route path="/knowledge-hub" element={<KnowledgeHubPage lang={lang} />} />

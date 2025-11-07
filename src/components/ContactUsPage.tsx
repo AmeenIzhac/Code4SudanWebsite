@@ -25,10 +25,10 @@ export function ContactUsPage({ lang }: ContactUsPageProps) {
             : 'Interested in writing an article for the site in Arabic or English? Have any feedback on an existing post or project? Email us at'
           }{' '}
           <a 
-            href="mailto:sudanhackathon@gmail.com"
+            href="mailto:team@code4sudan.com"
             className="text-green-600 hover:text-green-700 font-semibold transition-colors"
           >
-            sudanhackathon@gmail.com
+            team@code4sudan.com
           </a>
           {lang === 'ar' ? '.' : '.'}
         </p>
