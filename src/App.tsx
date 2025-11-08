@@ -552,7 +552,15 @@ function Hackathon2Page({ lang }: { lang: 'en' | 'ar' }) {
                   <h3 className="text-2xl font-semibold text-gray-900">تقديم الفكرة</h3>
                 </div>
                 <p className="leading-relaxed text-gray-700">
-                  في هذه المرحلة تحتاج فقط إلى تقديم فكرتك — لا حاجة للبرمجة أو للنموذج الأولي أو للفيديو. قدّم وصفًا موجزًا (من 1 إلى 3 جمل أو فقرة واحدة) يوضّح مفهومك وخطاب المصعد الخاص بك.
+                  في هذه المرحلة تحتاج فقط إلى تقديم فكرتك — لا حاجة للبرمجة أو للنموذج الأولي أو للفيديو. قدّم وصفًا موجزًا (من 1 إلى 3 جمل أو فقرة واحدة) يوضّح مفهومك وخطاب المصعد الخاص بك.{" "}
+                  <a
+                    href="https://code4sudan.com/knowledge-hub/advice-for-proposing-ideas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:text-green-700 transition-colors"
+                  >
+                    اطلع على نصائحنا لتقديم فكرة مرجح قبولها.
+                  </a>
                 </p>
                 <div>
                   <p className="font-semibold text-gray-900">معايير الاختيار:</p>
@@ -819,7 +827,15 @@ function Hackathon2Page({ lang }: { lang: 'en' | 'ar' }) {
                   <h3 className="text-2xl font-semibold text-gray-900">Idea Submission</h3>
                 </div>
                 <p className="leading-relaxed text-gray-700">
-                  At this stage, you only need to submit your idea—no coding, prototype, or video required. Provide a short description (1–3 sentences or one paragraph) explaining your concept and elevator pitch.
+                  At this stage, you only need to submit your idea—no coding, prototype, or video required. Provide a short description (1–3 sentences or one paragraph) explaining your concept and elevator pitch.{" "}
+                  <a
+                    href="https://code4sudan.com/knowledge-hub/advice-for-proposing-ideas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:text-green-700 transition-colors"
+                  >
+                    Here's our advice on how to propose an idea that's likely to be accepted.
+                  </a>
                 </p>
                 <div>
                   <p className="font-semibold text-gray-900">Selection Criteria:</p>
