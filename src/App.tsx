@@ -58,7 +58,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
                       to="/launch-hackathon" 
                       className="text-red-500 hover:text-red-600 font-medium transition-colors underline decoration-red-200 hover:decoration-red-400"
                     >
-                      هاكاثون الإطلاق من 1 مايو - 31 يوليو
+                      هاكاثون الإطلاق من 1 مايو - 31 يوليو 2025
                     </Link>
                   </li>
                 </ul>
@@ -72,7 +72,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
                       to="/hackathon-2" 
                       className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
                     >
-                      هاكاثون 2 - التاريخ سيحدد لاحقًا
+                      هاكاثون 2 - 15 نوفمبر 2025 - الحاضر
                     </Link>
                   </li>
                 </ul>
@@ -227,7 +227,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
                   to="/launch-hackathon" 
                   className="text-red-500 hover:text-red-600 font-medium transition-colors underline decoration-red-200 hover:decoration-red-400"
                 >
-                  Launch Hackathon of May 1 - Jul 31
+                  Launch Hackathon of May 1 - Jul 31, 2025
                 </Link>
               </li>
             </ul>
@@ -241,7 +241,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
                   to="/hackathon-2" 
                   className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
                 >
-                  Hackathon 2 Date TBD
+                  Hackathon 2 - 15th November 2025 - Present
                 </Link>
               </li>
             </ul>
@@ -362,7 +362,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
         >
           {lang === 'ar' ? '← الرجوع للصفحة الرئيسية' : '← Back to Home'}
         </Link>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">{lang === 'ar' ? 'هاكاثون الإطلاق من 1 مايو – 31 يوليو' : 'Launch Hackathon of May 1 – Jul 31'}</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">{lang === 'ar' ? 'هاكاثون الإطلاق من 1 مايو – 31 يوليو 2025' : 'Launch Hackathon of May 1 – Jul 31, 2025'}</h1>
       </div>
       
       {/* Hackathon Header */}
