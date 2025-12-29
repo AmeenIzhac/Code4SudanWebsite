@@ -218,5 +218,75 @@ export const knowledgeHubItems: KnowledgeHubItem[] = [
       }
     ],
     videos: []
+  },
+  {
+    id: 'vibe-coding-resources',
+    title: {
+      en: 'Vibe Coding Resources',
+      ar: 'مصادر برمجة الـ "فايب"'
+    },
+    excerpt: {
+      en: 'A starter pack and expert tools to help you go from idea to working prototype in record time.',
+      ar: 'حزمة أدوات للمبتدئين وأدوات متقدمة لمساعدتك على تحويل فكرتك إلى نموذج أولي يعمل في وقت قياسي.'
+    },
+    summary: {
+      en: [
+        'A curated list of modern AI-powered tools and platforms to accelerate your development workflow and build MVPs faster than ever.'
+      ],
+      ar: [
+        'قائمة مختارة من الأدوات والمنصات الحديثة المدعومة بالذكاء الاصطناعي لتسريع سير عمل التطوير وبناء النماذج الأولية أسرع من أي وقت مضى.'
+      ]
+    },
+    sections: [
+      {
+        title: {
+          en: 'The Starter Pack',
+          ar: 'حزمة البداية'
+        },
+        content: {
+          en: [
+            '<ul class="list-disc list-inside space-y-4 text-gray-700 ml-4 mb-4">',
+            '<li><a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Antigravity</a>: A powerful agentic AI coding assistant designed by Google Deepmind for advanced developer tasks.</li>',
+            '<li><a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Google AI Studio</a>: A web-based tool for prototyping with Gemini models, offering a premier playground for Google\'s most capable models like Gemini 2.0.</li>',
+            '<li><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Vercel</a>: A cloud platform that enables developers to host web applications that deploy instantly and scale automatically.</li>',
+            '<li><a href="https://supabase.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Supabase</a>: The open source Firebase alternative, providing a Postgres database, authentication, instant APIs, and edge functions.</li>',
+            '</ul>'
+          ],
+          ar: [
+            '<ul class="list-disc list-inside space-y-4 text-gray-700 ml-4 mb-4">',
+            '<li><a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Antigravity</a>: مساعد برمجة وكيل قوي بالذكاء الاصطناعي من تصميم Google Deepmind لمهام المطورين المتقدمة.</li>',
+            '<li><a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Google AI Studio</a>: أداة قائمة على الويب لتجربة وبرمجة النماذج الأولية باستخدام نماذج Gemini، توفر مساحة لتجربة أحدث النماذج مثل Gemini 2.0.</li>',
+            '<li><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Vercel</a>: منصة سحابية تُمكّن المطورين من استضافة تطبيقات الويب التي تُنشر فوراً وتتوسع تلقائياً.</li>',
+            '<li><a href="https://supabase.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Supabase</a>: البديل مفتوح المصدر لـ Firebase، يوفر قاعدة بيانات Postgres، توثيق الهوية، واجهات برمجة تطبيقات فورية، ووظائف برمجية (Edge Functions).</li>',
+            '</ul>'
+          ]
+        }
+      },
+      {
+        title: {
+          en: 'Alternative Resources',
+          ar: 'مصادر بديلة'
+        },
+        content: {
+          en: [
+            '<ul class="list-disc list-inside space-y-4 text-gray-700 ml-4 mb-4">',
+            '<li><a href="https://bolt.new/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">bolt.new</a>: An AI-powered full-stack web development platform that runs directly in the browser, allowing you to build and deploy apps instantly.</li>',
+            '<li><a href="https://cursor.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Cursor</a>: An AI-first code editor designed for pair programming with AI, which understands your entire codebase.</li>',
+            '<li><a href="https://codeium.com/windsurf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Windsurf</a>: An agentic IDE by Codeium that offers a cohesive AI flow, handling complex coding tasks autonomously.</li>',
+            '<li><a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Firebase</a>: Google\'s mobile and web app development platform that helps you build, improve, and grow your app with ease.</li>',
+            '</ul>'
+          ],
+          ar: [
+            '<ul class="list-disc list-inside space-y-4 text-gray-700 ml-4 mb-4">',
+            '<li><a href="https://bolt.new/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">bolt.new</a>: منصة تطوير ويب متكاملة مدعومة بالذكاء الاصطناعي تعمل مباشرة في المتصفح، مما يتيح لك بناء ونشر التطبيقات فوراً.</li>',
+            '<li><a href="https://cursor.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Cursor</a>: محرر أكواد مصمم خصيصاً للبرمجة المشتركة مع الذكاء الاصطناعي، ويفهم كامل مشروعك البرمجي.</li>',
+            '<li><a href="https://codeium.com/windsurf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Windsurf</a>: بيئة تطوير برمجية (IDE) وكيلة من Codeium توفر تدفقاً متكاملاً للذكاء الاصطناعي وتتعامل مع المهام البرمجية المعقدة بشكل مستقل.</li>',
+            '<li><a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Firebase</a>: منصة تطوير تطبيقات الجوال والويب من Google التي تساعدك على بناء وتحسين وتطوير تطبيقك بسهولة.</li>',
+            '</ul>'
+          ]
+        }
+      }
+    ],
+    videos: []
   }
 ];
