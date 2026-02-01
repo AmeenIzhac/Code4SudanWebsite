@@ -27,16 +27,16 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
 
           {/* Header */}
           <header className="text-center mb-20">
-          <div className="flex items-center justify-center space-x-2 mb-6" dir="ltr">
-          <Code className="w-10 h-10 text-red-600" />
-          <h1 className="text-4xl font-bold text-gray-900">Code4Sudan</h1>
-        </div>
+            <div className="flex items-center justify-center space-x-2 mb-6" dir="ltr">
+              <Code className="w-10 h-10 text-red-600" />
+              <h1 className="text-4xl font-bold text-gray-900">Code4Sudan</h1>
+            </div>
             <p className="text-xl text-gray-600 mb-6">تمكين السودان عبر التكنولوجيا والتعليم</p>
             <p className="mt-6 text-gray-700">
               <strong className="text-gray-900">انضم إلى المجتمع:</strong>{' '}
-              <a 
-                href="https://t.me/+eb1WfhdFFAtkOGU0" 
-                target="_blank" 
+              <a
+                href="https://t.me/+eb1WfhdFFAtkOGU0"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-green-500 hover:text-green-600 transition-colors font-semibold"
               >
@@ -48,14 +48,14 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           {/* Events */}
           <section id="events" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
             <h2 className="text-3xl font-bold mb-8 text-green-600">الفعاليات</h2>
-            
+
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-800">فعاليات سابقة</h3>
                 <ul className="space-y-2">
                   <li>
-                    <Link 
-                      to="/launch-hackathon" 
+                    <Link
+                      to="/launch-hackathon"
                       className="text-red-500 hover:text-red-600 font-medium transition-colors underline decoration-red-200 hover:decoration-red-400"
                     >
                       هاكاثون الإطلاق من 1 مايو - 31 يوليو 2025
@@ -63,16 +63,24 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
                   </li>
                 </ul>
               </div>
-              
+
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">فعاليات قادمة</h3>
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">الفعاليات الحالية</h3>
                 <ul className="space-y-2">
                   <li>
-                    <Link 
-                      to="/hackathon-2" 
+                    <Link
+                      to="/hackathon-2"
                       className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
                     >
                       هاكاثون 2 - 15 نوفمبر 2025 - الحاضر
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/pytorch-hackathon"
+                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
+                    >
+                      هاكاثون PyTorch - آخر موعد للمشاركة 28 فبراير 2025
                     </Link>
                   </li>
                 </ul>
@@ -83,7 +91,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           {/* About */}
           <section id="about" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
             <h2 className="text-3xl font-bold mb-8 text-red-500">عن المبادرة</h2>
-            
+
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-gray-800">رسالتنا</h3>
               <p className="mb-4 leading-relaxed">
@@ -92,7 +100,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
               <p className="mb-6 leading-relaxed">
                 المبادرة تقوم على ركيزتين أساسيتين متساويتين:
               </p>
-              
+
               <div className="mb-6">
                 <h4 className="font-semibold mb-3 text-gray-900">الركيزة التعليمية</h4>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
@@ -137,7 +145,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           {/* How We Work */}
           <section id="how-we-work" className="mb-16 scroll-mt-20">
             <h2 className="text-3xl font-bold mb-8 text-green-600">كيف نعمل</h2>
-            
+
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-gray-800">دعم الناس في السودان</h3>
               <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
@@ -162,14 +170,14 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           {/* Footer */}
           <footer className="text-center pt-12 mt-16 border-t border-gray-200">
             <div className="flex justify-center gap-6 mb-6">
-              <Link 
-                to="/knowledge-hub" 
+              <Link
+                to="/knowledge-hub"
                 className="text-green-600 hover:text-green-700 font-medium transition-colors"
               >
                 مركز المعرفة
               </Link>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="text-green-600 hover:text-green-700 font-medium transition-colors"
               >
                 اتصل بنا
@@ -179,173 +187,181 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
           </footer>
         </>
       ) : (
-    <>
-      {/* Navigation Menu */}
-      <nav className="mb-12 pb-6 border-b border-gray-200">
-        <div className="flex flex-wrap gap-4 justify-start">
-          <a href="#events" className="text-green-600 hover:text-green-700 font-medium transition-colors">Events</a>
-          <a href="#about" className="text-green-600 hover:text-green-700 font-medium transition-colors">About</a>
-          <a href="#blog" className="text-green-600 hover:text-green-700 font-medium transition-colors">Blog</a>
-          <a href="#how-we-work" className="text-green-600 hover:text-green-700 font-medium transition-colors">How We Work</a>
-          <Link to="/knowledge-hub" className="text-green-600 hover:text-green-700 font-medium transition-colors">Knowledge Hub</Link>
-          <Link to="/contact" className="text-green-600 hover:text-green-700 font-medium transition-colors">Contact Us</Link>
-        </div>
-      </nav>
+        <>
+          {/* Navigation Menu */}
+          <nav className="mb-12 pb-6 border-b border-gray-200">
+            <div className="flex flex-wrap gap-4 justify-start">
+              <a href="#events" className="text-green-600 hover:text-green-700 font-medium transition-colors">Events</a>
+              <a href="#about" className="text-green-600 hover:text-green-700 font-medium transition-colors">About</a>
+              <a href="#blog" className="text-green-600 hover:text-green-700 font-medium transition-colors">Blog</a>
+              <a href="#how-we-work" className="text-green-600 hover:text-green-700 font-medium transition-colors">How We Work</a>
+              <Link to="/knowledge-hub" className="text-green-600 hover:text-green-700 font-medium transition-colors">Knowledge Hub</Link>
+              <Link to="/contact" className="text-green-600 hover:text-green-700 font-medium transition-colors">Contact Us</Link>
+            </div>
+          </nav>
 
-      {/* Header */}
-      <header className="text-center mb-20">
-        <div className="flex items-center justify-center space-x-2 mb-6" dir="ltr">
-          <Code className="w-10 h-10 text-red-600" />
-          <h1 className="text-4xl font-bold text-gray-900">Code4Sudan</h1>
-        </div>
-        <p className="text-xl text-gray-600 mb-6">
-          Empowering Sudan through technology and education
-        </p>
-        <p className="mt-6 text-gray-700">
-          <strong className="text-gray-900">Join the community!:</strong>{' '}
-          <a 
-            href="https://t.me/+eb1WfhdFFAtkOGU0" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-green-500 hover:text-green-600 transition-colors font-semibold"
-          >
-            https://t.me/+eb1WfhdFFAtkOGU0
-          </a>
-        </p>
-      </header>
+          {/* Header */}
+          <header className="text-center mb-20">
+            <div className="flex items-center justify-center space-x-2 mb-6" dir="ltr">
+              <Code className="w-10 h-10 text-red-600" />
+              <h1 className="text-4xl font-bold text-gray-900">Code4Sudan</h1>
+            </div>
+            <p className="text-xl text-gray-600 mb-6">
+              Empowering Sudan through technology and education
+            </p>
+            <p className="mt-6 text-gray-700">
+              <strong className="text-gray-900">Join the community!:</strong>{' '}
+              <a
+                href="https://t.me/+eb1WfhdFFAtkOGU0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-500 hover:text-green-600 transition-colors font-semibold"
+              >
+                https://t.me/+eb1WfhdFFAtkOGU0
+              </a>
+            </p>
+          </header>
 
-      {/* Events */}
-      <section id="events" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
-        <h2 className="text-3xl font-bold mb-8 text-green-600">Events</h2>
-        
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-gray-800">Past Events</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link 
-                  to="/launch-hackathon" 
-                  className="text-red-500 hover:text-red-600 font-medium transition-colors underline decoration-red-200 hover:decoration-red-400"
-                >
-                  Launch Hackathon of May 1 - Jul 31, 2025
-                </Link>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-gray-800">Upcoming Events</h3>
+          {/* Events */}
+          <section id="events" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
+            <h2 className="text-3xl font-bold mb-8 text-green-600">Events</h2>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">Past Events</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link
+                      to="/launch-hackathon"
+                      className="text-red-500 hover:text-red-600 font-medium transition-colors underline decoration-red-200 hover:decoration-red-400"
+                    >
+                      Launch Hackathon of May 1 - Jul 31, 2025
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">Current Events</h3>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-              <li>
-                <Link 
-                  to="/hackathon-2" 
-                  className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
-                >
-                  Hackathon 2 - 15th November 2025 - Present
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+                  <li>
+                    <Link
+                      to="/hackathon-2"
+                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
+                    >
+                      Hackathon 2 - 15th November 2025 - Present
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/pytorch-hackathon"
+                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
+                    >
+                      PyTorch Hackathon - Deadline February 28th, 2025
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
-      {/* About */}
-      <section id="about" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
-        <h2 className="text-3xl font-bold mb-8 text-red-500">About</h2>
-        
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-gray-800">Our Mission</h3>
-          <p className="mb-4 leading-relaxed">
-            Our mission is to spread, modernize, and support computer science in Sudan—not only as an educational field but equally as a practical tool to address Sudanese needs.
-          </p>
-          <p className="mb-6 leading-relaxed">
-            The initiative is built on two equally essential pillars:
-          </p>
-          
-          <div className="mb-6">
-            <h4 className="font-semibold mb-3 text-gray-900">Educational Pillar</h4>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
-              <li>Support and improve CS education in Sudan</li>
-              <li>Empower teachers, mentors, and educators with resources</li>
-              <li>Equip students with modern knowledge and practical skills</li>
-            </ul>
-          </div>
+          {/* About */}
+          <section id="about" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
+            <h2 className="text-3xl font-bold mb-8 text-red-500">About</h2>
 
-          <div className="mb-6">
-            <h4 className="font-semibold mb-3 text-gray-900">Production Pillar</h4>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
-              <li>Enable and reward the application of CS to solve Sudan-specific challenges</li>
-              <li>Guide and support innovation that benefits Sudan directly</li>
-              <li>Connect projects and ideas with resources, mentorship, and startup opportunities</li>
-            </ul>
-          </div>
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Our Mission</h3>
+              <p className="mb-4 leading-relaxed">
+                Our mission is to spread, modernize, and support computer science in Sudan—not only as an educational field but equally as a practical tool to address Sudanese needs.
+              </p>
+              <p className="mb-6 leading-relaxed">
+                The initiative is built on two equally essential pillars:
+              </p>
 
-          <p className="text-gray-600 italic">
-            Both pillars are necessary and of equal importance: advancing CS education provides a foundation, while real application brings tangible impact. Solutions are effective only when learning and practical innovation move forward together.
-          </p>
-        </div>
-      </section>
+              <div className="mb-6">
+                <h4 className="font-semibold mb-3 text-gray-900">Educational Pillar</h4>
+                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                  <li>Support and improve CS education in Sudan</li>
+                  <li>Empower teachers, mentors, and educators with resources</li>
+                  <li>Equip students with modern knowledge and practical skills</li>
+                </ul>
+              </div>
 
-      {/* Blog */}
-      <section id="blog" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
-        <h2 className="text-3xl font-bold mb-8 text-red-500">Blog</h2>
-        <div className="grid md:grid-cols-1 gap-6">
-          {blogPosts.map(post => (
-            <BlogCard
-              key={post.id}
-              id={post.id}
-              title={post.title.en}
-              date={post.date}
-              excerpt={post.excerpt.en}
-              lang="en"
-            />
-          ))}
-        </div>
-      </section>
+              <div className="mb-6">
+                <h4 className="font-semibold mb-3 text-gray-900">Production Pillar</h4>
+                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                  <li>Enable and reward the application of CS to solve Sudan-specific challenges</li>
+                  <li>Guide and support innovation that benefits Sudan directly</li>
+                  <li>Connect projects and ideas with resources, mentorship, and startup opportunities</li>
+                </ul>
+              </div>
 
-      {/* How We Work */}
-      <section id="how-we-work" className="mb-16 scroll-mt-20">
-        <h2 className="text-3xl font-bold mb-8 text-green-600">How We Work</h2>
-        
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-gray-800">Supporting People in Sudan</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-            <li>Provide access to education through sessions, tutorials, and lectures</li>
-            <li>Support teachers and educators by funding materials, planning courses, improving curricula, media support, and feedback</li>
-            <li>Reward innovation for Sudan by offering financial incentives, mentorship, expert connections, and startup guidance</li>
-            <li>Connect stakeholders with tech talent: facilitate partnerships between those facing local challenges and people with tech skills who can help solve these problems</li>
-          </ul>
-        </div>
+              <p className="text-gray-600 italic">
+                Both pillars are necessary and of equal importance: advancing CS education provides a foundation, while real application brings tangible impact. Solutions are effective only when learning and practical innovation move forward together.
+              </p>
+            </div>
+          </section>
 
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-gray-800">Engaging the Diaspora</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-            <li>Offer a platform to connect with students, educators, and innovators in Sudan</li>
-            <li>Provide opportunities to teach, mentor, or collaborate remotely</li>
-            <li>Invite diaspora-led solutions that address Sudan's challenges</li>
-            <li>Enable financial contributions to sustain education and innovation programs</li>
-          </ul>
-        </div>
-      </section>
+          {/* Blog */}
+          <section id="blog" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
+            <h2 className="text-3xl font-bold mb-8 text-red-500">Blog</h2>
+            <div className="grid md:grid-cols-1 gap-6">
+              {blogPosts.map(post => (
+                <BlogCard
+                  key={post.id}
+                  id={post.id}
+                  title={post.title.en}
+                  date={post.date}
+                  excerpt={post.excerpt.en}
+                  lang="en"
+                />
+              ))}
+            </div>
+          </section>
 
-      {/* Footer */}
-      <footer className="text-center pt-12 mt-16 border-t border-gray-200">
-        <div className="flex justify-center gap-6 mb-6">
-          <Link 
-            to="/knowledge-hub" 
-            className="text-green-600 hover:text-green-700 font-medium transition-colors"
-          >
-            Knowledge Hub
-          </Link>
-          <Link 
-            to="/contact" 
-            className="text-green-600 hover:text-green-700 font-medium transition-colors"
-          >
-            Contact Us
-          </Link>
-        </div>
-        <p className="text-gray-500">© 2025 Code4Sudan</p>
-      </footer>
+          {/* How We Work */}
+          <section id="how-we-work" className="mb-16 scroll-mt-20">
+            <h2 className="text-3xl font-bold mb-8 text-green-600">How We Work</h2>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Supporting People in Sudan</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>Provide access to education through sessions, tutorials, and lectures</li>
+                <li>Support teachers and educators by funding materials, planning courses, improving curricula, media support, and feedback</li>
+                <li>Reward innovation for Sudan by offering financial incentives, mentorship, expert connections, and startup guidance</li>
+                <li>Connect stakeholders with tech talent: facilitate partnerships between those facing local challenges and people with tech skills who can help solve these problems</li>
+              </ul>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Engaging the Diaspora</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>Offer a platform to connect with students, educators, and innovators in Sudan</li>
+                <li>Provide opportunities to teach, mentor, or collaborate remotely</li>
+                <li>Invite diaspora-led solutions that address Sudan's challenges</li>
+                <li>Enable financial contributions to sustain education and innovation programs</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer className="text-center pt-12 mt-16 border-t border-gray-200">
+            <div className="flex justify-center gap-6 mb-6">
+              <Link
+                to="/knowledge-hub"
+                className="text-green-600 hover:text-green-700 font-medium transition-colors"
+              >
+                Knowledge Hub
+              </Link>
+              <Link
+                to="/contact"
+                className="text-green-600 hover:text-green-700 font-medium transition-colors"
+              >
+                Contact Us
+              </Link>
+            </div>
+            <p className="text-gray-500">© 2025 Code4Sudan</p>
+          </footer>
         </>
       )}
     </>
@@ -356,23 +372,23 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
   return (
     <div className="min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <div className="mb-12">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="inline-flex items-center text-green-500 hover:text-green-600 font-medium transition-colors mb-8"
         >
           {lang === 'ar' ? '← الرجوع للصفحة الرئيسية' : '← Back to Home'}
         </Link>
         <h1 className="text-4xl font-bold text-gray-900 mb-4">{lang === 'ar' ? 'هاكاثون الإطلاق من 1 مايو – 31 يوليو 2025' : 'Launch Hackathon of May 1 – Jul 31, 2025'}</h1>
       </div>
-      
+
       {/* Hackathon Header */}
       <section className="mb-16 pb-16 border-b border-gray-200">
         <h2 className="text-3xl font-bold mb-6 text-green-600">{lang === 'ar' ? 'الهاكاثون' : 'Hackathon'}</h2>
         <p className="mb-2 text-gray-700">
           <strong className="text-gray-900">{lang === 'ar' ? 'الهاكاثون على Devpost:' : 'Hackathon on Devpost:'}</strong>{' '}
-          <a 
-            href="https://code-for-sudan.devpost.com/" 
-            target="_blank" 
+          <a
+            href="https://code-for-sudan.devpost.com/"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-red-500 hover:text-red-600 transition-colors font-semibold"
           >
@@ -384,7 +400,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
       {/* About the Hackathon */}
       <section className="mb-16 pb-16 border-b border-gray-200">
         <h2 className="text-3xl font-bold mb-8 text-red-500">{lang === 'ar' ? 'عن الهاكاثون' : 'About the Hackathon'}</h2>
-        
+
         <div className="mb-8">
           <h3 className="text-xl font-semibold mb-4 text-gray-800">{lang === 'ar' ? 'نبحث عن:' : "We're looking for:"}</h3>
           <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
@@ -418,7 +434,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
       {/* Requirements */}
       <section className="mb-16">
         <h2 className="text-3xl font-bold mb-8 text-red-500">{lang === 'ar' ? 'المتطلبات' : 'Requirements'}</h2>
-        
+
         <div className="mb-8">
           <h3 className="text-xl font-semibold mb-4 text-gray-800">{lang === 'ar' ? 'ماذا تبني' : 'What to Build'}</h3>
           <p className="mb-4 leading-relaxed">
@@ -437,7 +453,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
           <p className="mb-4 leading-relaxed">
             {lang === 'ar' ? 'تُقبل المشاركات بالعربية أو الإنجليزية ويجب أن تتضمن:' : 'Submissions are accepted in Arabic or English and must include:'}
           </p>
-          
+
           <p className="mb-4 text-gray-600 italic">
             {lang === 'ar' ? 'إذا كنت تفضل إبقاء شيفرتك خاصة، أضف "team@code4sudan.com" كمساهم في مستودعك' : 'If you prefer to keep your code private, add "team@code4sudan.com" as a collaborator to your repository'}
           </p>
@@ -477,8 +493,7 @@ function LaunchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
 function Hackathon2Page({ lang }: { lang: 'en' | 'ar' }) {
   const isArabic = lang === 'ar';
   const stageCardClass = (ltr: string, rtl: string): string =>
-    `space-y-4 rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md ${
-      isArabic ? rtl : ltr
+    `space-y-4 rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md ${isArabic ? rtl : ltr
     }`;
 
   return (
@@ -1050,6 +1065,215 @@ function Hackathon2Page({ lang }: { lang: 'en' | 'ar' }) {
   );
 }
 
+function PyTorchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
+  const isArabic = lang === 'ar';
+
+  return (
+    <div
+      className="min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12"
+      dir={isArabic ? 'rtl' : 'ltr'}
+    >
+      <div className="mb-12">
+        <Link
+          to="/"
+          className="inline-flex items-center text-green-500 hover:text-green-600 font-medium transition-colors mb-8"
+        >
+          {isArabic ? '← الرجوع للصفحة الرئيسية' : '← Back to Home'}
+        </Link>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          {isArabic ? 'هاكاثون PyTorch' : 'PyTorch Hackathon'}
+        </h1>
+      </div>
+
+      {isArabic ? (
+        <>
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">نظرة عامة</h2>
+            <p className="mb-4 leading-relaxed">
+              تدعوك مبادرة Code4Sudan للمشاركة في هاكاثون PyTorch! هذه فرصة للمساهمة في مشروع PyTorch.
+            </p>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">كيف تساهم</h2>
+            <p className="mb-4 leading-relaxed">
+              نشجعك على استكشاف <a href="https://pytorch.org/docs/stable/community/contribution_guide.html" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">دليل المساهمة الرسمي لـ PyTorch</a> للاطلاع على القائمة الكاملة من الخيارات. للمبتدئين، نوصي بالخيارات التالية:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>تجاوب على أسئلة الناس في منتدى النقاش.</li>
+              <li>نعمل تيوتوريال جديد.</li>
+              <li>تعدل أو تضيف للتوثيق الموجود.</li>
+              <li>تكتشف مشاكل في الكود و تساعد في حلها.</li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">متطلبات التقديم</h2>
+            <p className="mb-4 leading-relaxed">لتقييم مساهماتك، يرجى تقديم ما يلي:</p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>رابط ملفك الشخصي على GitHub ومنتدى النقاش الخاص بـ PyTorch.</li>
+              <li>شرح مفصل للمساهمة الواحدة التي تفتخر بها أكثر.</li>
+              <li>فقرة قصيرة تلخص جميع مساهماتك التي أكملتها خلال فترة الهاكاثون (إذا قمت بعدة مساهمات).</li>
+              <li>وصف لما كنت تعرفه قبل البدء وما تعلمته في العملية.</li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">لماذا تشارك؟</h2>
+            <p className="mb-4 leading-relaxed">بالإضافة إلى فرصة الفوز بجائزة 100 دولار، تقدم المشاركة في هاكاثون PyTorch العديد من الفوائد القيمة:</p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong className="text-gray-900">ساهم في واحد من أهم مشاريع الذكاء الاصطناعي:</strong> ساهم مباشرة في PyTorch، أحد أهم أطر التعلم العميق في العالم.</li>
+              <li><strong className="text-gray-900">تطوير المهارات والتعلم:</strong> تحدى نفسك واكتسب مهارات تقنية جديدة، وهو محور رئيسي في معايير التحكيم.</li>
+              <li><strong className="text-gray-900">بناء ملفك المهني:</strong> أنشئ مساهمات ظاهرة على ملفاتك في GitHub و PyTorch لتعزيز خبرتك المهنية.</li>
+              <li><strong className="text-gray-900">التواصل مع المجتمع:</strong> تفاعل مع مجتمع PyTorch الرسمي من خلال أنشطة متنوعة مثل الإجابة على الأسئلة أو تحسين التوثيق.</li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">معايير التحكيم</h2>
+            <p className="mb-4 leading-relaxed">سيتم تقييم المشاركات بناءً على الجودة والكمية.</p>
+
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">الجودة</h3>
+              <p className="mb-2 leading-relaxed">نقيّم دقة واكتمال ووضوح وصرامة عملك التقنية. الأسئلة الرئيسية التي نأخذها في الاعتبار:</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                <li>ما مدى دقة مساهمتك؟</li>
+                <li>هل حل ردك على مشكلة ما المشكلة بشكل صحيح؟</li>
+                <li>ما مدى قيمة مساهمتك للمجتمع وقاعدة الكود؟</li>
+                <li>كم تعلمت؟</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">الكمية</h3>
+              <p className="leading-relaxed">هذا يقارن حجم عملك مع المشاركين الآخرين. على سبيل المثال، المشارك الذي حل 10 مشاكل بشكل صحيح سيُرتب أعلى من الذي عالج 3 فقط.</p>
+            </div>
+
+            <div className="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400">
+              <p className="text-gray-700">
+                <strong className="text-gray-900">ملاحظة مهمة:</strong> لا تقم بإرسال رسائل عشوائية في المنتدى. المساهمات العشوائية أو التي لا معنى لها لن تكسب نقاطًا وقد تضر بسمعتك. يرجى احترام العملية من خلال تقديم مساهمات ذات معنى ومدروسة فقط.
+              </p>
+            </div>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">الجدول الزمني</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong className="text-gray-900">فترة التقديم:</strong> آخر موعد للتقديم هو الساعة 5:00 مساءً يوم 28 فبراير 2025.</li>
+              <li><strong className="text-gray-900">إعلان الفائز:</strong> بعد أسبوع واحد من انتهاء فترة التقديم.</li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">الجائزة</h2>
+            <p className="text-xl font-bold text-yellow-500">الفائز بالمركز الأول سيحصل على 100 دولار أمريكي.</p>
+          </section>
+
+          <section>
+            <h2 className="text-3xl font-bold mb-6 text-red-500">الموارد</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>يرجى قراءة هذا الدليل بعناية، حيث يحتوي على جميع المعلومات اللازمة.</li>
+              <li>إذا واجهت صعوبة، لا تتردد في طلب المساعدة في منتدى النقاش.</li>
+            </ul>
+          </section>
+        </>
+      ) : (
+        <>
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">Overview</h2>
+            <p className="mb-4 leading-relaxed">
+              Code4Sudan invites you to participate in our PyTorch Hackathon! This is an opportunity to contribute to the PyTorch project.
+            </p>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">How to Contribute</h2>
+            <p className="mb-4 leading-relaxed">
+              We encourage you to explore the <a href="https://pytorch.org/docs/stable/community/contribution_guide.html" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">official PyTorch contribution guide</a> for a full list of options. For beginners, we recommend the following options from the full list to get started:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Respond to questions in the discussion forum.</li>
+              <li>Develop a new tutorial.</li>
+              <li>Contribute to the existing documentation.</li>
+              <li>Report or investigate issues, including reproducing problems.</li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">Submission Requirements</h2>
+            <p className="mb-4 leading-relaxed">To have your contributions judged, please provide the following:</p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>A link to your profiles on both GitHub and the PyTorch discussion forum.</li>
+              <li>A detailed explanation of the single contribution you are most proud of.</li>
+              <li>A short paragraph summarizing all your contributions completed during the hackathon period (if you made multiple contributions).</li>
+              <li>A description of what you knew before starting and what you learnt in the process.</li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">Why Participate?</h2>
+            <p className="mb-4 leading-relaxed">Beyond the chance to win the 100 USD grand prize, participating in the PyTorch Hackathon offers several valuable benefits:</p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong className="text-gray-900">Make a Meaningful Contribution:</strong> Directly contribute to PyTorch, one of the world's leading deep learning frameworks.</li>
+              <li><strong className="text-gray-900">Skill Development and Learning:</strong> Challenge yourself and acquire new technical skills, which is a key focus of the judging criteria.</li>
+              <li><strong className="text-gray-900">Build Your Portfolio:</strong> Create visible contributions for your GitHub and PyTorch profiles to enhance your professional experience.</li>
+              <li><strong className="text-gray-900">Community Engagement:</strong> Engage with the official PyTorch community through various activities like responding to questions or improving documentation.</li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">Judging Criteria</h2>
+            <p className="mb-4 leading-relaxed">Submissions will be evaluated based on both Quality and Quantity.</p>
+
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">Quality</h3>
+              <p className="mb-2 leading-relaxed">We assess the accuracy, completeness, clarity, and technical rigor of your work. Key questions we consider include:</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                <li>How accurate was your contribution?</li>
+                <li>Did your response to an issue correctly solve the problem?</li>
+                <li>How valuable is your contribution to the community and the codebase?</li>
+                <li>How much did you learn?</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">Quantity</h3>
+              <p className="leading-relaxed">This compares the volume of your work against other participants. For example, a participant who correctly resolved 10 issues will be ranked higher than one who addressed only 3.</p>
+            </div>
+
+            <div className="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400">
+              <p className="text-gray-700">
+                <strong className="text-gray-900">Important Note:</strong> Do not spam the forum. Random or meaningless contributions will not earn points and may harm your reputation. Please respect the process by making only meaningful and well-thought-out contributions.
+              </p>
+            </div>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">Timeline</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong className="text-gray-900">Submission Period:</strong> The submission deadline is scheduled for 5:00 PM on February 28th, 2025.</li>
+              <li><strong className="text-gray-900">Winner Announcement:</strong> One week after the submission deadline.</li>
+            </ul>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">Prize</h2>
+            <p className="text-xl font-bold text-yellow-500">The first-place winner will receive 100 USD.</p>
+          </section>
+
+          <section>
+            <h2 className="text-3xl font-bold mb-6 text-red-500">Resources</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Please read this guide carefully, as it contains all the necessary information.</li>
+              <li>If you get stuck, don't hesitate to ask for help in the discussion forum.</li>
+            </ul>
+          </section>
+        </>
+      )}
+    </div>
+  );
+}
+
 function App() {
   const [lang, setLang] = useState<'en' | 'ar'>('en');
   return (
@@ -1082,6 +1306,7 @@ function App() {
         <Route path="/" element={<HomePage lang={lang} />} />
         <Route path="/launch-hackathon" element={<LaunchHackathonPage lang={lang} />} />
         <Route path="/hackathon-2" element={<Hackathon2Page lang={lang} />} />
+        <Route path="/pytorch-hackathon" element={<PyTorchHackathonPage lang={lang} />} />
         <Route path="/blog/:id" element={<BlogPost lang={lang} />} />
         <Route path="/contact" element={<ContactUsPage lang={lang} />} />
         <Route path="/knowledge-hub" element={<KnowledgeHubPage lang={lang} />} />
