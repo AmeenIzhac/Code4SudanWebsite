@@ -83,6 +83,14 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
                       هاكاثون PyTorch - آخر موعد للمشاركة 28 فبراير 2025
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to="/workshop-signup"
+                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
+                    >
+                      سجّل لقيادة ورشة عمل!
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -258,6 +266,14 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
                       className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
                     >
                       PyTorch Hackathon - Deadline February 28th, 2025
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/workshop-signup"
+                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
+                    >
+                      Sign-up to Lead a Workshop!
                     </Link>
                   </li>
                 </ul>
@@ -1274,6 +1290,201 @@ function PyTorchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
   );
 }
 
+function WorkshopSignupPage({ lang }: { lang: 'en' | 'ar' }) {
+  const isArabic = lang === 'ar';
+
+  return (
+    <div
+      className="min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12"
+      dir={isArabic ? 'rtl' : 'ltr'}
+    >
+      <div className="mb-12">
+        <Link
+          to="/"
+          className="inline-flex items-center text-green-500 hover:text-green-600 font-medium transition-colors mb-8"
+        >
+          {isArabic ? '← الرجوع للصفحة الرئيسية' : '← Back to Home'}
+        </Link>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          {isArabic ? 'سجّل لقيادة ورشة عمل!' : 'Sign-up to Lead a Workshop!'}
+        </h1>
+      </div>
+
+      {isArabic ? (
+        <>
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">نظرة عامة</h2>
+            <p className="mb-4 leading-relaxed">
+              ندعوك للانضمام إلى مبادرة Code4Sudan عبر قيادة ورشة عمل. نعني بـ"ورشة العمل" أي تجربة تعليمية تفاعلية وجذابة في علوم الحاسوب. لها ثلاثة متطلبات أساسية:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
+              <li>يجب أن تكون مرتبطة بعلوم الحاسوب.</li>
+              <li>يجب على المشاركين أداء قدر من العمل.</li>
+              <li>يجب أن يتلقى المشاركون ملاحظات على عملهم من قائد الورشة.</li>
+            </ul>
+            <p className="mb-4 leading-relaxed">
+              الصيغة والمدة مرنة تمامًا لتناسب احتياجاتك. يمكن أن تكون الورش افتراضية أو حضورية، وتتراوح من يوم واحد إلى شهر، ولثلاثة مشاركين أو مئة، ويمكن أن تكون غير متزامنة أو متزامنة أو مزيجًا من الاثنين. ستساعد Code4Sudan في التحضير واستقطاب المشاركين والإعلان، وقد تقدم جوائز صغيرة للمشاركين حسب توفر التمويل. ما يلي يوضح ما نفكر فيه، لكن إذا كانت لديك فكرة مختلفة تعتقد أنها تتماشى مع ركائز Code4Sudan (<a href="https://code4sudan.com/#about" className="text-green-600 hover:text-green-700 transition-colors">https://code4sudan.com/#about</a>)، فنحن حريصون على سماعها.
+            </p>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">من نبحث عنه</h2>
+            <p className="mb-4 leading-relaxed">
+              نبحث عن أفراد يتمتعون بخبرة قوية في علوم الحاسوب ومتحمسين لمشاركة معرفتهم مع الناس في السودان من خلال صيغة تفاعلية وجذابة.
+            </p>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">مسؤولياتك كقائد ورشة</h2>
+            <p className="mb-4 leading-relaxed">
+              يتضمن دورك أربع مراحل رئيسية:
+            </p>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">1. تحديد هدف التعلم والمهمة:</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>حدد المهارة أو المعرفة المحددة التي سيكتسبها المشاركون.</li>
+                <li>حدد مهمة عملية أو مشروعًا محددًا كهدف.</li>
+                <li>أمثلة: استخدام التعلم الآلي لتحليل صور الأقمار الصناعية للسودان، إعادة تنفيذ خوارزمية معينة، ضبط نموذج لغوي كبير مفتوح المصدر، المساهمة في البرمجيات مفتوحة المصدر، أو تنظيم مسابقة التقاط العلم. يمكن أن تكون المهمة أيضًا عملًا نظريًا، مثل حل مسائل رياضية أو إثبات نظرية. الاحتمالات واسعة، لذا كن مبدعًا!</li>
+                <li>نحن مهتمون بشكل خاص بالموضوعات المتوسطة إلى المتقدمة، حيث أن الموضوعات التمهيدية (خاصة في الذكاء الاصطناعي) متاحة بسهولة في كثير من الأحيان. أمثلة على الموضوعات التمهيدية التي لا نبحث عنها: "كيفية تدريب شبكة عصبية في PyTorch" أو "مقدمة في Python".</li>
+              </ul>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">2. توثيق المهمة بوضوح:</h3>
+              <p className="mb-2">اكتب وصفًا شاملاً للمهمة، يتضمن:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>الخطوات المطلوبة للمشاركين.</li>
+                <li>أي مواعيد نهائية للتسليم.</li>
+                <li>معايير التقييم.</li>
+              </ul>
+              <p className="mt-2 text-gray-600 italic">
+                (يمكنك الاستلهام من هاكاثوناتنا السابقة: <a href="https://code-for-sudan.devpost.com/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">https://code-for-sudan.devpost.com/</a>)
+              </p>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">3. توفير الموارد والإرشاد:</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>قدم مواد بداية، والتي يمكن أن تكون محتوى تنشئه أنت أو موارد موجودة على الإنترنت.</li>
+                <li>لديك خيار إجراء جلسة واحدة أو أكثر مباشرة للإرشاد والشرح والأسئلة والأجوبة.</li>
+              </ul>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">4. التقييم وتقديم ملاحظات بناءة:</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>راجع المشاريع المكتملة من المشاركين.</li>
+                <li>قدم ملاحظات مدروسة وبناءة على عملهم.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">سجّل الآن</h2>
+            <p className="mb-4 leading-relaxed">
+              إذا كنت مهتمًا بقيادة ورشة عمل، يرجى ملء نموذج التسجيل أدناه:
+            </p>
+            <a
+              href="https://docs.google.com/forms/d/1inIl0viAQ9OU6l8LuGalthC8KiVRX9mBgg-jR9YhxnU/viewform?pli=1&pli=1&edit_requested=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+            >
+              نموذج التسجيل
+            </a>
+          </section>
+        </>
+      ) : (
+        <>
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">Overview</h2>
+            <p className="mb-4 leading-relaxed">
+              We invite you to join the Code4Sudan initiative by leading a workshop. By "workshop," we mean any engaging, interactive computer science learning experience. It has three main requirements:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-6">
+              <li>It must be related to Computer Science (CS).</li>
+              <li>Participants must perform some amount of work.</li>
+              <li>Participants must receive some feedback on their work from the workshop lead.</li>
+            </ul>
+            <p className="mb-4 leading-relaxed">
+              The format and duration are completely flexible to fit your needs. Workshops can be virtual or in-person, ranging from a single day to a month, can be for three participants or a hundred, and can be asynchronous, synchronous, or a mix of both. Code4Sudan will assist with preparation, participant recruitment, and advertising, and may offer small prizes for the participants depending on funding availability. The following details what we have in mind, but if you have an idea that differs but you think it aligns with the pillars of Code4Sudan (<a href="https://code4sudan.com/#about" className="text-green-600 hover:text-green-700 transition-colors">https://code4sudan.com/#about</a>), then we would be keen to hear it.
+            </p>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">Who We're Looking For</h2>
+            <p className="mb-4 leading-relaxed">
+              We are seeking individuals with strong Computer Science expertise who are enthusiastic about sharing their knowledge with people in Sudan through an engaging, interactive format.
+            </p>
+          </section>
+
+          <section className="mb-16 pb-16 border-b border-gray-200">
+            <h2 className="text-3xl font-bold mb-6 text-green-600">Your Responsibilities as a Workshop Lead</h2>
+            <p className="mb-4 leading-relaxed">
+              Your role involves four key stages:
+            </p>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">1. Define the Learning Objective and Task:</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>Determine the specific skill or knowledge participants will gain.</li>
+                <li>Define a specific practical task or project as the goal.</li>
+                <li>Examples: Using Machine Learning to analyze satellite imagery of Sudan, reimplementing a specific algorithm, fine-tuning an open-source Large Language Model (LLM), contributing to open-source software, or organizing a capture-the-flag competition. The task can also be theoretical work, such as solving mathematical problems or proving a theorem. The possibilities are vast, so feel free to be creative!</li>
+                <li>We are particularly interested in intermediate to advanced topics, as introductory topics (especially in AI) are often readily available. Examples of introductory topics we are not seeking include: "How to train a neural network in PyTorch" or "Introduction to Python."</li>
+              </ul>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">2. Clearly Document the Task:</h3>
+              <p className="mb-2">Write a comprehensive description of the task, including:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>The required steps for participants.</li>
+                <li>Any relevant submission deadlines.</li>
+                <li>The evaluation criteria.</li>
+              </ul>
+              <p className="mt-2 text-gray-600 italic">
+                (Inspiration can be found in our previous hackathons: <a href="https://code-for-sudan.devpost.com/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">https://code-for-sudan.devpost.com/</a>)
+              </p>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">3. Provide Resources and Guidance:</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>Offer starting materials, which can be content you create or existing online resources.</li>
+                <li>You have the option to conduct one or more live sessions for guidance, walk-throughs, and Q&A.</li>
+              </ul>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">4. Evaluate and Give Constructive Feedback:</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>Review the completed submissions from participants.</li>
+                <li>Provide thoughtful and constructive feedback on their work.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold mb-6 text-red-500">Sign Up Now</h2>
+            <p className="mb-4 leading-relaxed">
+              If you are interested in leading a workshop, please fill out the sign-up form below:
+            </p>
+            <a
+              href="https://docs.google.com/forms/d/1inIl0viAQ9OU6l8LuGalthC8KiVRX9mBgg-jR9YhxnU/viewform?pli=1&pli=1&edit_requested=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+            >
+              Sign-up Form
+            </a>
+          </section>
+        </>
+      )}
+    </div>
+  );
+}
+
 function App() {
   const [lang, setLang] = useState<'en' | 'ar'>('en');
   return (
@@ -1307,6 +1518,7 @@ function App() {
         <Route path="/launch-hackathon" element={<LaunchHackathonPage lang={lang} />} />
         <Route path="/hackathon-2" element={<Hackathon2Page lang={lang} />} />
         <Route path="/pytorch-hackathon" element={<PyTorchHackathonPage lang={lang} />} />
+        <Route path="/workshop-signup" element={<WorkshopSignupPage lang={lang} />} />
         <Route path="/blog/:id" element={<BlogPost lang={lang} />} />
         <Route path="/contact" element={<ContactUsPage lang={lang} />} />
         <Route path="/knowledge-hub" element={<KnowledgeHubPage lang={lang} />} />
