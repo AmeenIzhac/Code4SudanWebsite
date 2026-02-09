@@ -1,5 +1,5 @@
 import { Code } from 'lucide-react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { BlogCard } from './components/BlogCard';
 import { BlogPost } from './components/BlogPost';
@@ -9,378 +9,481 @@ import { KnowledgeHubPage } from './components/KnowledgeHubPage';
 import { blogPosts } from './data/blogData';
 
 function HomePage({ lang }: { lang: 'en' | 'ar' }) {
+  const isArabic = lang === 'ar';
+
   return (
-    <>
-      {lang === 'ar' ? (
-        <>
-          {/* Navigation Menu */}
-          <nav className="mb-12 pb-6 border-b border-gray-200">
-            <div className="flex flex-wrap gap-4 justify-start">
-              <a href="#events" className="text-green-600 hover:text-green-700 font-medium transition-colors">الفعاليات</a>
-              <a href="#about" className="text-green-600 hover:text-green-700 font-medium transition-colors">عن المبادرة</a>
-              <a href="#blog" className="text-green-600 hover:text-green-700 font-medium transition-colors">المدونة</a>
-              <a href="#how-we-work" className="text-green-600 hover:text-green-700 font-medium transition-colors">كيف نعمل</a>
-              <Link to="/knowledge-hub" className="text-green-600 hover:text-green-700 font-medium transition-colors">مركز المعرفة</Link>
-              <Link to="/contact" className="text-green-600 hover:text-green-700 font-medium transition-colors">اتصل بنا</Link>
-            </div>
-          </nav>
+    <div className="min-h-screen" dir={isArabic ? 'rtl' : 'ltr'}>
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(/sud1.jpeg)' }}
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 hero-overlay" />
 
-          {/* Header */}
-          <header className="text-center mb-20">
-            <div className="flex items-center justify-center space-x-2 mb-6" dir="ltr">
-              <Code className="w-10 h-10 text-red-600" />
-              <h1 className="text-4xl font-bold text-gray-900">Code4Sudan</h1>
+        {/* Simple Text Navigation */}
+        <nav className="absolute top-0 left-0 right-0 z-20 pt-8 px-8">
+          <div className="max-w-6xl mx-auto flex justify-center gap-8 md:gap-12" dir="ltr">
+            <a href="#events" className="text-white/90 hover:text-white text-sm md:text-base font-medium tracking-wide transition-colors">
+              {isArabic ? 'الفعاليات' : 'Events'}
+            </a>
+            <a href="#about" className="text-white/90 hover:text-white text-sm md:text-base font-medium tracking-wide transition-colors">
+              {isArabic ? 'عن المبادرة' : 'About'}
+            </a>
+            <a href="#blog" className="text-white/90 hover:text-white text-sm md:text-base font-medium tracking-wide transition-colors">
+              {isArabic ? 'المدونة' : 'Blog'}
+            </a>
+            <Link to="/knowledge-hub" className="text-white/90 hover:text-white text-sm md:text-base font-medium tracking-wide transition-colors">
+              {isArabic ? 'المعرفة' : 'Knowledge'}
+            </Link>
+            <Link to="/contact" className="text-white/90 hover:text-white text-sm md:text-base font-medium tracking-wide transition-colors">
+              {isArabic ? 'اتصل بنا' : 'Contact'}
+            </Link>
+          </div>
+        </nav>
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+          <div className="animate-fade-up">
+            <div className="flex items-center justify-center gap-3 mb-6" dir="ltr">
+              <Code className="w-12 h-12 text-[#D4A853]" />
+              <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight">
+                Code4Sudan
+              </h1>
             </div>
-            <p className="text-xl text-gray-600 mb-6">تمكين السودان عبر التكنولوجيا والتعليم</p>
-            <p className="mt-6 text-gray-700">
-              <strong className="text-gray-900">انضم إلى المجتمع:</strong>{' '}
-              <a
-                href="https://t.me/+eb1WfhdFFAtkOGU0"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green-500 hover:text-green-600 transition-colors font-semibold"
-              >
-                https://t.me/+eb1WfhdFFAtkOGU0
+            <p className="text-xl md:text-2xl text-white/90 mb-4 font-medium">
+              {isArabic
+                ? 'تمكين السودان عبر التكنولوجيا والتعليم'
+                : 'Empowering Sudan through technology and education'}
+            </p>
+            <p className="text-lg text-white/70 mb-10 max-w-2xl mx-auto">
+              {isArabic
+                ? 'نشر وتحديث ودعم علوم الحاسوب في السودان — كمجال تعليمي وأداة عملية لمعالجة احتياجات السودان'
+                : 'Spreading, modernizing, and supporting computer science in Sudan—as both an educational field and a practical tool to address Sudanese needs'}
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up animate-delay-200">
+            <a
+              href="https://t.me/+eb1WfhdFFAtkOGU0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary text-lg px-8 py-4"
+            >
+              {isArabic ? 'انضم إلى المجتمع' : 'Join the Community'}
+            </a>
+            <a href="#events" className="btn btn-outline text-lg px-8 py-4">
+              {isArabic ? 'الفعاليات الحالية' : 'Current Events'}
+            </a>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-slow">
+          <svg className="w-8 h-8 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section id="about" className="section bg-cream scroll-mt-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="section-title text-primary">
+              {isArabic ? 'رسالتنا' : 'Our Mission'}
+            </h2>
+            <p className="section-subtitle mx-auto">
+              {isArabic
+                ? 'المبادرة تقوم على ركيزتين أساسيتين متساويتين'
+                : 'The initiative is built on two equally essential pillars'}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Educational Pillar */}
+            <div className="feature-card">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">
+                  {isArabic ? 'الركيزة التعليمية' : 'Educational Pillar'}
+                </h3>
+              </div>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  {isArabic ? 'دعم وتحسين تعليم علوم الحاسوب في السودان' : 'Support and improve CS education in Sudan'}
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  {isArabic ? 'تمكين المعلمين والموجهين بالمصادر' : 'Empower teachers, mentors, and educators with resources'}
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  {isArabic ? 'تزويد الطلاب بالمعرفة والمهارات العملية الحديثة' : 'Equip students with modern knowledge and practical skills'}
+                </li>
+              </ul>
+            </div>
+
+            {/* Production Pillar */}
+            <div className="feature-card" style={{ borderColor: 'var(--color-accent)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">
+                  {isArabic ? 'ركيزة الإنتاج' : 'Production Pillar'}
+                </h3>
+              </div>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  {isArabic ? 'تمكين ومكافأة تطبيق علوم الحاسوب لحل التحديات السودانية' : 'Enable and reward the application of CS to solve Sudan-specific challenges'}
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  {isArabic ? 'توجيه ودعم الابتكار الذي يفيد السودان مباشرة' : 'Guide and support innovation that benefits Sudan directly'}
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  {isArabic ? 'ربط المشاريع والأفكار بالموارد والإرشاد وفرص الشركات الناشئة' : 'Connect projects and ideas with resources, mentorship, and startup opportunities'}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-center text-gray-500 italic mt-10 max-w-3xl mx-auto">
+            {isArabic
+              ? 'كلا الركيزتين ضروريتان وبنفس الأهمية: تطوير التعليم يؤسس القاعدة، بينما التطبيق الواقعي يحقق الأثر.'
+              : 'Both pillars are necessary and of equal importance: advancing CS education provides a foundation, while real application brings tangible impact.'}
+          </p>
+        </div>
+      </section>
+
+      {/* Events Section */}
+      <section id="events" className="section bg-white scroll-mt-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="section-title text-primary">
+              {isArabic ? 'الفعاليات' : 'Events'}
+            </h2>
+            <p className="section-subtitle mx-auto">
+              {isArabic ? 'انضم إلى فعالياتنا وكن جزءاً من التغيير' : 'Join our events and be part of the change'}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {/* Current Events */}
+            <Link to="/hackathon-2" className="card group cursor-pointer">
+              <div className="card-body">
+                <span className="badge badge-active mb-3">
+                  {isArabic ? 'نشط' : 'Active'}
+                </span>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                  {isArabic ? 'هاكاثون 2' : 'Hackathon 2'}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {isArabic
+                    ? '15 نوفمبر 2025 - الحاضر'
+                    : '15th November 2025 - Present'}
+                </p>
+                <span className="text-primary font-medium text-sm group-hover:underline">
+                  {isArabic ? 'اعرف المزيد ←' : 'Learn more →'}
+                </span>
+              </div>
+            </Link>
+
+            <Link to="/pytorch-hackathon" className="card group cursor-pointer">
+              <div className="card-body">
+                <span className="badge badge-active mb-3">
+                  {isArabic ? 'نشط' : 'Active'}
+                </span>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                  {isArabic ? 'هاكاثون PyTorch' : 'PyTorch Hackathon'}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {isArabic
+                    ? 'آخر موعد للمشاركة 28 فبراير 2025'
+                    : 'Deadline February 28th, 2025'}
+                </p>
+                <span className="text-primary font-medium text-sm group-hover:underline">
+                  {isArabic ? 'اعرف المزيد ←' : 'Learn more →'}
+                </span>
+              </div>
+            </Link>
+
+            <Link to="/workshop-signup" className="card group cursor-pointer">
+              <div className="card-body">
+                <span className="badge badge-active mb-3">
+                  {isArabic ? 'مفتوح' : 'Open'}
+                </span>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                  {isArabic ? 'قيادة ورشة عمل' : 'Lead a Workshop'}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {isArabic
+                    ? 'سجّل لقيادة ورشة عمل!'
+                    : 'Sign-up to lead a workshop!'}
+                </p>
+                <span className="text-primary font-medium text-sm group-hover:underline">
+                  {isArabic ? 'سجل الآن ←' : 'Sign up now →'}
+                </span>
+              </div>
+            </Link>
+          </div>
+
+          {/* Past Events */}
+          <div className="border-t border-gray-200 pt-8">
+            <h3 className="text-lg font-semibold text-gray-700 mb-4">
+              {isArabic ? 'فعاليات سابقة' : 'Past Events'}
+            </h3>
+            <Link
+              to="/launch-hackathon"
+              className="inline-flex items-center text-gray-500 hover:text-accent transition-colors"
+            >
+              <span className="badge badge-past mr-3">{isArabic ? 'منتهي' : 'Completed'}</span>
+              {isArabic
+                ? 'هاكاثون الإطلاق من 1 مايو - 31 يوليو 2025'
+                : 'Launch Hackathon of May 1 - Jul 31, 2025'}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section id="blog" className="section bg-cream scroll-mt-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="section-title text-accent">
+              {isArabic ? 'المدونة' : 'Blog'}
+            </h2>
+            <p className="section-subtitle mx-auto">
+              {isArabic ? 'أحدث المقالات والأفكار' : 'Latest articles and insights'}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {blogPosts.slice(0, 3).map(post => (
+              <BlogCard
+                key={post.id}
+                id={post.id}
+                title={isArabic ? post.title.ar : post.title.en}
+                date={post.date}
+                excerpt={isArabic ? post.excerpt.ar : post.excerpt.en}
+                lang={lang}
+              />
+            ))}
+          </div>
+
+          {blogPosts.length > 3 && (
+            <div className="text-center mt-10">
+              <a href="#blog" className="btn btn-outline border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white">
+                {isArabic ? 'عرض جميع المقالات' : 'View All Articles'}
               </a>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* How We Work Section */}
+      <section id="how-we-work" className="section bg-white scroll-mt-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="section-title text-primary">
+              {isArabic ? 'كيف نعمل' : 'How We Work'}
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Supporting People in Sudan */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">
+                  {isArabic ? 'دعم الناس في السودان' : 'Supporting People in Sudan'}
+                </h3>
+              </div>
+              <ul className="space-y-4 text-gray-600">
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="w-2 h-2 rounded-full bg-primary"></span>
+                  </span>
+                  {isArabic
+                    ? 'توفير الوصول للتعليم عبر الجلسات والدروس والمحاضرات'
+                    : 'Provide access to education through sessions, tutorials, and lectures'}
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="w-2 h-2 rounded-full bg-primary"></span>
+                  </span>
+                  {isArabic
+                    ? 'دعم المعلمين من خلال تمويل المواد والتخطيط وتحسين المناهج'
+                    : 'Support teachers by funding materials, planning courses, and improving curricula'}
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="w-2 h-2 rounded-full bg-primary"></span>
+                  </span>
+                  {isArabic
+                    ? 'مكافأة الابتكار عبر الحوافز المالية والإرشاد'
+                    : 'Reward innovation through financial incentives and mentorship'}
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="w-2 h-2 rounded-full bg-primary"></span>
+                  </span>
+                  {isArabic
+                    ? 'ربط أصحاب التحديات بالمواهب التقنية لإيجاد حلول عملية'
+                    : 'Connect stakeholders with tech talent to find practical solutions'}
+                </li>
+              </ul>
+            </div>
+
+            {/* Engaging the Diaspora */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                  <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">
+                  {isArabic ? 'التواصل مع الشتات' : 'Engaging the Diaspora'}
+                </h3>
+              </div>
+              <ul className="space-y-4 text-gray-600">
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="w-2 h-2 rounded-full bg-secondary"></span>
+                  </span>
+                  {isArabic
+                    ? 'توفير منصة للتواصل مع الطلاب والمعلمين والمبتكرين في السودان'
+                    : 'Offer a platform to connect with students, educators, and innovators in Sudan'}
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="w-2 h-2 rounded-full bg-secondary"></span>
+                  </span>
+                  {isArabic
+                    ? 'إتاحة فرص للتدريس والإرشاد أو التعاون عن بُعد'
+                    : 'Provide opportunities to teach, mentor, or collaborate remotely'}
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="w-2 h-2 rounded-full bg-secondary"></span>
+                  </span>
+                  {isArabic
+                    ? 'دعوة حلول يقودها الشتات لمعالجة تحديات السودان'
+                    : "Invite diaspora-led solutions that address Sudan's challenges"}
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="w-2 h-2 rounded-full bg-secondary"></span>
+                  </span>
+                  {isArabic
+                    ? 'تمكين المساهمات المالية لاستدامة برامج التعليم والابتكار'
+                    : 'Enable financial contributions to sustain education and innovation programs'}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section bg-primary text-white text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            {isArabic ? 'انضم إلى مجتمعنا' : 'Join Our Community'}
+          </h2>
+          <p className="text-xl text-white/80 mb-8">
+            {isArabic
+              ? 'كن جزءاً من الحركة لتمكين السودان عبر التكنولوجيا'
+              : 'Be part of the movement to empower Sudan through technology'}
+          </p>
+          <a
+            href="https://t.me/+eb1WfhdFFAtkOGU0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary text-lg px-10 py-4"
+          >
+            {isArabic ? 'انضم عبر تيليجرام' : 'Join on Telegram'}
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-2 mb-4" dir="ltr">
+                <Code className="w-8 h-8 text-[#D4A853]" />
+                <span className="text-xl font-bold text-white">Code4Sudan</span>
+              </div>
+              <p className="text-gray-400">
+                {isArabic
+                  ? 'تمكين السودان عبر التكنولوجيا والتعليم'
+                  : 'Empowering Sudan through technology and education'}
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-white font-semibold mb-4">
+                {isArabic ? 'روابط سريعة' : 'Quick Links'}
+              </h4>
+              <ul className="space-y-2">
+                <li><a href="#about" className="footer-link">{isArabic ? 'عن المبادرة' : 'About'}</a></li>
+                <li><a href="#events" className="footer-link">{isArabic ? 'الفعاليات' : 'Events'}</a></li>
+                <li><a href="#blog" className="footer-link">{isArabic ? 'المدونة' : 'Blog'}</a></li>
+                <li><Link to="/knowledge-hub" className="footer-link">{isArabic ? 'مركز المعرفة' : 'Knowledge Hub'}</Link></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="text-white font-semibold mb-4">
+                {isArabic ? 'تواصل معنا' : 'Get in Touch'}
+              </h4>
+              <ul className="space-y-2">
+                <li><Link to="/contact" className="footer-link">{isArabic ? 'اتصل بنا' : 'Contact Us'}</Link></li>
+                <li>
+                  <a
+                    href="https://t.me/+eb1WfhdFFAtkOGU0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-link"
+                  >
+                    Telegram
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 pt-8 text-center">
+            <p className="text-gray-500">
+              © 2025 {isArabic ? 'كود فور سودان' : 'Code4Sudan'}. {isArabic ? 'جميع الحقوق محفوظة' : 'All rights reserved'}.
             </p>
-          </header>
-
-          {/* Events */}
-          <section id="events" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
-            <h2 className="text-3xl font-bold mb-8 text-green-600">الفعاليات</h2>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">فعاليات سابقة</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      to="/launch-hackathon"
-                      className="text-red-500 hover:text-red-600 font-medium transition-colors underline decoration-red-200 hover:decoration-red-400"
-                    >
-                      هاكاثون الإطلاق من 1 مايو - 31 يوليو 2025
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">الفعاليات الحالية</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      to="/hackathon-2"
-                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
-                    >
-                      هاكاثون 2 - 15 نوفمبر 2025 - الحاضر
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/pytorch-hackathon"
-                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
-                    >
-                      هاكاثون PyTorch - آخر موعد للمشاركة 28 فبراير 2025
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/workshop-signup"
-                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
-                    >
-                      سجّل لقيادة ورشة عمل!
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* About */}
-          <section id="about" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
-            <h2 className="text-3xl font-bold mb-8 text-red-500">عن المبادرة</h2>
-
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">رسالتنا</h3>
-              <p className="mb-4 leading-relaxed">
-                رسالتنا هي نشر وتحديث ودعم علوم الحاسوب في السودان — ليس كمجال تعليمي فحسب، بل أيضًا كأداة عملية لمعالجة احتياجات السودان.
-              </p>
-              <p className="mb-6 leading-relaxed">
-                المبادرة تقوم على ركيزتين أساسيتين متساويتين:
-              </p>
-
-              <div className="mb-6">
-                <h4 className="font-semibold mb-3 text-gray-900">الركيزة التعليمية</h4>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
-                  <li>دعم وتحسين تعليم علوم الحاسوب في السودان</li>
-                  <li>تمكين المعلمين والموجهين بالمصادر</li>
-                  <li>تزويد الطلاب بالمعرفة والمهارات العملية الحديثة</li>
-                </ul>
-              </div>
-
-              <div className="mb-6">
-                <h4 className="font-semibold mb-3 text-gray-900">ركيزة الإنتاج</h4>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
-                  <li>تمكين ومكافأة تطبيق علوم الحاسوب لحل التحديات السودانية</li>
-                  <li>توجيه ودعم الابتكار الذي يفيد السودان مباشرة</li>
-                  <li>ربط المشاريع والأفكار بالموارد والإرشاد وفرص الشركات الناشئة</li>
-                </ul>
-              </div>
-
-              <p className="text-gray-600 italic">
-                كلا الركيزتين ضروريتان وبنفس الأهمية: تطوير التعليم يؤسس القاعدة، بينما التطبيق الواقعي يحقق الأثر. تكون الحلول فعالة فقط عندما يتقدم التعلم والابتكار العملي معًا.
-              </p>
-            </div>
-          </section>
-
-          {/* Blog */}
-          <section id="blog" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
-            <h2 className="text-3xl font-bold mb-8 text-red-500">المدونة</h2>
-            <div className="grid md:grid-cols-1 gap-6">
-              {blogPosts.map(post => (
-                <BlogCard
-                  key={post.id}
-                  id={post.id}
-                  title={post.title.ar}
-                  date={post.date}
-                  excerpt={post.excerpt.ar}
-                  lang="ar"
-                />
-              ))}
-            </div>
-          </section>
-
-          {/* How We Work */}
-          <section id="how-we-work" className="mb-16 scroll-mt-20">
-            <h2 className="text-3xl font-bold mb-8 text-green-600">كيف نعمل</h2>
-
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">دعم الناس في السودان</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                <li>توفير الوصول للتعليم عبر الجلسات والدروس والمحاضرات</li>
-                <li>دعم المعلمين من خلال تمويل المواد والتخطيط وتحسين المناهج والدعم الإعلامي والتغذية الراجعة</li>
-                <li>مكافأة الابتكار عبر الحوافز المالية والإرشاد والربط بالخبراء وتوجيه ريادة الأعمال</li>
-                <li>ربط أصحاب التحديات بالمواهب التقنية لإيجاد حلول عملية</li>
-              </ul>
-            </div>
-
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">التواصل مع الشتات</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                <li>توفير منصة للتواصل مع الطلاب والمعلمين والمبتكرين في السودان</li>
-                <li>إتاحة فرص للتدريس والإرشاد أو التعاون عن بُعد</li>
-                <li>دعوة حلول يقودها الشتات لمعالجة تحديات السودان</li>
-                <li>تمكين المساهمات المالية لاستدامة برامج التعليم والابتكار</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Footer */}
-          <footer className="text-center pt-12 mt-16 border-t border-gray-200">
-            <div className="flex justify-center gap-6 mb-6">
-              <Link
-                to="/knowledge-hub"
-                className="text-green-600 hover:text-green-700 font-medium transition-colors"
-              >
-                مركز المعرفة
-              </Link>
-              <Link
-                to="/contact"
-                className="text-green-600 hover:text-green-700 font-medium transition-colors"
-              >
-                اتصل بنا
-              </Link>
-            </div>
-            <p className="text-gray-500">© 2025 كود فور سودان</p>
-          </footer>
-        </>
-      ) : (
-        <>
-          {/* Navigation Menu */}
-          <nav className="mb-12 pb-6 border-b border-gray-200">
-            <div className="flex flex-wrap gap-4 justify-start">
-              <a href="#events" className="text-green-600 hover:text-green-700 font-medium transition-colors">Events</a>
-              <a href="#about" className="text-green-600 hover:text-green-700 font-medium transition-colors">About</a>
-              <a href="#blog" className="text-green-600 hover:text-green-700 font-medium transition-colors">Blog</a>
-              <a href="#how-we-work" className="text-green-600 hover:text-green-700 font-medium transition-colors">How We Work</a>
-              <Link to="/knowledge-hub" className="text-green-600 hover:text-green-700 font-medium transition-colors">Knowledge Hub</Link>
-              <Link to="/contact" className="text-green-600 hover:text-green-700 font-medium transition-colors">Contact Us</Link>
-            </div>
-          </nav>
-
-          {/* Header */}
-          <header className="text-center mb-20">
-            <div className="flex items-center justify-center space-x-2 mb-6" dir="ltr">
-              <Code className="w-10 h-10 text-red-600" />
-              <h1 className="text-4xl font-bold text-gray-900">Code4Sudan</h1>
-            </div>
-            <p className="text-xl text-gray-600 mb-6">
-              Empowering Sudan through technology and education
-            </p>
-            <p className="mt-6 text-gray-700">
-              <strong className="text-gray-900">Join the community!:</strong>{' '}
-              <a
-                href="https://t.me/+eb1WfhdFFAtkOGU0"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green-500 hover:text-green-600 transition-colors font-semibold"
-              >
-                https://t.me/+eb1WfhdFFAtkOGU0
-              </a>
-            </p>
-          </header>
-
-          {/* Events */}
-          <section id="events" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
-            <h2 className="text-3xl font-bold mb-8 text-green-600">Events</h2>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">Past Events</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      to="/launch-hackathon"
-                      className="text-red-500 hover:text-red-600 font-medium transition-colors underline decoration-red-200 hover:decoration-red-400"
-                    >
-                      Launch Hackathon of May 1 - Jul 31, 2025
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">Current Events</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                  <li>
-                    <Link
-                      to="/hackathon-2"
-                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
-                    >
-                      Hackathon 2 - 15th November 2025 - Present
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/pytorch-hackathon"
-                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
-                    >
-                      PyTorch Hackathon - Deadline February 28th, 2025
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/workshop-signup"
-                      className="text-green-500 hover:text-green-600 font-medium transition-colors underline decoration-green-200 hover:decoration-green-400"
-                    >
-                      Sign-up to Lead a Workshop!
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* About */}
-          <section id="about" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
-            <h2 className="text-3xl font-bold mb-8 text-red-500">About</h2>
-
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">Our Mission</h3>
-              <p className="mb-4 leading-relaxed">
-                Our mission is to spread, modernize, and support computer science in Sudan—not only as an educational field but equally as a practical tool to address Sudanese needs.
-              </p>
-              <p className="mb-6 leading-relaxed">
-                The initiative is built on two equally essential pillars:
-              </p>
-
-              <div className="mb-6">
-                <h4 className="font-semibold mb-3 text-gray-900">Educational Pillar</h4>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
-                  <li>Support and improve CS education in Sudan</li>
-                  <li>Empower teachers, mentors, and educators with resources</li>
-                  <li>Equip students with modern knowledge and practical skills</li>
-                </ul>
-              </div>
-
-              <div className="mb-6">
-                <h4 className="font-semibold mb-3 text-gray-900">Production Pillar</h4>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
-                  <li>Enable and reward the application of CS to solve Sudan-specific challenges</li>
-                  <li>Guide and support innovation that benefits Sudan directly</li>
-                  <li>Connect projects and ideas with resources, mentorship, and startup opportunities</li>
-                </ul>
-              </div>
-
-              <p className="text-gray-600 italic">
-                Both pillars are necessary and of equal importance: advancing CS education provides a foundation, while real application brings tangible impact. Solutions are effective only when learning and practical innovation move forward together.
-              </p>
-            </div>
-          </section>
-
-          {/* Blog */}
-          <section id="blog" className="mb-16 pb-16 border-b border-gray-200 scroll-mt-20">
-            <h2 className="text-3xl font-bold mb-8 text-red-500">Blog</h2>
-            <div className="grid md:grid-cols-1 gap-6">
-              {blogPosts.map(post => (
-                <BlogCard
-                  key={post.id}
-                  id={post.id}
-                  title={post.title.en}
-                  date={post.date}
-                  excerpt={post.excerpt.en}
-                  lang="en"
-                />
-              ))}
-            </div>
-          </section>
-
-          {/* How We Work */}
-          <section id="how-we-work" className="mb-16 scroll-mt-20">
-            <h2 className="text-3xl font-bold mb-8 text-green-600">How We Work</h2>
-
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">Supporting People in Sudan</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                <li>Provide access to education through sessions, tutorials, and lectures</li>
-                <li>Support teachers and educators by funding materials, planning courses, improving curricula, media support, and feedback</li>
-                <li>Reward innovation for Sudan by offering financial incentives, mentorship, expert connections, and startup guidance</li>
-                <li>Connect stakeholders with tech talent: facilitate partnerships between those facing local challenges and people with tech skills who can help solve these problems</li>
-              </ul>
-            </div>
-
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">Engaging the Diaspora</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                <li>Offer a platform to connect with students, educators, and innovators in Sudan</li>
-                <li>Provide opportunities to teach, mentor, or collaborate remotely</li>
-                <li>Invite diaspora-led solutions that address Sudan's challenges</li>
-                <li>Enable financial contributions to sustain education and innovation programs</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Footer */}
-          <footer className="text-center pt-12 mt-16 border-t border-gray-200">
-            <div className="flex justify-center gap-6 mb-6">
-              <Link
-                to="/knowledge-hub"
-                className="text-green-600 hover:text-green-700 font-medium transition-colors"
-              >
-                Knowledge Hub
-              </Link>
-              <Link
-                to="/contact"
-                className="text-green-600 hover:text-green-700 font-medium transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
-            <p className="text-gray-500">© 2025 Code4Sudan</p>
-          </footer>
-        </>
-      )}
-    </>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
 
@@ -1487,18 +1590,36 @@ function WorkshopSignupPage({ lang }: { lang: 'en' | 'ar' }) {
 
 function App() {
   const [lang, setLang] = useState<'en' | 'ar'>('en');
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
     <div
-      className={`min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12 ${lang === 'ar' ? 'text-right' : ''}`}
+      className={`min-h-screen bg-cream ${lang === 'ar' ? 'text-right' : ''}`}
       dir={lang === 'ar' ? 'rtl' : 'ltr'}
     >
+      {/* Language Toggle */}
       <div className="fixed top-4 right-4 z-50 flex flex-row items-center gap-3" dir="ltr">
-        <span className="text-sm font-medium text-gray-600">{lang === 'ar' ? 'اللغة' : 'Language'}</span>
-        <div role="group" aria-label={lang === 'ar' ? 'تبديل اللغة' : 'Language toggle'} className="inline-flex rounded-md overflow-hidden border border-gray-300 bg-white shadow-sm">
+        <span className={`text-sm font-medium ${isHomePage ? 'text-white drop-shadow-md' : 'text-gray-700'}`}>
+          {lang === 'ar' ? 'اللغة' : 'Language'}
+        </span>
+        <div
+          role="group"
+          aria-label={lang === 'ar' ? 'تبديل اللغة' : 'Language toggle'}
+          className={`inline-flex rounded-lg overflow-hidden shadow-lg ${isHomePage
+            ? 'border border-white/30 bg-white/20 backdrop-blur-sm'
+            : 'border border-gray-300 bg-white'
+            }`}
+        >
           <button
             type="button"
             onClick={() => setLang('ar')}
-            className={`px-3 py-1.5 text-sm font-medium focus:outline-none transition-colors ${lang === 'ar' ? 'bg-green-600 text-white' : 'text-gray-700 hover:bg-gray-50'}`}
+            className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-all duration-200 ${lang === 'ar'
+              ? 'bg-[#D4A853] text-gray-900'
+              : isHomePage
+                ? 'text-white hover:bg-white/20'
+                : 'text-gray-700 hover:bg-gray-100'
+              }`}
             aria-pressed={lang === 'ar'}
           >
             AR
@@ -1506,7 +1627,13 @@ function App() {
           <button
             type="button"
             onClick={() => setLang('en')}
-            className={`px-3 py-1.5 text-sm font-medium border-l border-gray-300 focus:outline-none transition-colors ${lang === 'en' ? 'bg-red-600 text-white' : 'text-gray-700 hover:bg-gray-50'}`}
+            className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-all duration-200 ${isHomePage ? 'border-l border-white/30' : 'border-l border-gray-300'
+              } ${lang === 'en'
+                ? 'bg-[#0D4F4F] text-white'
+                : isHomePage
+                  ? 'text-white hover:bg-white/20'
+                  : 'text-gray-700 hover:bg-gray-100'
+              }`}
             aria-pressed={lang === 'en'}
           >
             EN
