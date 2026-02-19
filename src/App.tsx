@@ -201,7 +201,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
               </div>
             </Link>
 
-            <Link to="/pytorch-hackathon" className="card group cursor-pointer">
+            <a href="https://forms.gle/zNg7F587r9VEUCDt5" target="_blank" rel="noopener noreferrer" className="card group cursor-pointer">
               <div className="card-body">
                 <span className="badge badge-active mb-3">
                   {isArabic ? 'نشط' : 'Active'}
@@ -218,7 +218,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
                   {isArabic ? 'اعرف المزيد ←' : 'Learn more →'}
                 </span>
               </div>
-            </Link>
+            </a>
 
             <Link to="/workshop-signup" className="card group cursor-pointer">
               <div className="card-body">
