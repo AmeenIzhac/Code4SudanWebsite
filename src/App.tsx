@@ -1593,11 +1593,14 @@ function App() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const [isHeroVisible, setIsHeroVisible] = useState(true);
+  const [isSubpageHeroVisible, setIsSubpageHeroVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       // Switch toggle style once user scrolls past the hero (roughly 90vh)
       setIsHeroVisible(window.scrollY < window.innerHeight * 0.9);
+      // Sub-page heroes are shorter (~200px), switch at 160px
+      setIsSubpageHeroVisible(window.scrollY < 160);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     // Reset when route changes
@@ -1605,8 +1608,8 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
-  // Use hero styles only when on homepage AND hero is still in view
-  const useHeroStyle = isHomePage && isHeroVisible;
+  // Use hero styles when on homepage hero OR on a sub-page with a page-hero visible
+  const useHeroStyle = (isHomePage && isHeroVisible) || (!isHomePage && isSubpageHeroVisible);
 
   return (
     <div

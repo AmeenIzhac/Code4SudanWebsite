@@ -18,18 +18,21 @@ export function BlogCard({ id, title, date, excerpt, lang }: BlogCardProps) {
       to={`/blog/${id}`}
       className="card group block"
     >
-      <div className="card-body">
-        <p className="text-sm text-gray-400 mb-2">{date}</p>
+      <div className="card-body flex flex-col h-full">
+        <div className="flex items-center gap-2 mb-3">
+          <div className="w-2 h-2 rounded-full bg-accent" />
+          <p className="text-sm text-gray-400">{date}</p>
+        </div>
         <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
           {title}
         </h3>
         <p
-          className="text-gray-600 leading-relaxed line-clamp-3 mb-4"
+          className="text-gray-600 leading-relaxed line-clamp-3 mb-4 flex-1"
           dangerouslySetInnerHTML={{ __html: processedExcerpt }}
         />
-        <span className="inline-flex items-center text-primary font-medium group-hover:underline">
+        <span className="inline-flex items-center text-primary font-medium group-hover:underline mt-auto">
           {lang === 'ar' ? 'اقرأ المزيد' : 'Read more'}
-          <svg className="w-4 h-4 ml-1 rtl:mr-1 rtl:ml-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 ml-1 rtl:mr-1 rtl:ml-0 rtl:rotate-180 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </span>
