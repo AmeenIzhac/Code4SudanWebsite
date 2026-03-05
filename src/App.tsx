@@ -1,6 +1,6 @@
 import { Code } from 'lucide-react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BlogCard } from './components/BlogCard';
 import { BlogPost } from './components/BlogPost';
 import { ContactUsPage } from './components/ContactUsPage';
@@ -478,7 +478,7 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
 
           <div className="border-t border-gray-800 pt-8 text-center">
             <p className="text-gray-500">
-              © 2025 {isArabic ? 'كود فور سودان' : 'Code4Sudan'}. {isArabic ? 'جميع الحقوق محفوظة' : 'All rights reserved'}.
+              © 2026 {isArabic ? 'كود فور سودان' : 'Code4Sudan'}. {isArabic ? 'جميع الحقوق محفوظة' : 'All rights reserved'}.
             </p>
           </div>
         </div>
@@ -1592,6 +1592,21 @@ function App() {
   const [lang, setLang] = useState<'en' | 'ar'>('en');
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Switch toggle style once user scrolls past the hero (roughly 90vh)
+      setIsHeroVisible(window.scrollY < window.innerHeight * 0.9);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Reset when route changes
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
+
+  // Use hero styles only when on homepage AND hero is still in view
+  const useHeroStyle = isHomePage && isHeroVisible;
 
   return (
     <div
@@ -1600,13 +1615,13 @@ function App() {
     >
       {/* Language Toggle */}
       <div className="fixed top-4 right-4 z-50 flex flex-row items-center gap-3" dir="ltr">
-        <span className={`text-sm font-medium ${isHomePage ? 'text-white drop-shadow-md' : 'text-gray-700'}`}>
+        <span className={`text-sm font-medium ${useHeroStyle ? 'text-white drop-shadow-md' : 'text-gray-700'}`}>
           {lang === 'ar' ? 'اللغة' : 'Language'}
         </span>
         <div
           role="group"
           aria-label={lang === 'ar' ? 'تبديل اللغة' : 'Language toggle'}
-          className={`inline-flex rounded-lg overflow-hidden shadow-lg ${isHomePage
+          className={`inline-flex rounded-lg overflow-hidden shadow-lg ${useHeroStyle
             ? 'border border-white/30 bg-white/20 backdrop-blur-sm'
             : 'border border-gray-300 bg-white'
             }`}
@@ -1616,7 +1631,7 @@ function App() {
             onClick={() => setLang('ar')}
             className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-all duration-200 ${lang === 'ar'
               ? 'bg-[#D4A853] text-gray-900'
-              : isHomePage
+              : useHeroStyle
                 ? 'text-white hover:bg-white/20'
                 : 'text-gray-700 hover:bg-gray-100'
               }`}
@@ -1627,10 +1642,10 @@ function App() {
           <button
             type="button"
             onClick={() => setLang('en')}
-            className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-all duration-200 ${isHomePage ? 'border-l border-white/30' : 'border-l border-gray-300'
+            className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-all duration-200 ${useHeroStyle ? 'border-l border-white/30' : 'border-l border-gray-300'
               } ${lang === 'en'
                 ? 'bg-[#0D4F4F] text-white'
-                : isHomePage
+                : useHeroStyle
                   ? 'text-white hover:bg-white/20'
                   : 'text-gray-700 hover:bg-gray-100'
               }`}
