@@ -182,25 +182,6 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {/* Current Events */}
-            <Link to="/hackathon-2" className="card group cursor-pointer">
-              <div className="card-body">
-                <span className="badge badge-active mb-3">
-                  {isArabic ? 'نشط' : 'Active'}
-                </span>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
-                  {isArabic ? 'هاكاثون 2' : 'Hackathon 2'}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  {isArabic
-                    ? '15 نوفمبر 2025 - الحاضر'
-                    : '15th November 2025 - Present'}
-                </p>
-                <span className="text-primary font-medium text-sm group-hover:underline">
-                  {isArabic ? 'اعرف المزيد ←' : 'Learn more →'}
-                </span>
-              </div>
-            </Link>
-
             <a href="https://forms.gle/zNg7F587r9VEUCDt5" target="_blank" rel="noopener noreferrer" className="card group cursor-pointer">
               <div className="card-body">
                 <span className="badge badge-active mb-3">
@@ -246,6 +227,15 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
               {isArabic ? 'فعاليات سابقة' : 'Past Events'}
             </h3>
             <div className="flex flex-col gap-3">
+              <Link
+                to="/hackathon-2"
+                className="inline-flex items-center text-gray-500 hover:text-accent transition-colors"
+              >
+                <span className="badge badge-past mr-3">{isArabic ? 'منتهي' : 'Completed'}</span>
+                {isArabic
+                  ? 'هاكاثون 2 من 15 نوفمبر 2025 - 15 أبريل 2026'
+                  : 'Hackathon 2 of November 15, 2025 - April 15, 2026'}
+              </Link>
               <Link
                 to="/hackathon-2-results"
                 className="inline-flex items-center text-gray-500 hover:text-accent transition-colors"
@@ -1601,10 +1591,11 @@ function WorkshopSignupPage({ lang }: { lang: 'en' | 'ar' }) {
 
 function Hackathon2ResultsPage({ lang }: { lang: 'en' | 'ar' }) {
   const isArabic = lang === 'ar';
+  const listMargin = isArabic ? 'mr-4' : 'ml-4';
   return (
     <div
       className="min-h-screen bg-white text-black max-w-4xl mx-auto px-6 py-12"
-      dir="rtl"
+      dir={isArabic ? 'rtl' : 'ltr'}
     >
       <div className="mb-12">
         <Link
@@ -1614,137 +1605,186 @@ function Hackathon2ResultsPage({ lang }: { lang: 'en' | 'ar' }) {
           {isArabic ? '← الرجوع للصفحة الرئيسية' : '← Back to Home'}
         </Link>
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          نتائج هاكاثون 2: مسابقة #برمج_للسودان
+          {isArabic
+            ? 'نتائج هاكاثون 2: مسابقة #برمج_للسودان'
+            : 'Hackathon 2 Results: #Code4Sudan Competition'}
         </h1>
       </div>
 
       <section className="mb-16 pb-16 border-b border-gray-200">
         <p className="mb-4 leading-relaxed text-lg">
-          بفخر كبير، نعلن عن اختتام مسابقة <strong>#برمج_للسودان</strong> بنجاح باهر وبنتائج مبهرة، حيث وزعنا أكثر من <strong>2000 دولار أمريكي</strong> كجوائز إجمالية! 🎉💰
+          {isArabic ? (
+            <>
+              بفخر كبير، نعلن عن اختتام مسابقة <strong>#برمج_للسودان</strong> بنجاح باهر وبنتائج مبهرة، حيث وزعنا أكثر من <strong>2000 دولار أمريكي</strong> كجوائز إجمالية! 🎉💰
+            </>
+          ) : (
+            <>
+              With great pride, we announce the conclusion of the <strong>#Code4Sudan</strong> competition with outstanding success and impressive results, having distributed over <strong>$2,000 USD</strong> in total prizes! 🎉💰
+            </>
+          )}
         </p>
 
-        <h2 className="text-2xl font-bold mt-10 mb-4 text-green-600">📊 إحصائيات المسابقة الملهمة</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700 mr-4">
-          <li>استقبلنا <strong>114 فكرة</strong> إبداعية. 💡</li>
-          <li>تأهلت <strong>6 مشاريع</strong> مبتكرة للمرحلة النهائية. 🏅</li>
-          <li>الأهم: جميع المشاريع الفائزة يتم تطبيقها حاليًا على أرض الواقع ويستخدمها مستخدمون حقيقيون! 🚀✅</li>
+        <h2 className="text-2xl font-bold mt-10 mb-4 text-green-600">
+          {isArabic ? '📊 إحصائيات المسابقة الملهمة' : '📊 Inspiring Competition Stats'}
+        </h2>
+        <ul className={`list-disc list-inside space-y-2 text-gray-700 ${listMargin}`}>
+          {isArabic ? (
+            <>
+              <li>استقبلنا <strong>114 فكرة</strong> إبداعية. 💡</li>
+              <li>تأهلت <strong>6 مشاريع</strong> مبتكرة للمرحلة النهائية. 🏅</li>
+              <li>الأهم: جميع المشاريع الفائزة يتم تطبيقها حاليًا على أرض الواقع ويستخدمها مستخدمون حقيقيون! 🚀✅</li>
+            </>
+          ) : (
+            <>
+              <li>We received <strong>114 creative ideas</strong>. 💡</li>
+              <li><strong>6 innovative projects</strong> qualified for the final stage. 🏅</li>
+              <li>Most importantly: all winning projects are currently being applied in the real world and used by actual users! 🚀✅</li>
+            </>
+          )}
         </ul>
       </section>
 
       <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-green-600">🏆 المركز الأول: شريان (جائزة 1000 دولار) — 🩸 إنقاذ حياة</h2>
+        <h2 className="text-3xl font-bold mb-6 text-green-600">
+          {isArabic
+            ? '🏆 المركز الأول: شريان (جائزة 1000 دولار) — 🩸 إنقاذ حياة'
+            : '🏆 1st Place: Shrayan ($1,000 prize) — 🩸 Saving Lives'}
+        </h2>
         <p className="mb-4 leading-relaxed">
-          <strong>المشروع:</strong> تطبيق للتبرع بالدم يربط المحتاجين بالمتبرعين. تم تحميله أكثر من مائة مرة واستُخدم بالفعل لإنقاذ حياة بعض المرضى.
+          <strong>{isArabic ? 'المشروع:' : 'The project:'}</strong>{' '}
+          {isArabic
+            ? 'تطبيق للتبرع بالدم يربط المحتاجين بالمتبرعين. تم تحميله أكثر من مائة مرة واستُخدم بالفعل لإنقاذ حياة بعض المرضى.'
+            : 'A blood donation app connecting those in need with donors. Downloaded over a hundred times and already used to save the lives of several patients.'}
         </p>
-        <ul className="space-y-2 text-gray-700 mr-4">
+        <ul className={`space-y-2 text-gray-700 ${listMargin}`}>
           <li>
-            🎬 <strong>شاهد الفيديو:</strong>{' '}
+            🎬 <strong>{isArabic ? 'شاهد الفيديو:' : 'Watch the video:'}</strong>{' '}
             <a href="https://vimeo.com/1179106044?share=copy&fl=sv&fe=ci" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">vimeo.com/1179106044</a>
           </li>
           <li>
-            📱 <strong>تجربة التطبيق:</strong>{' '}
+            📱 <strong>{isArabic ? 'تجربة التطبيق:' : 'Try the app:'}</strong>{' '}
             <a href="https://play.google.com/store/apps/details?id=com.mqoder.shryan_sd&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">Google Play</a>
           </li>
         </ul>
-        <p className="mt-4 mb-2 font-semibold">🤝 تواصل مع الفريق:</p>
-        <ul className="space-y-1 text-gray-700 mr-4">
+        <p className="mt-4 mb-2 font-semibold">🤝 {isArabic ? 'تواصل مع الفريق:' : 'Get in touch with the team:'}</p>
+        <ul className={`space-y-1 text-gray-700 ${listMargin}`}>
           <li>
-            مروان إبراهيم —{' '}
+            {isArabic ? 'مروان إبراهيم' : 'Murwan Ibrahim'} —{' '}
             <a href="https://www.linkedin.com/in/murwan-ibrahim-250860228" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">LinkedIn</a>
           </li>
           <li>
-            محمد طاهر —{' '}
+            {isArabic ? 'محمد طاهر' : 'Mohammed Tahir'} —{' '}
             <a href="https://www.linkedin.com/in/mohammed-tahir-bilal-50886b356" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">LinkedIn</a>
           </li>
         </ul>
       </section>
 
       <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-red-500">🏅 المراكز الثانية المشتركة (300 دولار لكل مشروع)</h2>
+        <h2 className="text-3xl font-bold mb-6 text-red-500">
+          {isArabic
+            ? '🏅 المراكز الثانية المشتركة (300 دولار لكل مشروع)'
+            : '🏅 Joint 2nd Place ($300 per project)'}
+        </h2>
 
         <div className="mb-10">
-          <h3 className="text-2xl font-semibold mb-3 text-gray-900">مستشارك — ⚖️ مساعد قانوني ذكي</h3>
+          <h3 className="text-2xl font-semibold mb-3 text-gray-900">
+            {isArabic ? 'مستشارك — ⚖️ مساعد قانوني ذكي' : 'Mustasharak — ⚖️ AI Legal Assistant'}
+          </h3>
           <p className="mb-3 leading-relaxed">
-            <strong>المشروع:</strong> مساعد ذكي للإجابة على الأسئلة القانونية.
+            <strong>{isArabic ? 'المشروع:' : 'The project:'}</strong>{' '}
+            {isArabic
+              ? 'مساعد ذكي للإجابة على الأسئلة القانونية.'
+              : 'An AI assistant that answers legal questions.'}
           </p>
-          <ul className="space-y-2 text-gray-700 mr-4">
+          <ul className={`space-y-2 text-gray-700 ${listMargin}`}>
             <li>
-              🎬 <strong>شاهد الفيديو:</strong>{' '}
+              🎬 <strong>{isArabic ? 'شاهد الفيديو:' : 'Watch the video:'}</strong>{' '}
               <a href="https://youtu.be/oitCc39oduE" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">youtu.be/oitCc39oduE</a>
             </li>
             <li>
-              💬 <strong>تجربة المشروع:</strong> بوت مستشارك على تليجرام —{' '}
+              💬 <strong>{isArabic ? 'تجربة المشروع:' : 'Try the project:'}</strong>{' '}
+              {isArabic ? 'بوت مستشارك على تليجرام —' : 'Mustasharak bot on Telegram —'}{' '}
               <a href="https://t.me/ItsMustasharbot" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">@ItsMustasharbot</a>
             </li>
           </ul>
-          <p className="mt-3 mb-2 font-semibold">📞 تواصل مع الفريق:</p>
-          <ul className="space-y-1 text-gray-700 mr-4">
+          <p className="mt-3 mb-2 font-semibold">📞 {isArabic ? 'تواصل مع الفريق:' : 'Get in touch with the team:'}</p>
+          <ul className={`space-y-1 text-gray-700 ${listMargin}`}>
             <li>
-              أسماء الهادي —{' '}
+              {isArabic ? 'أسماء الهادي' : 'Asma Elhadi'} —{' '}
               <a href="https://www.linkedin.com/in/asma-elhadi-006078169/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">LinkedIn</a>
             </li>
             <li>
-              عمر عبد الرحيم التوم —{' '}
+              {isArabic ? 'عمر عبد الرحيم التوم' : 'Omar Abdulrahim Eltoum'} —{' '}
               <a href="https://www.linkedin.com/in/omar-abdulrahim-1o/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">LinkedIn</a>
             </li>
           </ul>
         </div>
 
         <div className="mb-10">
-          <h3 className="text-2xl font-semibold mb-3 text-gray-900">مكتبة السودان — 📚 مصدر تعليمي</h3>
+          <h3 className="text-2xl font-semibold mb-3 text-gray-900">
+            {isArabic ? 'مكتبة السودان — 📚 مصدر تعليمي' : 'Sudan Library — 📚 Educational Resource'}
+          </h3>
           <p className="mb-3 leading-relaxed">
-            <strong>المشروع:</strong> موقع إلكتروني لتوفير الكتب المدرسية والامتحانات والملخصات.
+            <strong>{isArabic ? 'المشروع:' : 'The project:'}</strong>{' '}
+            {isArabic
+              ? 'موقع إلكتروني لتوفير الكتب المدرسية والامتحانات والملخصات.'
+              : 'A website providing school textbooks, exams, and summaries.'}
           </p>
-          <ul className="space-y-2 text-gray-700 mr-4">
+          <ul className={`space-y-2 text-gray-700 ${listMargin}`}>
             <li>
-              🎬 <strong>شاهد الفيديو:</strong>{' '}
+              🎬 <strong>{isArabic ? 'شاهد الفيديو:' : 'Watch the video:'}</strong>{' '}
               <a href="https://youtu.be/pbVmHVk-d0g?si=hGX8IyxkYHtjezZ-" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">youtu.be/pbVmHVk-d0g</a>
             </li>
             <li>
-              🌐 <strong>تجربة المشروع:</strong>{' '}
+              🌐 <strong>{isArabic ? 'تجربة المشروع:' : 'Try the project:'}</strong>{' '}
               <a href="https://sudanlibrary.kesug.com" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">sudanlibrary.kesug.com</a>
             </li>
           </ul>
-          <p className="mt-3 mb-2 font-semibold">🧑‍💻 تواصل مع الفريق:</p>
-          <ul className="space-y-1 text-gray-700 mr-4">
+          <p className="mt-3 mb-2 font-semibold">🧑‍💻 {isArabic ? 'تواصل مع الفريق:' : 'Get in touch with the team:'}</p>
+          <ul className={`space-y-1 text-gray-700 ${listMargin}`}>
             <li>
-              محمد منصور —{' '}
+              {isArabic ? 'محمد منصور' : 'Mohammed Mansour'} —{' '}
               <a href="https://www.linkedin.com/in/mohammed-mansour-gumaa-65633b275/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">LinkedIn</a>
             </li>
           </ul>
         </div>
 
         <div>
-          <h3 className="text-2xl font-semibold mb-3 text-gray-900">شفاء — 💊 إدارة الرعاية الصحية</h3>
+          <h3 className="text-2xl font-semibold mb-3 text-gray-900">
+            {isArabic ? 'شفاء — 💊 إدارة الرعاية الصحية' : 'Shifaa — 💊 Healthcare Management'}
+          </h3>
           <p className="mb-3 leading-relaxed">
-            <strong>المشروع:</strong> سجل طبي إلكتروني لكل شخص ونظام إدارة للصيدليات.
+            <strong>{isArabic ? 'المشروع:' : 'The project:'}</strong>{' '}
+            {isArabic
+              ? 'سجل طبي إلكتروني لكل شخص ونظام إدارة للصيدليات.'
+              : 'An electronic medical record for every person and a pharmacy management system.'}
           </p>
-          <ul className="space-y-2 text-gray-700 mr-4">
+          <ul className={`space-y-2 text-gray-700 ${listMargin}`}>
             <li>
-              🎬 <strong>شاهد الفيديو:</strong>{' '}
+              🎬 <strong>{isArabic ? 'شاهد الفيديو:' : 'Watch the video:'}</strong>{' '}
               <a href="https://youtu.be/cIsqfHUEiOg?si=i1IW8OQscIxQslUF" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">youtu.be/cIsqfHUEiOg</a>
             </li>
             <li>
-              💻 <strong>تجربة المشروع:</strong>{' '}
+              💻 <strong>{isArabic ? 'تجربة المشروع:' : 'Try the project:'}</strong>{' '}
               <a href="https://shifaa-blue.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">shifaa-blue.vercel.app</a>
             </li>
           </ul>
-          <p className="mt-3 mb-2 font-semibold">🌟 تواصل مع الفريق:</p>
-          <ul className="space-y-1 text-gray-700 mr-4">
+          <p className="mt-3 mb-2 font-semibold">🌟 {isArabic ? 'تواصل مع الفريق:' : 'Get in touch with the team:'}</p>
+          <ul className={`space-y-1 text-gray-700 ${listMargin}`}>
             <li>
-              هبة عبد الرحمن —{' '}
+              {isArabic ? 'هبة عبد الرحمن' : 'Heba Abdulrahman'} —{' '}
               <a href="https://www.linkedin.com/in/heba-fadlaila-b04621225" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">LinkedIn</a>
             </li>
             <li>
-              مجذوب الصديق —{' '}
+              {isArabic ? 'مجذوب الصديق' : 'Majzoub Siddig'} —{' '}
               <a href="https://www.linkedin.com/in/majzoub-siddig" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">LinkedIn</a>
             </li>
             <li>
-              حسام فرحات —{' '}
+              {isArabic ? 'حسام فرحات' : 'Hosam Farahat'} —{' '}
               <a href="https://www.linkedin.com/in/hosam-mohamed-eid-farahat-a6a723294" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">LinkedIn</a>
             </li>
             <li>
-              فتح الرحمن الجعلي —{' '}
+              {isArabic ? 'فتح الرحمن الجعلي' : 'Fath Alrhman Aljaali'} —{' '}
               <a href="https://www.linkedin.com/in/fath-alrhman-3a61852a2" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">LinkedIn</a>
             </li>
           </ul>
@@ -1752,44 +1792,58 @@ function Hackathon2ResultsPage({ lang }: { lang: 'en' | 'ar' }) {
       </section>
 
       <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-green-600">🥉 المركز الثالث: أمانة (150 دولار) — 🤲 إدارة العمل الخيري</h2>
+        <h2 className="text-3xl font-bold mb-6 text-green-600">
+          {isArabic
+            ? '🥉 المركز الثالث: أمانة (150 دولار) — 🤲 إدارة العمل الخيري'
+            : '🥉 3rd Place: Amana ($150) — 🤲 Charity Work Management'}
+        </h2>
         <p className="mb-4 leading-relaxed">
-          <strong>المشروع:</strong> نظام لإدارة عمل المنظمات الخيرية.
+          <strong>{isArabic ? 'المشروع:' : 'The project:'}</strong>{' '}
+          {isArabic
+            ? 'نظام لإدارة عمل المنظمات الخيرية.'
+            : 'A management system for charitable organizations.'}
         </p>
-        <ul className="space-y-2 text-gray-700 mr-4">
+        <ul className={`space-y-2 text-gray-700 ${listMargin}`}>
           <li>
-            📽️ <strong>شاهد الفيديو:</strong>{' '}
+            📽️ <strong>{isArabic ? 'شاهد الفيديو:' : 'Watch the video:'}</strong>{' '}
             <a href="https://youtu.be/w4chwhfZTLc?si=hZbQHcrOFT4wDU6g" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">youtu.be/w4chwhfZTLc</a>
           </li>
         </ul>
-        <p className="mt-3 mb-2 font-semibold">👩‍💻 تواصل مع الفريق:</p>
-        <ul className="space-y-1 text-gray-700 mr-4">
+        <p className="mt-3 mb-2 font-semibold">👩‍💻 {isArabic ? 'تواصل مع الفريق:' : 'Get in touch with the team:'}</p>
+        <ul className={`space-y-1 text-gray-700 ${listMargin}`}>
           <li>
-            وفاء ماشا —{' '}
+            {isArabic ? 'وفاء ماشا' : 'Wafaa Masha'} —{' '}
             <a href="https://www.linkedin.com/in/wafaa-masha" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">LinkedIn</a>
           </li>
         </ul>
       </section>
 
       <section className="mb-16 pb-16 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-red-500">⭐ المركز الرابع: مفقود (50 دولار) — 🔎 البحث بالذكاء الاصطناعي</h2>
+        <h2 className="text-3xl font-bold mb-6 text-red-500">
+          {isArabic
+            ? '⭐ المركز الرابع: مفقود (50 دولار) — 🔎 البحث بالذكاء الاصطناعي'
+            : '⭐ 4th Place: Mafqood ($50) — 🔎 AI-Powered Search'}
+        </h2>
         <p className="mb-4 leading-relaxed">
-          <strong>المشروع:</strong> موقع للبحث عن الأشخاص المفقودين باستخدام الذكاء الاصطناعي.
+          <strong>{isArabic ? 'المشروع:' : 'The project:'}</strong>{' '}
+          {isArabic
+            ? 'موقع للبحث عن الأشخاص المفقودين باستخدام الذكاء الاصطناعي.'
+            : 'A website for searching for missing persons using artificial intelligence.'}
         </p>
-        <ul className="space-y-2 text-gray-700 mr-4">
+        <ul className={`space-y-2 text-gray-700 ${listMargin}`}>
           <li>
-            📽️ <strong>شاهد الفيديو:</strong>{' '}
+            📽️ <strong>{isArabic ? 'شاهد الفيديو:' : 'Watch the video:'}</strong>{' '}
             <a href="https://youtu.be/psjPBumf-ps?si=b3AsKoSGN_6DkDCa" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">youtu.be/psjPBumf-ps</a>
           </li>
           <li>
-            🤖 <strong>تجربة المشروع:</strong>{' '}
+            🤖 <strong>{isArabic ? 'تجربة المشروع:' : 'Try the project:'}</strong>{' '}
             <a href="https://lost-in-sudan.online/" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">lost-in-sudan.online</a>
           </li>
         </ul>
-        <p className="mt-3 mb-2 font-semibold">🤝 تواصل مع الفريق:</p>
-        <ul className="space-y-1 text-gray-700 mr-4">
+        <p className="mt-3 mb-2 font-semibold">🤝 {isArabic ? 'تواصل مع الفريق:' : 'Get in touch with the team:'}</p>
+        <ul className={`space-y-1 text-gray-700 ${listMargin}`}>
           <li>
-            مصطفى عبدو —{' '}
+            {isArabic ? 'مصطفى عبدو' : 'Mustafa Abdo'} —{' '}
             <a href="https://www.linkedin.com/in/mustafa-abdo" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">LinkedIn</a>
           </li>
         </ul>
@@ -1797,23 +1851,33 @@ function Hackathon2ResultsPage({ lang }: { lang: 'en' | 'ar' }) {
 
       <section className="mb-16">
         <p className="mb-6 leading-relaxed text-lg">
-          نهنئ جميع الفرق الفائزة على إبداعهم والتزامهم بتقديم حلول تقنية ذات تأثير حقيقي على أرض الواقع! ندعوكم لدعم هذه المشاريع الواعدة والتواصل مع مطوريها. 👏
+          {isArabic
+            ? 'نهنئ جميع الفرق الفائزة على إبداعهم والتزامهم بتقديم حلول تقنية ذات تأثير حقيقي على أرض الواقع! ندعوكم لدعم هذه المشاريع الواعدة والتواصل مع مطوريها. 👏'
+            : 'We congratulate all the winning teams on their creativity and commitment to delivering tech solutions with real-world impact! We invite you to support these promising projects and reach out to their developers. 👏'}
         </p>
 
-        <h2 className="text-2xl font-bold mb-4 text-green-600">للمزيد من التفاصيل</h2>
-        <ul className="space-y-2 text-gray-700 mr-4">
+        <h2 className="text-2xl font-bold mb-4 text-green-600">
+          {isArabic ? 'للمزيد من التفاصيل' : 'More Details'}
+        </h2>
+        <ul className={`space-y-2 text-gray-700 ${listMargin}`}>
           <li>
-            📺 <strong>شاهد الجلسة الختامية كاملة:</strong>{' '}
+            📺 <strong>
+              {isArabic ? 'شاهد الجلسة الختامية كاملة:' : 'Watch the full closing session:'}
+            </strong>{' '}
             <a href="https://youtu.be/-FAmGzyh9IE?si=UMcMUojAW1M-DtoH" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">youtu.be/-FAmGzyh9IE</a>
           </li>
           <li>
-            🌐 <strong>كل تفاصيل المسابقة والمبادرة:</strong>{' '}
+            🌐 <strong>
+              {isArabic ? 'كل تفاصيل المسابقة والمبادرة:' : 'All competition and initiative details:'}
+            </strong>{' '}
             <a href="http://Code4sudan.com" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-600">Code4sudan.com</a>
           </li>
         </ul>
 
-        <p className="mt-8 text-gray-600 italic">
-          #برمجة #تكنولوجيا #السودان #ابتكار #تطبيقات_هادفة #ريادة_الأعمال #TechForGood 💻🇸🇩
+        <p className="mt-8 text-gray-600 italic" dir="ltr">
+          {isArabic
+            ? '#برمجة #تكنولوجيا #السودان #ابتكار #تطبيقات_هادفة #ريادة_الأعمال #TechForGood 💻🇸🇩'
+            : '#Coding #Technology #Sudan #Innovation #ImpactfulApps #Entrepreneurship #TechForGood 💻🇸🇩'}
         </p>
       </section>
     </div>
