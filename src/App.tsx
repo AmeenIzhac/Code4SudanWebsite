@@ -182,25 +182,6 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {/* Current Events */}
-            <a href="https://forms.gle/zNg7F587r9VEUCDt5" target="_blank" rel="noopener noreferrer" className="card group cursor-pointer">
-              <div className="card-body">
-                <span className="badge badge-active mb-3">
-                  {isArabic ? 'نشط' : 'Active'}
-                </span>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
-                  {isArabic ? 'هاكاثون PyTorch' : 'PyTorch Hackathon'}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  {isArabic
-                    ? 'آخر موعد للمشاركة 28 فبراير 2025'
-                    : 'Deadline February 28th, 2025'}
-                </p>
-                <span className="text-primary font-medium text-sm group-hover:underline">
-                  {isArabic ? 'اعرف المزيد ←' : 'Learn more →'}
-                </span>
-              </div>
-            </a>
-
             <Link to="/workshop-signup" className="card group cursor-pointer">
               <div className="card-body">
                 <span className="badge badge-active mb-3">
@@ -244,6 +225,15 @@ function HomePage({ lang }: { lang: 'en' | 'ar' }) {
                 {isArabic
                   ? 'نتائج هاكاثون 2: مسابقة #برمج_للسودان'
                   : 'Hackathon 2 Results: #Code4Sudan Competition'}
+              </Link>
+              <Link
+                to="/pytorch-hackathon"
+                className="inline-flex items-center text-gray-500 hover:text-accent transition-colors"
+              >
+                <span className="badge badge-past mr-3">{isArabic ? 'منتهي' : 'Ended'}</span>
+                {isArabic
+                  ? 'هاكاثون PyTorch — انتهى في 28 فبراير 2025'
+                  : 'PyTorch Hackathon — Ended February 28, 2025'}
               </Link>
               <Link
                 to="/launch-hackathon"
@@ -631,6 +621,17 @@ function Hackathon2Page({ lang }: { lang: 'en' | 'ar' }) {
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           {isArabic ? 'هاكاثون 2' : 'Hackathon 2'}
         </h1>
+        <div className="mt-4 inline-flex flex-wrap items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-4 py-2 text-sm text-gray-600">
+          <span className="badge badge-past">{isArabic ? 'منتهي' : 'Ended'}</span>
+          <span>
+            {isArabic
+              ? 'اختتم هذا الهاكاثون في 15 أبريل 2026.'
+              : 'This hackathon concluded on April 15, 2026.'}
+          </span>
+          <Link to="/hackathon-2-results" className="text-green-600 hover:text-green-700 font-medium">
+            {isArabic ? 'شاهد النتائج ←' : 'See the results →'}
+          </Link>
+        </div>
       </div>
 
       {isArabic ? (
@@ -1203,6 +1204,14 @@ function PyTorchHackathonPage({ lang }: { lang: 'en' | 'ar' }) {
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           {isArabic ? 'هاكاثون PyTorch' : 'PyTorch Hackathon'}
         </h1>
+        <div className="mt-4 inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-4 py-2 text-sm text-gray-600">
+          <span className="badge badge-past">{isArabic ? 'منتهي' : 'Ended'}</span>
+          <span>
+            {isArabic
+              ? 'انتهى هذا الهاكاثون في 28 فبراير 2025.'
+              : 'This hackathon ended on February 28, 2025.'}
+          </span>
+        </div>
       </div>
 
       {isArabic ? (
